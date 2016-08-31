@@ -1,0 +1,18 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pag-container{background: url(../images/uff2.jpg) no-repeat center bottom fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== */
+    
+    .pag-container{padding-right: 12%;padding-left: 12%;padding-top: 1%;background-color: #F8F8FF;}
+    .header-main-container{padding-right: 2%;padding-left: 2%;}
+    .corpo-main-container{padding-right: 2%;padding-left: 2%;}
+    /*width: 1026px;  1140px - 10% for margins */
+    .wrapper {margin: 0 auto;}
+}
