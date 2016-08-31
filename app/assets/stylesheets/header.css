@@ -8,7 +8,6 @@
 .frase-inline p{padding-top: 15px;}
 .header-container {height: 125px;padding-top: 5px;}
 
-<<<<<<< HEAD
 /*----------aqui está o css da navbar--------------*/
 
 .container{width: 100% !important;background-color: black; padding-left: 50px !important;border-bottom: 2px solid black;}
@@ -21,5 +20,3 @@ nav a:hover {text-decoration: underline;}
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {color: #9d9d9d;background-color: transparent;}
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {color: #fff;background-color: none;}
 
-=======
->>>>>>> e9b9ae5bebcb5e4bc1bb56e0eddf919e7955c3f5
