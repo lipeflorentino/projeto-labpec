@@ -10,7 +10,9 @@ class User < ApplicationRecord
                         uniqueness: { case_sensitive: false }
     validates :matricula, presence: true,  numericality: { only_integer: true }, length: { minimum: 5,  maximum: 15 }
     has_secure_password # bcrypt para manter a senha segura
-    validates :password, presence: true, length: { minimum: 6 }
+    validates :password, presence: true, length: { minimum: 6, maximum: 20 }, on: :create
+    # deixa o usuario dar update sem botar uma senha
+    validates :password, length: { minimum: 6, maximum: 20 }, on: :update, allow_blank: true
     mount_uploader :picture, PictureUploader
     
     def User.digest(string)
