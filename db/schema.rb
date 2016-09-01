@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160901011540) do
+ActiveRecord::Schema.define(version: 20160901213245) do
 
   create_table "types", force: :cascade do |t|
     t.string   "name"
@@ -23,10 +23,12 @@ ActiveRecord::Schema.define(version: 20160901011540) do
     t.string   "email"
     t.integer  "type_id"
     t.string   "matricula"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "password_digest"
     t.string   "picture"
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
   end
 
 end
