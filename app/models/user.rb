@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     belongs_to :type
     
-    
+    attr_accessor :activation_token
     before_save { self.email = email.downcase }
     # chamada do método pra criar a activation_digest para futura confirmação de usuario
     # ocorre somente no ato de criação
@@ -20,16 +20,21 @@ class User < ApplicationRecord
     mount_uploader :picture, PictureUploader
     
     def User.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
+      BCrypt::Password.create(string, cost: cost)
+    end
+    
+    def User.new_token
+      SecureRandom.urlsafe_base64
     end
     
   private 
     
     def create_activation_digest
       # Cria o token e usa criptografia
-      # antes de continuar aqui, preciso ver o tutorial de remember user
+      self.activation_token  = User.new_token
+      self.activation_digest = User.digest(activation_token)
     end
       
   end
