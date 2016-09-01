@@ -20,5 +20,7 @@
   <%= @user.matricula %>
 </p>
 
+<%= image_tag @user.picture.url if @user.picture? %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

@@ -11,6 +11,7 @@ class User < ApplicationRecord
     validates :matricula, presence: true,  numericality: { only_integer: true }, length: { minimum: 5,  maximum: 15 }
     has_secure_password # bcrypt para manter a senha segura
     validates :password, presence: true, length: { minimum: 6 }
+    mount_uploader :picture, PictureUploader
     
     def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
