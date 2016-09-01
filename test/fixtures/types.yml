@@ -2,12 +2,6 @@
 
 one:
   name: MyString
-  email: MyString
-  type_id: 1
-  matricula: MyString
 
 two:
   name: MyString
-  email: MyString
-  type_id: 1
-  matricula: MyString

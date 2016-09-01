@@ -6,6 +6,8 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Email</th>
+      <th>Type</th>
       <th>Matricula</th>
       <th colspan="3"></th>
     </tr>
@@ -15,6 +17,8 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.type_id %></td>
         <td><%= user.matricula %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>

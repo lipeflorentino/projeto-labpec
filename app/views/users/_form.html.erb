@@ -17,8 +17,28 @@
   </div>
 
   <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type_id %>
+    <%= f.number_field :type_id %>
+  </div>
+
+  <div class="field">
     <%= f.label :matricula %>
     <%= f.text_field :matricula %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
   </div>
 
   <div class="actions">
