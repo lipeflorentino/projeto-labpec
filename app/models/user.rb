@@ -2,10 +2,10 @@ class User < ApplicationRecord
     belongs_to :type
     
     attr_accessor :activation_token
-    before_save { self.email = email.downcase }
     # chamada do método pra criar a activation_digest para futura confirmação de usuario
     # ocorre somente no ato de criação
     before_create :create_activation_digest
+    before_save { self.email = email.downcase }
     # REGEX dizendo que o email deve ter esse formato: "email@dominio.com" + qualquer coisa
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, length: { maximum: 255 },
@@ -29,6 +29,24 @@ class User < ApplicationRecord
       SecureRandom.urlsafe_base64
     end
     
+    # Retorna true se a token combina com o digest da confirmação 
+    def authenticated?(token)
+      digest = self.activation_digest
+      return false if digest.nil?
+      # isso está retornando falso
+      BCrypt::Password.new(digest).is_password?(token)
+    end
+    
+      # Activates an account.
+    def activate
+      update_attribute(:activated,    true)
+    end
+  
+    # Sends activation email.
+    def send_activation_email
+      UserMailer.account_activation(self).deliver_now
+    end
+    
   private 
     
     def create_activation_digest
@@ -37,6 +55,4 @@ class User < ApplicationRecord
       self.activation_digest = User.digest(activation_token)
     end
       
-  end
-    
 end

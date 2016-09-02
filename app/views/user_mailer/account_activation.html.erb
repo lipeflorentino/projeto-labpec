@@ -1,5 +1,12 @@
-<h1>User#account_activation</h1>
+<h1> LABPEC </h1>
 
-<p>
-  <%= @greeting %>, find me in app/views/user_mailer/account_activation.html.erb
-</p>
+<p> Olá <%= @user.name %>, <p>
+
+<p> Bem-vindo ao site do LABPEC! </p>
+
+<p> Caso tenha solicitado, clique no link abaixo para ativar sua conta: </p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
+
+<p> Se você não tentou se cadastrar em nosso site, desconsidere esta mensagem. </p>
