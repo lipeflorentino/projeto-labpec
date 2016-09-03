@@ -18,10 +18,10 @@ class AccountActivationsController < ApplicationController
     aux.reverse!
     idFix << aux
     
-    if !user.authenticated?(params[:id])
-      redirect_to emailFix_url
-      return;
-    end
+    #if !user.authenticated?(params[:id])
+    #  redirect_to emailFix_url
+    #  return;
+    #end
     if user && !user.activated? && user.authenticated?(params[:id])
       user.activate
       #log_in user
