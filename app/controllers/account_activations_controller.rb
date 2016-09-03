@@ -2,6 +2,8 @@ class AccountActivationsController < ApplicationController
 
   def edit
     # emailFix porq o email tava chegando com um "3D" na frente
+    # só acontece em development
+    
     # emailFix = params[:email]
     # emailFix.reverse!
     # emailFix.chop!
