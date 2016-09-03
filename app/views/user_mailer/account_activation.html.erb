@@ -6,7 +6,6 @@
 
 <p> Caso tenha solicitado, clique no link abaixo para ativar sua conta: </p>
 
-<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
-                                                    email: @user.email) %>
+<p><%= edit_account_activation_url(@user.activation_token, email: @user.email) %></p>
 
 <p> Se você não tentou se cadastrar em nosso site, desconsidere esta mensagem. </p>
