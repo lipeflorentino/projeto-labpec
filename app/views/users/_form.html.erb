@@ -22,8 +22,15 @@
   </div>
   
   <div class="field">
-      <%= f.collection_select :type_id, Type.order(:id),:id,:name, include_blank: false, class: 'form-control' %>
+     <%= f.label :email_confirmation %><br>
+    <%= f.email_field :email_confirmation, class:'form-control' %>
   </div>
+  
+  <% if administrador? %>
+    <div class="field">
+        <%= f.collection_select :type_id, Type.order(:id),:id,:name, include_blank: false, class: 'form-control' %>
+    </div>
+  <% end %>
   
   <div class="field">
     <%= f.label :matricula %><br>

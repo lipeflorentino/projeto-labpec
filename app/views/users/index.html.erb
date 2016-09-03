@@ -2,6 +2,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Users</h1>
+<% if logged_in? %>
+  <h2> Logged in </h2>
+<% end %>
 
 <table>
   <thead>

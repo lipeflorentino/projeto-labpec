@@ -10,8 +10,12 @@
   </head>
 
   <body>
-    <section class="pag-container">
-    <%= yield %>
+    
+    <section class="pag-container">      
+      <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
     </section>
     
   </body>

@@ -1,7 +1,9 @@
 class User < ApplicationRecord
     belongs_to :type
     
-    attr_accessor :activation_token
+    attr_accessor :activation_token, :email_confirmation
+    
+    validate :email_match_email_confirmation
     # chamada do método pra criar a activation_digest para futura confirmação de usuario
     # ocorre somente no ato de criação
     before_create :create_activation_digest
@@ -11,13 +13,14 @@ class User < ApplicationRecord
     validates :email, presence: true, length: { maximum: 255 },
                         format: { with: VALID_EMAIL_REGEX },
                         uniqueness: { case_sensitive: false }
-    validates :matricula, presence: true,  numericality: { only_integer: true }, length: { minimum: 5,  maximum: 15 }
+    validates :matricula,  numericality: { only_integer: true }, length: { minimum: 5,  maximum: 15 }
     has_secure_password # bcrypt para manter a senha segura
     validates :password, presence: true, length: { minimum: 6, maximum: 20 }, on: :create
     # deixa o usuario dar update sem botar uma senha
     validates :password, length: { minimum: 6, maximum: 20 }, on: :update, allow_blank: true
     validates :name, presence: true, length: { minimum: 5, maximum: 40 }
     mount_uploader :picture, PictureUploader
+    validate :tamanho_imagem
     
     def User.digest(string)
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -47,7 +50,21 @@ class User < ApplicationRecord
       UserMailer.account_activation(self).deliver_now
     end
     
+    
+    
   private 
+  
+    def tamanho_imagem
+      if picture.size > (5/2).megabytes
+        errors.add :picture, 'Imagem não pode ser maior que 2.5 Megabytes'
+      end
+    end
+  
+    def email_match_email_confirmation
+      unless email_confirmation == email 
+        errors.add :email, '=> confirmação não combina'
+      end
+    end
     
     def create_activation_digest
       # Cria o token e usa criptografia

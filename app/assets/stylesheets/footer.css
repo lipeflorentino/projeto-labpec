@@ -1,2 +1,5 @@
-.footer-container{padding-bottom: 15px;margin-top: 20px;background-color: black;}
-.copyright p{padding-top: 30px;padding-left: 30px;font-size: 18px;color:white;}
+.footer-container{margin-top: 23px;background-color: black;height:100%;}
+.copyright p{padding-top: 40px;padding-left: 30px;font-size: 18px;color:white;}
+.in {padding-top: 8px;padding-bottom:8px;color:#0066CC;text-align:center;}
+.in p{margin-bottom:5px;}
+.logoIN{padding-left:105px;}
