@@ -1,4 +1,2 @@
-.copyright{
-  background-color:black;
-  color:white;
-}
+.footer-container{padding-bottom: 15px;margin-top: 20px;background-color: black;}
+.copyright p{padding-top: 30px;padding-left: 30px;font-size: 18px;color:white;}
