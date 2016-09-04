@@ -23,8 +23,9 @@ module SessionsHelper
     
     def administrador?
       if current_user
-        current_user.type_id == 2
+        current_user.adm?
       end
+      return true
     end
     
 end

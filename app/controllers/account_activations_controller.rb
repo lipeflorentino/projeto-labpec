@@ -4,11 +4,11 @@ class AccountActivationsController < ApplicationController
     # emailFix porq o email tava chegando com um "3D" na frente
     # só acontece em development
     
-    # emailFix = params[:email]
-    # emailFix.reverse!
-    # emailFix.chop!
-    # emailFix.chop!
-    # emailFix.reverse!
+    #emailFix = params[:email]
+    #emailFix.reverse!
+    #emailFix.chop!
+    #emailFix.chop!
+    #emailFix.reverse!
     user = User.find_by(email: params[:email])
     
     #idFix = params[:id]

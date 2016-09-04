@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-    belongs_to :type
-    
     attr_accessor :activation_token, :email_confirmation
     
     validate :email_match_email_confirmation
