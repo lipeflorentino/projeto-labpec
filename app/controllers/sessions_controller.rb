@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       if user.activated?
-      log_in user
-      redirect_to user
+        log_in user
+        redirect_to user
       else
         flash.now[:notice] = 'Favor confirmar seu e-mail'
         render 'new'

@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-    attr_accessor :activation_token, :email_confirmation
+    attr_accessor :activation_token, :email_confirmation, :actual_password
     
     validate :email_match_email_confirmation
+    
     # chamada do método pra criar a activation_digest para futura confirmação de usuario
     # ocorre somente no ato de criação
     before_create :create_activation_digest
@@ -10,7 +11,7 @@ class User < ApplicationRecord
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, length: { maximum: 255 },
                         format: { with: VALID_EMAIL_REGEX },
-                        uniqueness: { case_sensitive: false }
+                        uniqueness: { case_sensitive: false }, on: :update, allow_blank: true
     validates :matricula,  numericality: { only_integer: true }, length: { minimum: 5,  maximum: 15 }
     has_secure_password # bcrypt para manter a senha segura
     validates :password, presence: true, length: { minimum: 6, maximum: 20 }, on: :create
@@ -40,14 +41,13 @@ class User < ApplicationRecord
     
       # Activates an account.
     def activate
-      update_attribute(:activated,    true)
+      update_attribute(:activated, true)
     end
   
     # Sends activation email.
     def send_activation_email
       UserMailer.account_activation(self).deliver_now
     end
-    
     
     
   private 
@@ -59,8 +59,10 @@ class User < ApplicationRecord
     end
   
     def email_match_email_confirmation
-      unless email_confirmation == email 
-        errors.add :email, '=> confirmação não combina'
+      if email && email_confirmation
+        unless email_confirmation == email 
+          errors.add :email, '=> confirmação não combina'
+        end
       end
     end
     

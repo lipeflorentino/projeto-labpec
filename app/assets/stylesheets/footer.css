@@ -1,5 +1,13 @@
 .footer-container{margin-top: 23px;background-color: black;height:100%;}
-.copyright p{padding-top: 40px;padding-left: 30px;font-size: 18px;color:white;}
-.in {padding-top: 8px;padding-bottom:8px;color:#0066CC;text-align:center;}
-.in p{margin-bottom:5px;}
-.logoIN{padding-left:105px;}
+.copyright p{padding-left: 30px;font-size: 14px;color:white;}
+.copyright{padding-top: 25px;}
+.in {padding-top: 8px;padding-bottom:8px;color:#636363;text-align:center;}
+.in p{margin-bottom:0px;}
+.logoIN{padding-left:35%;}
+.logoIN{height: 40px !important;}
+
+@media only screen and (min-width: 1140px) {
+
+
+
+}

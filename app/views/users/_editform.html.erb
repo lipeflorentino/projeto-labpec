@@ -1,0 +1,38 @@
+<%= form_for(user, html: { multipart: true}) do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class:'form-control', :placeholder=>'digite seu nome' %>
+  </div>
+  
+  <% if administrador? %>
+    <div class="field">
+      <%= f.label :adm %><br>
+      <%= f.check_box :adm, class:'form-control'%>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :matricula %><br>
+    <%= f.text_field :matricula, class:'form-control' %>
+  </div>
+  
+ <span class="picture">
+    <%= f.file_field :picture %>
+  </span>
+  
+  <div class="actions">
+    <%= f.submit 'Aplicar Alterações', class:'btn'%>
+  </div>
+<% end %>

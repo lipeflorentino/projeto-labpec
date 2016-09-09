@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :editemail, :editpassword]
 
   # GET /users
   # GET /users.json
@@ -20,7 +20,64 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
   end
+  
+  def editemail
+    if logged_in?
+        @user = current_user
+    end
+  end
+  
+  def editemailupdate
+    if logged_in?
+      @user = current_user
+    else
+      @user = User.find_by(params[:id])
+    end
+    
+    if @user && @user.authenticate(params[:user][:actual_password])
+      respond_to do |format|
+        if @user.update(user_params)
+          format.html { redirect_to @user, notice: 'Email was successfully updated.' }
+          format.json { render :show, status: :ok, location: @user }
+        else
+          format.html { render :editemail }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      flash.now[:danger] = 'Senha inválida'
+      render 'editemail'
+    end
+  end
 
+  def editpassword
+    if logged_in?
+        @user = current_user
+    end
+  end
+  
+  def editpasswordupdate
+    if logged_in?
+      @user = current_user
+    else
+      @user = User.find_by(params[:id])
+    end
+    if @user && @user.authenticate(params[:user][:actual_password])
+      respond_to do |format|
+        if @user.update(user_params)
+          format.html { redirect_to @user, notice: 'Email was successfully updated.' }
+          format.json { render :show, status: :ok, location: @user }
+        else
+          format.html { render :editpassword }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      flash.now[:danger] = 'Senha inválida'
+      render 'editpassword'
+    end
+  end
+  
   # POST /users
   # POST /users.json
   def create
@@ -81,6 +138,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :adm, :matricula, :password, :password_confirmation, :email_confirmation, :picture)
+      params.require(:user).permit(:name, :email, :adm, :matricula, :password, :password_confirmation, :email_confirmation, :picture, :actual_password)
     end
 end

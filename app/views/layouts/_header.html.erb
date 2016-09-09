@@ -1,22 +1,9 @@
 <div class="header-main-container">
-    <header class="header-container hidden-xs">
+    <header class="header-container">
         <div class="row">
-            <div class="col-lg-6 col-md-7 col-sm-8 col-xs-12">
-                <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <a href=""><%= image_tag("Logo.png", class: 'logo1 img-responsive') %></a> 
-                    </div>
-                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                        <a href=""><%= image_tag("nomelinha.png", class: 'logo2 img-responsive') %></a> 
-                    </div>
-                </div>
+            <div class="logo-container">
+                <a href=""><%= image_tag("logo.png", class: 'logo1 img-responsive') %></a>  
             </div>
-            <div class="col-lg-6 col-md-5 col-sm-4 col-xs-12">
-                <div class="frase-inline">
-                    <p>Laboratório de Pesquisas <br>
-                    em Contato Linguistíco</p> 
-                </div>
-            </div>    
         </div>    
     </header>
     <nav class="navbar navbar-default navbar-static-top">
@@ -31,12 +18,20 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav nav-a">
-                <li><a href="../Labpec/index.html">Home</a></li>
-                <li><a href="../Labpec/linhasPesquisa.html">Linhas de pesquisa</a></li>
-                <li><a href="../Labpec/teses.html">Teses e dissertações</a></li>
-                <li><a href="../Labpec/publicacoes.html">Publicações</a></li>
-                <li><a href="../Labpec/eventos.html">Eventos</a></li>
-                <li><a href="../Labpec/parceiros.html">Parceiros</a></li>
+                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "Linhas de pesquisa",    linhasdepesquisa_path %></li>
+                <li><%= link_to "Teses e dissertações",    teses_path %></li>
+                <li><%= link_to "Publicações",    publicacoes_path %></li>
+                <li><%= link_to "Eventos",    eventos_path %></li>
+                <li>
+                  <div class="nav-dropdown">
+                    <button class="dropbtn">Parceiros</button>
+                    <div class="nav-dropdown-content">
+                      <a href="#">Colaboradores</a>
+                      <a href="#">Instituições</a>
+                    </div>
+                  </div>
+                </li>
               </ul>
               
             </div><!--/.nav-collapse -->

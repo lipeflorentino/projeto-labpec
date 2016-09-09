@@ -6,6 +6,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="row">
+                        <!-----------IMPLEMENTAR: carrousel *talvez------------->
                         <div class="lp-img img-container-home">
                 			<%= image_tag("alunos.jpg", class: 'img-responsive') %>
                 		</div>
@@ -39,7 +40,7 @@
     </div> 
     <div class="coordenadores-container">
         <div class="main wrapper clearfix">
-            <h1>Coordenadores</h1>
+            <h1>O Grupo</h1>
             <div class="row r-coordenadores"> 
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..</p>
@@ -53,8 +54,9 @@
         </div>
     </div>    
     <div class="coordenadores-container">
-        <div class="row r-coordenadores">
-            <div class="main wrapper clearfix">
+        <div class="main wrapper clearfix">
+            <h1>Coordenadores</h1>
+            <div class="row r-coordenadores">
                 <div class="cd-img col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <h5>Fulana da Silva</h5>
                     <div class="cl-img">
@@ -114,33 +116,36 @@
             <div class="wrapper clearfix">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div>    
-                        <div class="row b-borda-dotted">
+                    <!-----------IMPLEMENTAR: buscar eventos do BD------------->
+                        <div class="row b-borda-dotted ic-title">
                             <h1>Eventos</h1>
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                            <p>20 SET</p>
+                            <h5>20 SET</h5>
                             </div>
                             <div class="l-borda-dotted col-lg-8 col-md-8 col-sm-12 col-xs-12 d-event">
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                             </div>  
                         </div>
-                        <div class="row b-borda-dotted">
+                        <div class="row b-borda-dotted ic-title">
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                            <p>25 SET</p>
+                            <h5>25 SET</h5>
                             </div>
                             <div class="l-borda-dotted col-lg-8 col-md-8 col-sm-12 col-xs-12 d-event">
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                             </div>  
                         </div>
-                        <div class="row b-borda-dotted">
+                        <div class="row b-borda-dotted ic-title">
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                            <p>3 OUT</p>
+                            <h5>3 OUT</h5>
                             </div>
                             <div class="l-borda-dotted col-lg-8 col-md-8 col-sm-12 col-xs-12 d-event">
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                             </div>  
                         </div>
                     </div>    
-                        <a href"">+ Leia Mais</a>
+                    <div class="h-link">
+                        <a href=""><p>+ saiba mais</p></a>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="ie-contato-container">    
@@ -157,27 +162,27 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="row ie-container">
+                        <!-----------IMPLEMENTAR: buscar noticias do BD------------->
                         <h1>Noticias</h1>
-                        <div class="h-noticia b-borda-dotted">
+                        <div class="h-noticia b-borda-dotted ic-title">
                             <h5>Noticia 1</h5>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry, text of the printing and typesetting industry.</p>
                         </div>
-                        <div class="h-noticia b-borda-dotted">
+                        <div class="h-noticia b-borda-dotted ic-title">
                             <h5>Noticia 2</h5>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry, text of the printing and typesetting industry.</p>
                         </div>
-                        <div class="h-noticia b-borda-dotted">
+                        <div class="h-noticia b-borda-dotted ic-title">
                             <h5>Noticia 3</h5>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </div> 
-                    <a href"">+ Leia Mais</a>
+                    <div class="h-link">
+                        <a href=""><p>+ saiba mais</p></a>
+                    </div>
                 </div>
             </div>    
         </div>
     </div>
-    
-    
-    
     <%= render 'layouts/footer' %>
 </div>

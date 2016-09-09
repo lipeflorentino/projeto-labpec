@@ -1,0 +1,32 @@
+<%= form_for(user, html: { multipart: true}, :url => {:action => "editemailupdate" , params: {id: @user.id}}) do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.email_field :email, :value => "", class:'form-control' %>
+  </div>
+  
+  <div class="field">
+     <%= f.label :email_confirmation %><br>
+    <%= f.email_field :email_confirmation, class:'form-control' %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :actual_password %><br>
+    <%= f.password_field :actual_password, class:'form-control' %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit 'Aplicar', class:'btn'%>
+  </div>
+<% end %>

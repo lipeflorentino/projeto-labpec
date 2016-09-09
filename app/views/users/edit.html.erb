@@ -1,8 +1,12 @@
 <div class="main-container">
-<h1>Editing User</h1>
-
-<%= render 'form', user: @user %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+  
+  <h1>Editing User</h1>
+  
+    <%= render 'editform', user: @user %>
+    
+    <%= link_to 'Show', @user %> | 
+    <%= link_to 'Alterar Senha', editpassword_path(:id => @user.id) %> | 
+    <%= link_to 'Alterar e-mail', editemail_path(:id => @user.id) %> | 
+    <%= link_to 'Voltar', users_path %>
+  
 </div>
