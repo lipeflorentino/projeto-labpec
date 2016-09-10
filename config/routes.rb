@@ -8,11 +8,14 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/logout', to: 'sessions#destroy'
+  post '/lostemail', to: 'users#lostemail'
   
   patch 'editemailupdate' => 'users#editemailupdate'
   patch 'editpasswordupdate' => 'users#editpasswordupdate'
+  
   get 'editemail' => 'users#editemail'
   get 'editpassword' => 'users#editpassword'
+  get 'recuperacao' => 'pages#recuperacao'
   get 'publicacoes'    => 'pages#publicacoes'
   get 'linhasdepesquisa'    => 'pages#linhasdepesquisa'
   get 'teses'    => 'pages#teses'

@@ -6,6 +6,26 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
+  
+  def lostemail
+    
+    user = User.find_by(email: params[:user][:email])
+    user.update_activation_digest
+    
+    if user && !user.activated?
+      if user.send_activation_email
+        flash.now[:notice] = 'E-mail enviado com sucesso'
+        render 'index'
+      else
+        flash.now[:notice] = 'Ocorreu um erro. Tente novamente mais tarde.'
+        render 'edit'
+      end
+    else
+      flash.now[:danger] = 'Não foi encontrado nenhum usuário com esse e-mail'
+      render 'show'
+    end
+    
+  end
 
   # GET /users/1
   # GET /users/1.json

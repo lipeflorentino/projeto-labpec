@@ -1,0 +1,17 @@
+
+<p> Esqueci minha senha </p>
+
+<p> Não recebi meu e-mail de confirmação </p>
+
+<%= form_for(:user, url: lostemail_path ) do |f| %>
+  
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.email_field :email, :value => "", class:'form-control' %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit 'Re-enviar confirmação', class:'btn'%>
+  </div>
+  
+<% end %>

@@ -34,8 +34,8 @@ class User < ApplicationRecord
     # Retorna true se a token combina com o digest da confirmação 
     def authenticated?(token)
       digest = self.activation_digest
-      return false if digest.nil?
-      # isso está retornando falso
+      return false  if digest.nil?
+      # isso pode retornanar falso
       BCrypt::Password.new(digest).is_password?(token)
     end
     
@@ -49,6 +49,11 @@ class User < ApplicationRecord
       UserMailer.account_activation(self).deliver_now
     end
     
+    def update_activation_digest
+      # Cria o token e usa criptografia
+      self.activation_token  = User.new_token
+      update_attribute(:activation_digest, User.digest(activation_token))
+    end
     
   private 
   

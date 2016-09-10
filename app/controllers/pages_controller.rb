@@ -19,6 +19,8 @@ class PagesController < ApplicationController
     def Teses
     end
     
+    def recuperacao
+    end
     
     
 end

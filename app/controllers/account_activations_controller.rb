@@ -4,26 +4,28 @@ class AccountActivationsController < ApplicationController
     # emailFix porq o email tava chegando com um "3D" na frente
     # só acontece em development
     
-    #emailFix = params[:email]
-    #emailFix.reverse!
-    #emailFix.chop!
-    #emailFix.chop!
-    #emailFix.reverse!
+    emailFix = params[:email]
+    emailFix.reverse!
+    emailFix.chop!
+    emailFix.chop!
+    emailFix.reverse!
     user = User.find_by(email: params[:email])
     
-    #idFix = params[:id]
-    #aux = idFix.reverse.byteslice(0,2)
-    #idFix.chop!
-    #idFix.chop!
-    #idFix.chop!
-    #idFix.chop!
-    #aux.reverse!
-    #idFix << aux
+    idFix = params[:id]
+    aux = idFix.reverse.byteslice(0,2)
+    idFix.chop!
+    idFix.chop!
+    idFix.chop!
+    idFix.chop!
+    aux.reverse!
+    idFix << aux
     
-    if !user.authenticated?(params[:id])
+    # Se entrar aqui é porq o usuário não autenticou corretamente
+    if !user.authenticated?(idFix)
       redirect_to emailFix_url
-      return;
+      return
     end
+    
     if user && !user.activated? && user.authenticated?(params[:id])
       user.activate
       #log_in user
