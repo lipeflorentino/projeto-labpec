@@ -1,17 +1,22 @@
 class User < ApplicationRecord
     attr_accessor :activation_token, :email_confirmation, :actual_password
     
-    validate :email_match_email_confirmation
+    validate :email_match_email_confirmation, on: :create
+    validate :new_email_match_email_confirmation, on: :update
     
     # chamada do método pra criar a activation_digest para futura confirmação de usuario
     # ocorre somente no ato de criação
     before_create :create_activation_digest
     before_save { self.email = email.downcase }
+    
     # REGEX dizendo que o email deve ter esse formato: "email@dominio.com" + qualquer coisa
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, length: { maximum: 255 },
                         format: { with: VALID_EMAIL_REGEX },
                         uniqueness: { case_sensitive: false }, on: :update, allow_blank: true
+    validates :new_email, length: { maximum: 255 },
+                          format: { with: VALID_EMAIL_REGEX },
+                          uniqueness: { case_sensitive: false }, on: :update, allow_blank: true
     validates :matricula,  numericality: { only_integer: true }, length: { minimum: 5,  maximum: 15 }
     has_secure_password # bcrypt para manter a senha segura
     validates :password, presence: true, length: { minimum: 6, maximum: 20 }, on: :create
@@ -49,6 +54,10 @@ class User < ApplicationRecord
       UserMailer.account_activation(self).deliver_now
     end
     
+    def send_update_activation_email
+      UserMailer.update_activation(self).deliver_now
+    end
+    
     def update_activation_digest
       # Cria o token e usa criptografia
       self.activation_token  = User.new_token
@@ -67,6 +76,14 @@ class User < ApplicationRecord
       if email && email_confirmation
         unless email_confirmation == email 
           errors.add :email, '=> confirmação não combina'
+        end
+      end
+    end
+    
+    def new_email_match_email_confirmation
+      if new_email && email_confirmation
+        unless email_confirmation == new_email 
+          errors.add :new_email, '=> confirmação não combina'
         end
       end
     end

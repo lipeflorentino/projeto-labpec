@@ -14,15 +14,20 @@ class UsersController < ApplicationController
     
     if user && !user.activated?
       if user.send_activation_email
-        flash.now[:notice] = 'E-mail enviado com sucesso'
-        render 'index'
+        flash[:success] = 'E-mail enviado com sucesso'
+        redirect_to root_url
       else
-        flash.now[:notice] = 'Ocorreu um erro. Tente novamente mais tarde.'
-        render 'edit'
+        flash[:danger] = 'Ocorreu um erro. Tente novamente mais tarde.'
+        redirect_to recuperacao_url
       end
     else
-      flash.now[:danger] = 'Não foi encontrado nenhum usuário com esse e-mail'
-      render 'show'
+      unless user
+        flash[:danger] = 'E-mail inválido'
+        redirect_to recuperacao_url
+      else
+        flash[:success] = 'E-mail já foi confirmado'
+        redirect_to root_url
+      end
     end
     
   end
@@ -51,13 +56,15 @@ class UsersController < ApplicationController
     if logged_in?
       @user = current_user
     else
-      @user = User.find_by(params[:id])
+      @user = User.find(params[:id])
     end
     
     if @user && @user.authenticate(params[:user][:actual_password])
       respond_to do |format|
         if @user.update(user_params)
-          format.html { redirect_to @user, notice: 'Email was successfully updated.' }
+          @user.update_activation_digest
+          @user.send_update_activation_email
+          format.html { redirect_to @user, notice: 'Confirme seu novo e-mail' }
           format.json { render :show, status: :ok, location: @user }
         else
           format.html { render :editemail }
@@ -158,6 +165,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :adm, :matricula, :password, :password_confirmation, :email_confirmation, :picture, :actual_password)
+      params.require(:user).permit(:name, :email, :adm, :matricula, :password, :password_confirmation, :email_confirmation, :picture, :actual_password, :new_email)
     end
 end

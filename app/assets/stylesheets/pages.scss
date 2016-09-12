@@ -52,11 +52,20 @@ article header p{text-indent: 20px;text-align: justify;}
 
 /*----------aqui está o css de publicações--------------*/
 .pp-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 60px;padding-left: 10px;padding-right: 10px;padding-top: 10px;}
-.ps-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 30px;margin-bottom: 20px;padding-left: 10px;padding-right: 10px;padding-top: 10px;}
+.ps-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;padding-bottom: 30px;margin-bottom: 20px;border: 1px gray;margin-top:60px;border-radius:2px;}
+.ps-main-container h2{background-color:black;border-radius:2px;padding:15px;font-size:15px;color:white;margin-top:0px;}
 .publicacoes-container h1 {font-size: 1.6em;padding-bottom: 5px;border-bottom: 0.3px solid black;margin-right: 0px;}
 .p-container{padding-bottom:30px;padding-top:30px;border-bottom:1px solid gray;}
 .p-info p{text-align:left;text-indent:0px;}
 .p-busca{margin-top:20px;}
+.ps-content{padding:5px;}
+.pp-content{padding:20px;}
+
+
+/*----------aqui está o css do swipper slider--------------*/
+
+.swiper-container {width: 100%;height: 100%;}
+.swiper-slide {text-align: center;font-size: 18px;background: #fff;/* Center slide text vertically */display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;}
 
 
 

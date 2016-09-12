@@ -1,0 +1,9 @@
+Olá <%= @user.name %>,
+
+Bem-vindo ao site do LABPEC!
+
+Caso tenha solicitado, clique no link abaixo para ativar sua conta:
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+
+Se você não tentou se cadastrar em nosso site, desconsidere esta mensagem.

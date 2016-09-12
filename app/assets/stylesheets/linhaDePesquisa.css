@@ -1,1 +1,3 @@
 /*----------aqui está o css da linha de pesquisa------------------*/
+.lp-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 60px;padding-left: 10px;padding-right: 10px;padding-top: 10px;}
+.lp-corpo-main-container{background: rgba(256, 256, 256, 0.5);padding-top: 10px;padding-bottom: 20px;margin-top: 2px;}

@@ -1,0 +1,80 @@
+h1, h2,ul {
+	clear: both;
+}
+
+ul.pagination1 li:hover,
+ul.pagination2 li:hover,
+ul.pagination4 li:hover,
+ul.pagination3 li:hover {
+	background-color: #FEFEFE;
+}
+
+ul.pagination1 li,
+ul.pagination2 li,
+ul.pagination3 li {
+    font-family: sans-serif;
+	background-color: #ffffff;
+    font-size: 14px;
+    color: black;
+    line-height: 2;
+    width: 100%;
+    margin-bottom: 5px;
+	list-style:none;
+    height: 100%;
+    text-align: justify;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+ul.pagination4 li{
+    font-family: sans-serif;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: black;
+    line-height: 2;
+    width: 100%;
+    margin-bottom: 5px;
+    list-style:none;
+    height: 100%;
+    text-align: justify;
+    padding-right: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;    
+}
+.simplePagerContainer{
+    min-height: 100px;
+}
+
+
+
+ul.simplePagerNav li{
+    display:block;
+    float: left;
+    padding: 5px;
+    font-family: georgia;
+	font-size:10px;
+}
+
+ul.simplePagerNav li a{
+    color: #2B4D6B;
+    text-decoration: none;
+}
+
+li.currentPage {
+	background: blue;
+    background: #2B4D6B;	
+}
+
+ul.simplePagerNav li.currentPage a {
+	color: #fff;	
+}
+
+table.pageme {
+    border-collapse: collapse;
+    border: 1px solid #fff;
+}  
+
+table.pageme td {
+    border-collapse: collapse;
+    border: 1px solid #fff;
+}
