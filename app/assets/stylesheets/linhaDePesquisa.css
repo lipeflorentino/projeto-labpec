@@ -1,3 +1,8 @@
 /*----------aqui está o css da linha de pesquisa------------------*/
-.lp-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 60px;padding-left: 10px;padding-right: 10px;padding-top: 10px;}
-.lp-corpo-main-container{background: rgba(256, 256, 256, 0.5);padding-top: 10px;padding-bottom: 20px;margin-top: 2px;}
+.lp-corpo-main-container{background: rgba(256, 256, 256, 0.5);padding-top: 10px;padding-bottom: 20px;}
+.lp-cl-img{min-height:300px;max-width:100%;padding: 5px;-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;}
+.lp-main-container h1 {font-size: 1.6em;padding-bottom: 5px;border-bottom: 0.3px solid black;margin-right: 0px;}
+.lp-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 30px;padding-left: 10px;padding-right: 10px;padding-top: 30px;margin-bottom:20px;}
+.r-pesquisa{margin-bottom: 20px;padding-top:10px;}
+.photo{padding-top:5px;}
+.lp-pesquisa-container h4{margin-top: 0px;}

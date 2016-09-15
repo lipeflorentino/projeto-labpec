@@ -28,6 +28,10 @@ article header p{text-indent: 20px;text-align: justify;}
 .pag-container h1, h2, h3 {}
 .main p{text-indent: 20px;text-align: justify;}
 .main aside h1{font-size: 24px;margin-top: 15px;margin-bottom: 15px;}
+.b-fixed{}
+.b-fixed img{position:static;left:40px;top:300px;width: 50px;height: 50px;}
+.b-fixed a:hover{text-decoration:none;background-color:transparent !important;}
+.bf-container{}
 
 
 /*----------aqui está o css da home--------------*/
@@ -51,15 +55,24 @@ article header p{text-indent: 20px;text-align: justify;}
 .carrousel-container{padding-left:20px;}
 
 /*----------aqui está o css de publicações--------------*/
-.pp-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 60px;padding-left: 10px;padding-right: 10px;padding-top: 10px;}
+.pp-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 60px;padding-left: 10px;padding-right: 10px;padding-top: 10px;margin-bottom:20px;}
+.pp-carrousel-container{background-color: white;width:100%;height:100%;padding:5px;margin-bottom:20px;}
 .ps-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;padding-bottom: 30px;margin-bottom: 20px;border: 1px gray;margin-top:60px;border-radius:2px;}
 .ps-main-container h2{background-color:black;border-radius:2px;padding:15px;font-size:15px;color:white;margin-top:0px;}
+.t-arquivo{padding-top:20px;text-align:center;}
+.ps-main-container a{color: #23527c !important;}
+.ps-main-container a:hover{background-color:transparent;color:yellow;}
 .publicacoes-container h1 {font-size: 1.6em;padding-bottom: 5px;border-bottom: 0.3px solid black;margin-right: 0px;}
 .p-container{padding-bottom:30px;padding-top:30px;border-bottom:1px solid gray;}
+.mv-info{padding:5%;}
 .p-info p{text-align:left;text-indent:0px;}
-.p-busca{margin-top:20px;}
+.p-busca{margin-top:20px;padding:10px;}
 .ps-content{padding:5px;}
 .pp-content{padding:20px;}
+.pp-img{min-width:100%;max-height:400px;}
+.pp-carrousel{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;width:100%;height:100%;padding:5px;}
+.r-arquivo{padding-left:5%;text-align:justify;}
+.sp-content h3{color:black;font-size: 1.2em;}
 
 
 /*----------aqui está o css do swipper slider--------------*/
@@ -72,7 +85,7 @@ article header p{text-indent: 20px;text-align: justify;}
 /*----------aqui está o css do corpo--------------*/
 
 .pag-container{background: url(uff2.jpg) no-repeat center bottom fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
-.corpo-main-container{background: rgba(256, 256, 256, 0.5);padding-top: 10px;padding-bottom: 20px;margin-top: 2px;}
+.corpo-main-container{background: rgba(256, 256, 256, 0.5);padding-top: 10px;padding-bottom: 15px;}
 .main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 60px;padding-left: 10px;padding-right: 10px;padding-top: 10px;}
 .wrapper {width: 95%;margin: 0 5%;}
 .main-container-img{width: 100%;height: 250px;}
@@ -159,8 +172,10 @@ article header p{text-indent: 20px;text-align: justify;}
     .pag-container{padding-right: 5%;padding-left: 5%;padding-top: 1%;background-color: #F8F8FF;}
     .header-container,.main aside {-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;}
     .frase-inline{margin-left: 0px;font-family: Calibri Light;font-size: 20px;height:96px;}
-    .corpo-main-container{padding-right: 2%;padding-left: 2%;padding-top:20px;}
+    .corpo-main-container{padding-right: 2%;padding-left: 2%;padding-top:10px;}
+    .lp-corpo-main-container{padding-right: 2%;padding-left: 2%;padding-top:10px;}
     .wrapper {margin: 0 auto;}
+  
 /* ============
     WIDE: Menu
    ============ */
@@ -182,6 +197,7 @@ article header p{text-indent: 20px;text-align: justify;}
 /* ===============
     Maximal Width
    =============== */
+   .lp-main-container{padding-bottom: 60px;padding-left: 10px;padding-right: 10px;padding-top: 10px;}
     
     .pag-container{padding-right: 15.5%;padding-left: 15.5%;padding-top: 0%;background-color: #F8F8FF;}
     /*width: 1026px;  1140px - 10% for margins */

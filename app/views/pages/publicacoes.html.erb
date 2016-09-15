@@ -1,24 +1,25 @@
 <%= render 'layouts/header' %>
 <div class="corpo-main-container">
     <div class="publicacoes-container">
-        <div class="pp-main-container">
-            <div class="row">
-                    <div class="pp-content">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide"><%= image_tag("noimage.png", class: 'img-responsive') %></div>
-                                <div class="swiper-slide"><%= image_tag("noimage.png", class: 'img-responsive') %></div>
-                                <div class="swiper-slide"><%= image_tag("noimage.png", class: 'img-responsive') %></div>
-                                <div class="swiper-slide"><%= image_tag("noimage.png", class: 'img-responsive') %></div>
-                            </div>
-                            <!-- Add Pagination -->
-                            <div class="swiper-pagination"></div>
-                            <!-- Add Arrows -->
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
+        <div class="pp-carrousel-container">
+            <div class="">
+                <div class="pp-carrousel">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><%= image_tag("img6.jpg", class: 'pp-img img-responsive') %></div>
+                            <div class="swiper-slide"><%= image_tag("img2.png", class: 'pp-img img-responsive') %></div>
+                            <div class="swiper-slide"><%= image_tag("img5.jpg", class: 'pp-img img-responsive') %></div>
                         </div>
-                    </div>    
-                </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="pp-main-container">
             <div class="main wrapper clearfix">
                 <h1>Publicações</h1>
             </div>    
@@ -30,15 +31,13 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                         <div class="p-img">
-                                            <%= image_tag("noimage.png", class: 'img-responsive') %>
+                                            <%= image_tag("img2.png", class: 'img-responsive') %>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <div class="p-info">
-                                            <h3>Titulo</h3>
-                                            <h6>data</h6>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                        </div>
+                                    <div class="p-info col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <h3>Titulo is simply dummy text of the printing.</h3>
+                                        <h6>data</h6>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                                     </div>
                                 </div>    
                             </div>
@@ -47,15 +46,13 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                         <div class="p-img">
-                                            <%= image_tag("noimage.png", class: 'img-responsive') %>
+                                            <%= image_tag("img3.jpg", class: 'img-responsive') %>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <div class="p-info">
-                                            <h3>Titulo</h3>
-                                            <h6>data</h6>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                        </div>
+                                    <div class="p-info col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <h3>Titulo</h3>
+                                        <h6>data</h6>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                                     </div>
                                 </div>    
                             </div>
@@ -64,15 +61,13 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                         <div class="p-img">
-                                            <%= image_tag("noimage.png", class: 'img-responsive') %>
+                                            <%= image_tag("img4.jpg", class: 'img-responsive') %>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <div class="p-info">
-                                            <h3>Titulo</h3>
-                                            <h6>data</h6>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                        </div>
+                                    <div class="p-info col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <h3>Titulo</h3>
+                                        <h6>data</h6>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                                     </div>
                                 </div>    
                             </div>
@@ -103,13 +98,13 @@
                         <div class="ps-main-container">
                            <h2>Mais Visto</h2>
                            <div class="row ps-content">
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="p-img">
-                                        <%= image_tag("noimage.png", class: 'img-responsive') %>
+                                        <%= image_tag("img2.png", class: 'img-responsive') %>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <div class="p-info">
+                                <div class="p-info col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="mv-info">
                                         <h3>Titulo</h3>
                                         <h6>data</h6>
                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -118,17 +113,28 @@
                             </div> 
                         </div>
                     </div>  
+                    <!------IMPLEMENTAR: badge dinamicamente como atributo derivado--------->
                     <div class="main wrapper clearfix">
                         <div class="ps-main-container">
                             <h2>Arquivo</h2>
-                            <a href="#">SET 2016 <span class="badge"> 2</span></a></br>
-                            <a href="#">AGO 2016 <span class="badge"> 3</span></a></br>
-                            <a href="#">JUL 2016 <span class="badge"> 1</span></a></br>
-                            <a href="#">JUN 2016 <span class="badge"> 5</span></a></br>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="r-arquivo">
+                                        <a href="#">SET 2016 <span class="badge"> 2</span></a></br>
+                                        <a href="#">AGO 2016 <span class="badge"> 3</span></a></br>
+                                        <a href="#">JUL 2016 <span class="badge"> 1</span></a></br>
+                                        <a href="#">JUN 2016 <span class="badge"> 5</span></a></br>
+                                    </div>
+                                </div>    
+                                <div class="col-lg-12">
+                                    <div class="t-arquivo"><a href="#">ver todos</a></div>
+                                </div>
+                            </div>
                         </div>
                     </div>    
                     <div class="main wrapper clearfix">
                         <div class="ps-main-container">
+                            <h2>Busca</h2>
                             <div class="p-busca">
                                 <div class="input-group">
                                   <input type="text" class="form-control" placeholder="Search for...">

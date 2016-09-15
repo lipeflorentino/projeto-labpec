@@ -78,16 +78,13 @@ class UsersController < ApplicationController
   end
 
   def editpassword
-    if logged_in?
-        @user = current_user
-    end
   end
   
   def editpasswordupdate
     if logged_in?
       @user = current_user
     else
-      @user = User.find_by(params[:id])
+      @user = User.find(params[:id])
     end
     if @user && @user.authenticate(params[:user][:actual_password])
       respond_to do |format|
@@ -100,7 +97,7 @@ class UsersController < ApplicationController
         end
       end
     else
-      flash.now[:danger] = 'Senha inválida'
+      flash.now[:danger] = 'Senha inválida' 
       render 'editpassword'
     end
   end
@@ -138,7 +135,7 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'Alterações efetuadas com sucesso.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

@@ -7,28 +7,44 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag "swiper.min.js" %>
+    
+    
   </head>
 
   <body>
     
-    <section class="pag-container">      
+    <section class="pag-container" id="topo">      
       <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
       <%= yield %>
+      
+      <div class="b-fixed">
+        <a href="#" id="subir"><%= image_tag("up.png", class: '') %></a>
+      </div>
+      
     </section>
     
-    
     <!-- Initialize Swiper -->
-    <script>
+    <script type="text/javascript">
     var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
-        paginationClickable: true,
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
-        spaceBetween: 30
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
     });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+       $('#subir').click(function(){ 
+          $('html, body').animate({scrollTop:0}, 'slow');
+      return false;
+         });
+     });
     </script>
     
   </body>
