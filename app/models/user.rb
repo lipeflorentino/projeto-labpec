@@ -84,8 +84,11 @@ class User < ApplicationRecord
     
     def new_email_match_email_confirmation
       if new_email && email_confirmation
-        unless email_confirmation == new_email 
+        unless email_confirmation == new_email
           errors.add :new_email, '=> confirmação não combina'
+        end
+        if User.find_by(:email => new_email)
+          errors.add :new_email, '=> já está sendo usado'
         end
       end
     end
