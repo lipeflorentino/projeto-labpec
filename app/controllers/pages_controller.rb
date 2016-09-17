@@ -7,7 +7,10 @@ class PagesController < ApplicationController
     def LinhasDePesquisa
     end  
     
-    def Publicacoes
+    def publicacoes
+        #@posts = Post.paginate(:page => params[:page], :per_page => 3)
+        # Ordena invertido 
+        @posts = Post.reorder("created_at DESC").page(params[:page]).per_page(3)    
     end  
     
     def Eventos

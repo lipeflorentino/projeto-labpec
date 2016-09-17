@@ -1,31 +1,41 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Titulo</th>
-      <th>Descricao</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.titulo %></td>
-        <td><%= post.descricao %></td>
-        <td><%= post.user_id %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+<div class="pst-corpo-main-container">
+  <%= render 'layouts/header-admin' %>
+  <div class="pst-main-container">
+    
+    <p id="notice"><%= notice %></p>
+    <div class="pst-container">
+      <div class="pst-content">
+        <div class="table-responsive">
+          <table id="tablesorter" class="display" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                  <th>Titulo</th>
+                  <th>Descricao</th>
+                  <th>User</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @posts.each do |post| %>
+                  <tr>
+                    <td><%= post.titulo %></td>
+                    <td><%= post.descricao %></td>
+                    <td><%= post.user_id %></td>
+                    <td><%= link_to 'Visualizar', post %></td>
+                    <td><%= link_to 'Editar', edit_post_path(post) %></td>
+                    <td><%= link_to 'Apagar', post, method: :delete, data: { confirm: 'Está certo disso?' } %></td>
+                  </tr>
+                <% end %>
+            </tbody>
+        </table>
+        </div>
+      </div>
+      <div class="pst-button">
+        <button><%= link_to 'Novo Post', new_post_path %></button>
+      </div>
+    </div>
+  </div>
+  <%= render 'layouts/footer' %>
+</div>

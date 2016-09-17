@@ -108,6 +108,7 @@ class UsersController < ApplicationController
     
     @user = User.new(user_params)
     
+    # força o usuario ficar com 'adm' falso a não ser que a pessoa criando seja adm
     if !administrador?
       @user.adm = false
     end

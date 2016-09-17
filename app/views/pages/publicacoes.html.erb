@@ -24,77 +24,31 @@
                 <h1>Publicações</h1>
             </div>    
             <div class="row">
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                       <div class="main wrapper clearfix">
-                            <!-----------IMPLEMENTAR: buscar informações do BD------------->
-                            <div class="p-container">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <div class="p-img">
-                                            <%= image_tag("img2.png", class: 'img-responsive') %>
-                                        </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                   <div class="main wrapper clearfix">
+                        <% @posts.each do |publicacao| %>
+                            <div class="row p-container">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="p-img">
+                                        <%= image_tag(publicacao.picture.url, class: 'img-responsive') if publicacao.picture? %>
                                     </div>
-                                    <div class="p-info col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <h3>Titulo is simply dummy text of the printing.</h3>
-                                        <h6>data</h6>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="p-info">
+                                        <a href=""><h3> <%= publicacao.titulo %></h3></a>
+                                        <h6><%= imprime_data(publicacao.created_at) %> </h6>
+                                        <p><%= publicacao.descricao %></p>
                                     </div>
-                                </div>    
-                            </div>
-                            <!-----------meramente ilustrativo------------->
-                            <div class="p-container">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <div class="p-img">
-                                            <%= image_tag("img3.jpg", class: 'img-responsive') %>
-                                        </div>
-                                    </div>
-                                    <div class="p-info col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <h3>Titulo</h3>
-                                        <h6>data</h6>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                    </div>
-                                </div>    
-                            </div>
-                            <!-----------meramente ilustrativo------------->
-                            <div class="p-container">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <div class="p-img">
-                                            <%= image_tag("img4.jpg", class: 'img-responsive') %>
-                                        </div>
-                                    </div>
-                                    <div class="p-info col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <h3>Titulo</h3>
-                                        <h6>data</h6>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                    </div>
-                                </div>    
-                            </div>
-                            <!---IMPLEMENTAR: paginação com JS ---->
-                            <nav aria-label="Page navigation">
-                              <ul class="pagination">
-                                <li>
-                                  <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                  </a>
-                                </li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                  <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                  </a>
-                                </li>
-                              </ul>
-                            </nav>
-                       </div>
+                                </div>
+                            </div>    
+                        <% end %>
+                        <%= will_paginate @posts %>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="main wrapper clearfix">
+                        <!---VERIFICAR: uso do botão--->
+                        <!---<button type="button" class="p-buttom">Enviar Publicação</button>-->
                         <div class="ps-main-container">
                            <h2>Mais Visto</h2>
                            <div class="row ps-content">
@@ -152,3 +106,6 @@
     </div>
     <%= render 'layouts/footer' %>
 </div> 
+<div class="b-fixed">
+    <a href="#" id="subir"><%= image_tag("up.png", class: '') %></a>
+</div>

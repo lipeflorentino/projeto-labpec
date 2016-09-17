@@ -3,11 +3,16 @@
 <html>
   <head>
     <title>Labpec</title>
+    <meta charset = "utf-8" >
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge" >
+    <meta name = "viewport" content = "width=device-width, initial-scale=1" >
+    <meta name ="author" content = "site do laboratório LABPEC" >
+    
+    
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
     
   </head>
 
@@ -19,9 +24,6 @@
       <% end %>
       <%= yield %>
       
-      <div class="b-fixed">
-        <a href="#" id="subir"><%= image_tag("up.png", class: '') %></a>
-      </div>
       
     </section>
     
@@ -38,6 +40,9 @@
         autoplayDisableOnInteraction: false
     });
     </script>
+    
+    <!---------BACK TO TOP----------------->
+    
     <script type="text/javascript">
     $(document).ready(function() {
        $('#subir').click(function(){ 
@@ -47,5 +52,14 @@
      });
     </script>
     
+    
+    <!---------DATA TABLES----------------->
+    
+    <script type="text/javascript">
+		  $("#tablesorter").DataTable({
+		        "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
+		    });
+	  </script>
+	
   </body>
 </html>
