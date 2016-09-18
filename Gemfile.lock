@@ -61,6 +61,13 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
+    ckeditor (4.2.0)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -195,7 +202,7 @@ GEM
     fog-voxel (0.1.0)
       fog-core
       fog-xml
-    fog-vsphere (1.0.1)
+    fog-vsphere (1.1.0)
       fog-core
       rbvmomi (~> 1.8.0)
     fog-xenserver (0.2.3)
@@ -266,6 +273,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    orm_adapter (0.5.0)
     pg (0.18.4)
     pkg-config (1.1.7)
     pry (0.10.4)
@@ -363,7 +371,8 @@ DEPENDENCIES
   bootstrap-sass (= 3.3.6)
   bootstrap-will_paginate (= 0.0.10)
   byebug (= 9.0.0)
-  carrierwave (= 0.11.2)
+  carrierwave
+  ckeditor
   coffee-rails (= 4.2.1)
   faker (= 1.6.3)
   fog (= 1.38.0)
@@ -373,7 +382,7 @@ DEPENDENCIES
   jquery-datatables-rails (~> 3.4.0)
   jquery-rails (= 4.1.1)
   listen (= 3.0.8)
-  mini_magick (= 4.5.1)
+  mini_magick
   minitest-reporters (= 1.1.9)
   pg (= 0.18.4)
   puma (= 3.4.0)

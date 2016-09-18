@@ -2,7 +2,7 @@
 <%= form_for(post, html: {multipart: true}) do |f| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <h2><%= pluralize(post.errors.count, "error") %> impediu essa publicação de ser efetuada:</h2>
 
       <ul>
       <% post.errors.full_messages.each do |message| %>
@@ -25,7 +25,12 @@
   <span class="picture">
     <%= f.file_field :picture %>
   </span>
-
+  
+  <div class="field">
+    <%= f.cktext_area :conteudo, ckeditor: { language: 'pt-br'} %>
+  </div>
+  <%= javascript_include_tag Ckeditor.cdn_url %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
