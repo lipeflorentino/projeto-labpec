@@ -28,10 +28,18 @@
     <%= f.file_field :picture %>
   </span>
   
+    <script>
+    CKEDITOR.instances.editor.setData('asdasdasd');
+  </script>
+  
   <div class="field">
-    <%= f.cktext_area :conteudo, ckeditor: { language: 'pt-br'} %>
+    <%= f.cktext_area :conteudo, :value => post.conteudo, ckeditor: { language: 'pt-br'} %>
   </div>
+  
+
   <%= javascript_include_tag Ckeditor.cdn_url %>
+  
+  
   
   <div class="actions">
     <%= f.submit %>

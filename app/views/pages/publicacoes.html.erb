@@ -91,10 +91,12 @@
                             <h2>Busca</h2>
                             <div class="p-busca">
                                 <div class="input-group">
-                                  <input type="text" class="form-control" placeholder="Search for...">
-                                  <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">Go!</button>
-                                  </span>
+                                  <%= form_for(:post, url: publicacoes_path, method: :get) do |f| %>
+                                      <%= f.text_field :search, class: "form-control", :placeholder => 'Buscar por...' %>
+                                      <span class="input-group-btn">
+                                        <%= f.submit 'Buscar', class:'btn btn-default'%>
+                                      </span>
+                                  <% end %>
                                 </div>
                             </div>    
                         
