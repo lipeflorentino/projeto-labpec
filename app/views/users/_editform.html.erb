@@ -11,28 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
+   <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name, class:'form-control', :placeholder=>'digite seu nome' %>
   </div>
   
   <% if administrador? %>
-    <div class="field">
-      <%= f.label :adm %><br>
-      <%= f.check_box :adm, class:'form-control'%>
+    <div class="my-checkbox">
+      <%= f.label :Administrador %><br>
+      <%= f.check_box :adm, type:'checkbox'%>
     </div>
   <% end %>
   
-  <div class="field">
+  <div class="form-group">
     <%= f.label :matricula %><br>
-    <%= f.text_field :matricula, class:'form-control' %>
+    <%= f.text_field :matricula, class:'form-control', :placeholder=>"Digite a matrícula" %>
   </div>
   
- <span class="picture">
+  <span class="form-group">
     <%= f.file_field :picture %>
+    <p class="help-block">Escolha uma boa foto.</p>
   </span>
   
   <div class="actions">
-    <%= f.submit 'Aplicar Alterações', class:'btn'%>
+    <%= f.submit 'Aplicar Alterações', class:'btn btn-default'%>
   </div>
 <% end %>

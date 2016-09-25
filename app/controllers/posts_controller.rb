@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :logged_as_admin
+  before_action :logged_as_admin, only: [:edit, :update, :destroy, :create, :index, :new]
 
   # GET /posts
   # GET /posts.json
@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post.update(:vezes_visitado => @post.vezes_visitado + 1)
   end
 
   # GET /posts/new
@@ -77,6 +78,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:titulo, :descricao, :user_id, :picture, :conteudo)
+      params.require(:post).permit(:titulo, :descricao, :user_id, :picture, :conteudo, :vezes_visitado)
     end
 end

@@ -18,13 +18,11 @@
 
   <body>
     
-    <section class="pag-container" id="topo">      
-      <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
-      <%= yield %>
-      
-      
+    <section class="pag-container" id="topo">
+        <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+        <%= yield %>
     </section>
     
     <!-- Initialize Swiper -->
@@ -41,16 +39,6 @@
     });
     </script>
     
-    <!---------BACK TO TOP----------------->
-    
-    <script type="text/javascript">
-    $(document).ready(function() {
-       $('#subir').click(function(){ 
-          $('html, body').animate({scrollTop:0}, 'slow');
-      return false;
-         });
-     });
-    </script>
     
     
     <!---------DATA TABLES----------------->

@@ -1,28 +1,33 @@
-<div class="main-container">
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Adm:</strong>
-  <%= @user.adm %>
-</p>
-
-<p>
-  <strong>Matricula:</strong>
-  <%= @user.matricula %>
-</p>
-
-<%= image_tag @user.picture.url if @user.picture? %>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= render 'layouts/header-admin' %>
+<div class="pst-corpo-main-container">
+  <div class="pst-main-container">
+    <div class="main clearfix">
+      <h2>Usuário</h2>
+      <div class="pst-container">
+        <div class="pst-content">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="p-img">
+                <%= image_tag(@user.picture.url, class: 'img-responsive')if @user.picture? %>
+                <%= image_tag("semfoto.jpg", class: 'img-responsive')if !@user.picture? %>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <p><strong>Name:</strong><%= @user.name %></p>
+              <p><strong>Email:</strong><%= @user.email %></p>
+              <p><strong>Matricula:</strong><%= @user.matricula %></p>
+            </div>
+          </div>
+        </div>
+        <div class="pst-button">
+          <%= link_to 'Editar', edit_user_path(@user) %>
+          <%= link_to 'Voltar', users_path %>
+        </div>
+        <div class="pst-button">
+          
+        </div>
+      </div>
+    </div>  
+  </div>
+  <%= render 'layouts/footer' %>
 </div>

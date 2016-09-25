@@ -1,26 +1,44 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header-admin' %>
+<div class="pst-corpo-main-container">
+  <div class="pst-main-container">
+    <div class="main clearfix">
+      <h2>Publicação</h2>
+      <div class="pst-container">
+        <div class="pst-content">
+          <div class="pst-info-content">
+            <div class="row">
+              <div class="col-lg-6">
+                <p><strong>Título: </strong><%= @post.titulo %></p>
+                <p><strong>Descrição: </strong><%= @post.descricao %></p>
+                <p><strong>Usuário: </strong><%= @post.user_id %></p>
+              </div>
+              <div class="col-lg-6"></div>
+              <div class="col-lg-12">
+                <div class="p-info-img">
+                  <%= image_tag(@post.picture.url, class: 'img-responsive')if @post.picture? %>
+                  <%= image_tag("semfoto.jpg", class: 'img-responsive')if !@post.picture? %>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="pst-info-content">
+            <div class="row">
+              <div class="col-lg-12">
+                <p><%= simple_format(@post.conteudo) %></p>
+              </div>
+            </div>  
+          </div>
+        </div>
+        <div class="pst-button">
+          <%= link_to 'Editar', edit_post_path(@post) %> |
+          <%= link_to 'Voltar', posts_path %>
+        </div>
+        <div class="pst-button">
+          
+        </div>
+      </div>
+    </div>  
+  </div>
+  <%= render 'layouts/footer' %>
+</div>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @post.titulo %>
-</p>
-
-<p>
-  <strong>Descricao:</strong>
-  <%= @post.descricao %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
-
-<p>
-  <strong>Conteudo></strong>
-  <%= simple_format(@post.conteudo) %>
-</p>
-
-<%= image_tag @post.picture.url if @post.picture? %>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>

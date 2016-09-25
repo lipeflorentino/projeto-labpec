@@ -11,22 +11,22 @@
     </div>
   <% end %>
   
-  <div class="field">
+  <div class="form-group">
     <%= f.label :new_email %><br>
-    <%= f.email_field :new_email, :value => "", class:'form-control' %>
+    <%= f.email_field :new_email, class:'form-control', :placeholder=>"Digite o E-mail"  %>
   </div>
   
-  <div class="field">
+  <div class="form-group">
      <%= f.label :email_confirmation %><br>
-    <%= f.email_field :email_confirmation, class:'form-control' %>
+    <%= f.email_field :email_confirmation, class:'form-control', :placeholder=>"Confirme o E-mail" %>
   </div>
   
-  <div class="field">
+  <div class="form-group">
     <%= f.label :actual_password %><br>
-    <%= f.password_field :actual_password, class:'form-control' %>
+    <%= f.password_field :actual_password, class:'form-control', :placeholder=>"Senha atual" %>
   </div>
   
   <div class="actions">
-    <%= f.submit 'Aplicar', class:'btn'%>
+    <%= f.submit 'Aplicar', class:'btn btn-default'%>
   </div>
 <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160918000055) do
+ActiveRecord::Schema.define(version: 20160918211434) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -31,10 +31,11 @@ ActiveRecord::Schema.define(version: 20160918000055) do
     t.string   "titulo"
     t.text     "descricao"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "picture"
     t.text     "conteudo"
+    t.integer  "vezes_visitado", default: 0
   end
 
   create_table "users", force: :cascade do |t|

@@ -3,13 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .pst-main-container h1{background-color:black;border-radius:2px;padding:15px;font-size:15px;color:white;margin-top:0px;}
-.pst-corpo-main-container{background: rgba(256, 256, 256, 0.5);padding:20px;}
-.pst-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;}
-.pst-container{padding:10px;}
-.pst-content{padding:10px;}
+.pst-corpo-main-container{background: rgba(256, 256, 256, 0.5);padding:20px;padding-top:0px;}
+.pst-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-left:60px;padding-right:60px;padding-top:10px;padding-bottom:30px;}
+.pst-container{}
+.pst-content{}
 .pst-button{text-align:left;padding:5px;}
 .pst-content a:hover{background-color:transparent !important;text-decoration:none;}
 .tablesorter th{padding-left:15px !important;padding-right:15px;}
-.pst-header {height: 125px;padding-top: 5px}
-.pst-header-container{}
-.pst-corpo-header-container{background-color: white;}
+.pst-sec-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;}
+.pst-main-container h2{text-align: left;color:#23527c;font-size:2em;margin-bottom:40px;border-bottom: 1px solid gray;}
+.pst-info-content{padding:10px;text-align:left;}
+.pst-info-content p{text-indent:0px !important;}
+.pst-info-content h1,.pst-info-content h2, .pst-info-content h3 {border:none !important;background-color:transparent !important;color:Black;}
+.p-info-img img{max-height:300px;}
+

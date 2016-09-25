@@ -1,6 +1,19 @@
-<h1>Editing Post</h1>
+<%= render 'layouts/header-admin' %>
+<div class="pst-corpo-main-container">
+  <div class="pst-main-container">
+    <div class="main clearfix">
+      <h2>Editar Publicação</h2>
+      <div class="pst-container">
+        <div class="pst-content">
+          <%= render 'formedit', post: @post %>
+        </div>
+        <div class="pst-button">
+            <%= link_to 'Visualizar', @post %> |
+            <%= link_to 'Voltar', posts_path %>
+        </div>
+      </div>
+    </div>  
+  </div>
+  <%= render 'layouts/footer' %>
+</div>
 
-<%= render 'formedit', post: @post %>
-
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>

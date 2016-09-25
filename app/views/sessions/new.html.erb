@@ -1,3 +1,18 @@
-<%= render 'form' %>
-
-<%= link_to "Não consegue acessar sua conta?", recuperacao_path %>
+<div class="lg-corpo-main-container">
+  <div class="lg-main-container">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+        <div class="lg-form">
+          <h1>Sistema LABPEC.</h1>
+          <h4>Faça o login e gerencie seu site</h4>
+          <%= image_tag("login.png", class: 'img-responsive') %>
+          <%= render 'form' %>
+          <div class='lg-link'><%= link_to "Não consegue acessar sua conta?" , recuperacao_path %></div>
+        </div>
+        <div class='lg-link'><%= link_to "Criar conta", recuperacao_path %></div>
+      </div>
+      <div class="col-lg-3"></div>
+    </div>  
+  </div>
+</div>

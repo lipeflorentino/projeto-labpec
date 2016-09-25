@@ -1,4 +1,3 @@
-<div class="main-container">
 <%= form_for(post, html: {multipart: true, id: 'enquiry'}) do |f| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -12,37 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :titulo %>
-    <%= f.text_field :titulo %>
+    <%= f.text_field :titulo,  class:'form-control', :placeholder=>"Digite o título"  %>
   </div>
   
   <span class="counter"></span>
   
-  <div class="field">
+  <div class="form-group">
     <%= f.label :descricao %>
-    <%= f.text_area :descricao %>
+    <%= f.text_area :descricao,  class:'form-control', :placeholder=>"Digite a descrição" %>
   </div>
   
   <span class="picture">
     <%= f.file_field :picture %>
   </span>
+  </br>
   
-    <script>
-    CKEDITOR.instances.editor.setData('asdasdasd');
-  </script>
-  
-  <div class="field">
-    <%= f.cktext_area :conteudo, :value => post.conteudo, ckeditor: { language: 'pt-br'} %>
+  <div class="form-group">
+    <%= f.cktext_area :conteudo, ckeditor: { language: 'pt-br'} %>
   </div>
-  
-
   <%= javascript_include_tag Ckeditor.cdn_url %>
   
-  
-  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Enviar', class:'btn btn-default'%>
   </div>
 <% end %>
-</div>
+

@@ -1,6 +1,5 @@
 <%= render 'layouts/header' %>
 <div class="corpo-main-container">
-        
     <div class="main-container">
         <div class="carrousel-container">
             <div class="row">
@@ -20,7 +19,7 @@
                                 <div class="h-cadastro">
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p>
                                     <button type="button" class="btn btn-danger btn-lg">
-                                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="margin-right:10px;"></span>Cadastro</button>
+                                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="margin-right:10px;"></span><%= link_to 'Cadastro', new_user_path %></button>
                                         <button type="button" class="btn btn-success btn-lg">
                                         <span class="glyphicon glyphicon-envelope" aria-hidden="true" style="margin-right:10px;"></span>Contato</button>
                                         <button type="button" class="btn btn-info btn-lg">
@@ -164,28 +163,19 @@
                     <div class="row ie-container">
                         <!-----------IMPLEMENTAR: buscar noticias do BD------------->
                         <h1>Noticias</h1>
+                        <% @noticias.each do |n| %>
                         <div class="h-noticia b-borda-dotted ic-title">
-                            <h5>Noticia 1</h5>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry, text of the printing and typesetting industry.</p>
+                            <h5><%= n.titulo %> </h5>
+                            <p><%= n.descricao %></p>
                         </div>
-                        <div class="h-noticia b-borda-dotted ic-title">
-                            <h5>Noticia 2</h5>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry, text of the printing and typesetting industry.</p>
-                        </div>
-                        <div class="h-noticia b-borda-dotted ic-title">
-                            <h5>Noticia 3</h5>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        </div>
+                        <% end %>
                     </div> 
                     <div class="h-link">
-                        <a href=""><p>+ saiba mais</p></a>
+                        <p><%= link_to '+ saiba mais', publicacoes_path %></p>
                     </div>
                 </div>
             </div>    
         </div>
     </div>
     <%= render 'layouts/footer' %>
-</div>
-<div class="b-fixed">
-    <a href="#" id="subir"><%= image_tag("up.png", class: '') %></a>
 </div>

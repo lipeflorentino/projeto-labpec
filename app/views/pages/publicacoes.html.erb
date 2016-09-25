@@ -22,8 +22,8 @@
         <div class="pp-main-container">
             <div class="main wrapper clearfix">
                 <h1>Publicações</h1>
-            </div>    
-            <div class="row">
+            
+              <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                    <div class="main wrapper clearfix">
                         <% @posts.each do |publicacao| %>
@@ -35,9 +35,9 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <div class="p-info">
-                                        <a href=""><h3> <%= publicacao.titulo %></h3></a>
-                                        <h6><%= imprime_data(publicacao.created_at) %> </h6>
-                                        <p><%= publicacao.descricao %></p>
+                                      <h3><%= link_to  publicacao.titulo, publicacao %></h3>
+                                      <h6><%= imprime_data(publicacao.created_at) %> </h6>
+                                      <p><%= publicacao.descricao %></p>
                                     </div>
                                 </div>
                             </div>    
@@ -54,14 +54,15 @@
                            <div class="row ps-content">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="p-img">
-                                        <%= image_tag("img2.png", class: 'img-responsive') %>
+                                        <%= image_tag(@mais_visitado.picture.url, class: 'img-responsive') if @mais_visitado.picture? %>
                                     </div>
                                 </div>
                                 <div class="p-info col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="mv-info">
-                                        <h3>Titulo</h3>
-                                        <h6>data</h6>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                        
+                                        <h3><%= @mais_visitado.titulo  %></h3>
+                                        <h6><%= imprime_data(@mais_visitado.created_at) %> </h6>
+                                        <p><%=@mais_visitado.descricao %></p>
                                     </div>
                                 </div>
                             </div> 
@@ -74,14 +75,15 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="r-arquivo">
-                                        <a href="#">SET 2016 <span class="badge"> 2</span></a></br>
-                                        <a href="#">AGO 2016 <span class="badge"> 3</span></a></br>
-                                        <a href="#">JUL 2016 <span class="badge"> 1</span></a></br>
-                                        <a href="#">JUN 2016 <span class="badge"> 5</span></a></br>
+                                        <% @datas_min.each do |d| %>
+                                          <%= link_to imprime_data_arquivo(d), arquivo_show_path(:month => d.month, :year => d.year) %>
+                                          <span class="badge"><%= @data_freq.shift%></span>
+                                        <% end %>
                                     </div>
                                 </div>    
                                 <div class="col-lg-12">
-                                    <div class="t-arquivo"><a href="#">ver todos</a></div>
+                                    
+                                    <div class="t-arquivo"><%= link_to 'Ver todos', arquivos_path %></div>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +96,7 @@
                                   <%= form_for(:post, url: publicacoes_path, method: :get) do |f| %>
                                       <%= f.text_field :search, class: "form-control", :placeholder => 'Buscar por...' %>
                                       <span class="input-group-btn">
-                                        <%= f.submit 'Buscar', class:'btn btn-default'%>
+                                        <%= f.submit 'Buscar', class:'btn btn-default pp-btn'%>
                                       </span>
                                   <% end %>
                                 </div>
@@ -104,10 +106,8 @@
                     </div>    
                 </div>    
             </div> 
+            </div>
         </div>    
     </div>
     <%= render 'layouts/footer' %>
 </div> 
-<div class="b-fixed">
-    <a href="#" id="subir"><%= image_tag("up.png", class: '') %></a>
-</div>

@@ -1,0 +1,8 @@
+/*----------aqui está o css da página colaboradores------------------*/
+.col-corpo-container{background: rgba(256, 256, 256, 0.5);padding-top: 10px;padding-bottom: 20px;}
+.colaboradores-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 30px;padding-left: 10px;padding-right: 10px;padding-top: 0px;margin-bottom:20px;}
+.r-col{margin-bottom: 20px;padding-top:10px;}
+.colaboradores-main-container h1 {font-size: 1.6em;padding-bottom: 5px;border-bottom: 0.3px solid black;margin-right: 0px;}
+.col-cl-img{min-height:100px;max-width:100%;padding: 5px;-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;}
+.photo h3{margin-top: 10px; font-size: 1.3em;color: #23527c}
+.photos{margin-top: 15px;margin-left: 5px;margin-right: 5px;}

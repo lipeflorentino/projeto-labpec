@@ -1,5 +1,17 @@
-<h1>New Post</h1>
-
-<%= render 'form', post: @post %>
-
-<%= link_to 'Back', posts_path %>
+<%= render 'layouts/header-admin' %>
+<div class="pst-corpo-main-container">
+  <div class="pst-main-container">
+    <div class="main clearfix">
+      <h2>Fazer Publicação</h2>
+      <div class="pst-container">
+        <div class="pst-content">
+          <%= render 'form', post: @post %>
+        </div>
+        <div class="pst-button">
+          <%= link_to 'Voltar', posts_path %>
+        </div>
+      </div>
+    </div>  
+  </div>
+  <%= render 'layouts/footer' %>
+</div>

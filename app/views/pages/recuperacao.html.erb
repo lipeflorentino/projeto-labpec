@@ -1,6 +1,8 @@
 
 <p> Esqueci minha senha </p>
 
+ <%= link_to "Mudar esse link", new_password_reset_path %>
+
 <p> Não recebi meu e-mail de confirmação </p>
 
 <%= form_for(:user, url: lostemail_path ) do |f| %>
