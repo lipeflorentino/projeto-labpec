@@ -56,6 +56,14 @@ class User < ApplicationRecord
       BCrypt::Password.new(digest).is_password?(token)
     end
     
+    # Retorna true se a reset_token combina com o digest da confirmação 
+    def reset_authenticated?(token)
+      digest = self.reset_digest
+      return false  if digest.nil?
+      # isso pode retornanar falso
+      BCrypt::Password.new(digest).is_password?(token)
+    end
+    
       # Activates an account.
     def activate
       update_attribute(:activated, true)
