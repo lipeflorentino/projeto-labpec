@@ -26,12 +26,14 @@ class PasswordResetsController < ApplicationController
     if params[:user][:password].empty?                 
       @user.errors.add(:password, "não pode ficar em branco")
       render 'edit'
-    elsif @user.update_attributes(user_params)          
-      log_in @user
-      flash[:success] = "Você alterou a senha com sucesso"
-      redirect_to @user
-    else
-      render 'edit'                                     
+    else 
+      if @user.update_attributes(:password => params[:user][:password], :password_confirmation => params[:user][:password_confirmation])          
+        log_in @user
+        flash[:success] = "Você alterou a senha com sucesso"
+        redirect_to @user
+      else
+        render 'edit'
+      end
     end
   end
   
