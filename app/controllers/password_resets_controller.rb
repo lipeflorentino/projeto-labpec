@@ -41,7 +41,7 @@ class PasswordResetsController < ApplicationController
       #aux.reverse!
       #idFix << aux
       unless (@user && @user.activated? &&
-              !@user.authenticated?(idFix))
+              @user.authenticated?(idFix))
         redirect_to users_url
       end
     end
