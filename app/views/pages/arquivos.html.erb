@@ -1,15 +1,62 @@
 <%= render 'layouts/header' %>
-
 <div class="corpo-main-container">
-  
-  <% @datas_min.each do |data| %>
-      
-      <%= link_to imprime_data_arquivo(data), arquivo_show_path(:month => data.month, :year => data.year) %> 
-      <span class="badge"> <%= @data_freq.shift %></span>
-      <br>
-      
-  <% end %>
-
-</div>
-
+    <div class='arquivos-main-container'>
+        <div class="main wrapper clearfix">
+            <h1>Heading 1</h1>
+        </div>
+    </div>
+    
+    <div class='arquivos-main-container'>
+        <div class="main wrapper clearfix">
+            
+              <div class="row r-arq">  
+                
+                <div class="meses">
+                    <div class="titulo col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                      <h5>Header 5</h5>
+                      
+                    </div>
+                    <div class="description col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                        <p>Etiam ultricies vulputate aliquet.</p>
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    
+    <div class='arquivos-main-container'>
+        <div class="main wrapper clearfix">
+              <div class="row r-arq">  
+                  <div class="meses">
+                      <div class="titulo1 col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <h5>Text</h5>
+                      </div>
+                      <div class="description col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                          <p>Etiam ultricies vulputate aliquet. Morbi iaculis arcu et libero molestie malesuada. Quisque eget finibus turpis. Vivamus quam enim, posuere eu metus ut, porttitor vestibulum sem.</p>
+                      </div>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <div class='u-arquivos-main-container'>
+        <div class="main wrapper clearfix">
+              <div class="row r-arq">  
+                  <div class="meses">
+                      <div class="titulo1 col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <h5>Text</h5>
+                      </div>
+                      <div class="description col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                          <p>Etiam ultricies vulputate aliquet. Morbi iaculis arcu et libero molestie malesuada. Quisque eget finibus turpis. Vivamus quam enim, posuere eu metus ut, porttitor vestibulum sem.</p>
+                      </div>
+                  </div>
+              </div>
+        </div>
+    </div>
 <%= render 'layouts/footer' %>
+</div>
+<!--<% @datas_min.each do |data| %>-->
+<!--    <%= link_to imprime_data_arquivo(data), arquivo_show_path(:month => data.month, :year => data.year) %> -->
+<!--    <span class="badge"> <%= @data_freq.shift %></span>-->
+<!--    <br>-->
+<!--<% end %>-->
+                

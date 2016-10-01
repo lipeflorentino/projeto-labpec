@@ -2,11 +2,16 @@
 <!-- rails server -b $IP -p $PORT -->
 <html>
   <head>
-    <title>Labpec</title>
+    
     <meta charset = "utf-8" >
     <meta http-equiv = "X-UA-Compatible" content = "IE=edge" >
     <meta name = "viewport" content = "width=device-width, initial-scale=1" >
-    <meta name ="author" content = "site do laboratório LABPEC" >
+    <meta name="description" content="LABPEC - Laboratório de pesquisa em Estudos de Linguagem">
+    <meta name="keywords" content="LABPEC, Linguagem, Estudos, UFF, Laboratório">
+    <meta name="author" content="InJunior">
+    
+    <title><%= yield(:title) %> | Conheça o LABPEC</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/Logo.png"/>
     
     
     <%= csrf_meta_tags %>

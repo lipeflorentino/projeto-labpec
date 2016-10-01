@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     has_many :post, dependent: :destroy
     
-    attr_accessor :activation_token, :email_confirmation, :actual_password
+    attr_accessor :activation_token, :email_confirmation, :actual_password, :reset_token
     
     validate :email_match_email_confirmation, on: :create
     validate :new_email_match_email_confirmation, on: :update
@@ -38,6 +38,16 @@ class User < ApplicationRecord
       SecureRandom.urlsafe_base64
     end
     
+    def create_reset_digest
+      self.reset_token = User.new_token
+      update_attribute(:reset_digest,  User.digest(reset_token))
+      update_attribute(:reset_sent_at, Time.zone.now)
+    end
+    
+    def send_password_reset_email
+      UserMailer.password_reset(self).deliver_now
+    end
+  
     # Retorna true se a token combina com o digest da confirmação 
     def authenticated?(token)
       digest = self.activation_digest
