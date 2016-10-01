@@ -38,22 +38,22 @@ class PasswordResetsController < ApplicationController
   private
     def get_user
       emailFix = params[:email]
-      emailFix.reverse!
-      emailFix.chop!
-      emailFix.chop!
-      emailFix.reverse!
+      #emailFix.reverse!
+      #emailFix.chop!
+      #emailFix.chop!
+      #emailFix.reverse!
       @user = User.find_by(email: emailFix)
     end
 
     # Confirms a valid user.
     def valid_user
       idFix = params[:id]
-      aux = idFix.reverse.byteslice(0,8)
-      10.times do 
-        idFix.chop! 
-      end
-      aux.reverse!
-      idFix << aux
+      #aux = idFix.reverse.byteslice(0,8)
+      #10.times do 
+      #  idFix.chop! 
+      #end
+      #aux.reverse!
+      #idFix << aux
       unless (@user && @user.activated? &&
               @user.reset_authenticated?(idFix))
         redirect_to users_url
