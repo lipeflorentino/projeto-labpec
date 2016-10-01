@@ -84,6 +84,10 @@ class User < ApplicationRecord
       update_attribute(:activation_digest, User.digest(activation_token))
     end
     
+    def password_reset_expired?
+      reset_sent_at < 2.hours.ago
+    end
+  
   private 
   
     def tamanho_imagem
