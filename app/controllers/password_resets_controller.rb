@@ -19,11 +19,12 @@ class PasswordResetsController < ApplicationController
   end
   
   def edit
+    
   end
   
   private
     def get_user
-      #emailFix = params[:email]
+      emailFix = params[:email]
       #emailFix.reverse!
       #emailFix.chop!
       #emailFix.chop!
