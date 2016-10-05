@@ -14,7 +14,8 @@ class SessionsController < ApplicationController
         render 'new'
       end
     else
-      
+      flash.now[:danger] = ' E-mail/senha inválidos'
+      render 'new'
     end
   end
   

@@ -29,10 +29,12 @@
             </div>  
           </div>
         </div>
+        <% if administrador? %>
         <div class="pst-button">
           <%= link_to 'Editar', edit_post_path(@post) %> |
           <%= link_to 'Voltar', posts_path %>
         </div>
+        <% end %>
         <div class="pst-button">
           
         </div>

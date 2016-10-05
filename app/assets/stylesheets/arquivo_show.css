@@ -1,0 +1,4 @@
+/*----------aqui está o css da página de arquivos (Quando você clica do mês) ------------------*/
+.pst-content{padding-bottom: 20px;}
+.a_s-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 0px;padding-left: 10px;padding-right: 10px;padding-top: 0px;margin-bottom:10px;}
+.a_s-main-container h1 {font-size: 1.6em;padding-bottom: 5px;border-bottom: 0.3px solid black;margin-right: 0px;}

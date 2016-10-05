@@ -32,7 +32,7 @@ article header p{text-indent: 20px;text-align: justify;}
 .b-fixed img{position:static;left:40px;top:300px;width: 50px;height: 50px;}
 .b-fixed a:hover{text-decoration:none;background-color:transparent !important;}
 .bf-container{}
-
+.pag-container h1{border-bottom-color:gray;}
 
 /*----------aqui está o css da home--------------*/
 .c-title{}
@@ -53,6 +53,7 @@ article header p{text-indent: 20px;text-align: justify;}
 .ic-title h5{color: blue;}
 .coordenadores-container{margin-top:10px;-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;padding-top: 10px;}
 .carrousel-container{padding-left:20px;}
+.btn-cadastro a{color:white !important;}
 
 /*----------aqui está o css de publicações--------------*/
 .pp-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 60px;padding-left: 10px;padding-right: 10px;padding-top: 10px;margin-bottom:20px;}
@@ -123,7 +124,7 @@ article header p{text-indent: 20px;text-align: justify;}
 /*----------aqui está o css das imagens------------------*/
 
 .lp-img{padding: 5px;-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;}
-.cl-img{height:200px;width:200px;padding: 5px;-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;}
+.cl-img{height:200px;width:200px;padding: 5px;-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;margin-bottom:25px;}
 .cd-img{margin-top:25px;border-right-style: dotted;border-right-width: 1.4px;}
 .img-container-home img{min-width: 100%;max-height: 400px;}
 .img-container-home{margin-right:10px;min-height:100%;}

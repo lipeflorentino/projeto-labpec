@@ -1,0 +1,33 @@
+<%= render 'layouts/header-admin' %>
+<div class="corpo-main-container">
+  <div class="a_s-main-container">
+    <div class="main wrapper clearfix">
+      <div class="main clearfix">
+          <h1>Arquivos de <%= imprime_data_arquivo @data_ini %> </h1>
+        <div class="pst-container">
+          <div class="pst-content">
+            <div class="table-responsive">
+              <table id="tablesorter" class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                      <th>Título</th>
+                      <th>Usuário</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @posts.each do |post| %>
+                      <tr>
+                        <td><%= link_to post.titulo, post %></td>
+                        <td><%= post.user_id %></td>
+                      </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+  <%= render 'layouts/footer' %>
+</div>

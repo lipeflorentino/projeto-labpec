@@ -6,7 +6,7 @@ class PagesController < ApplicationController
       ultima_data = Post.last.created_at
       @datas_min << ultima_data
       @data_freq = Array.new
-      @data_freq << 1 if ultima_data != nil
+      @data_freq << 0 if ultima_data != nil
       Post.order('created_at DESC').each do |p|
         if p.created_at.month != ultima_data.month
           @datas_min << p.created_at
@@ -16,7 +16,6 @@ class PagesController < ApplicationController
           @data_freq[(@datas_min.length) -1] += 1
         end
       end
-      # tem 1 numero a mais m data_freq, verificar se é só no ultimo
     end
     
     def home
@@ -28,9 +27,9 @@ class PagesController < ApplicationController
     
     def arquivo_show
       data = params[:data]
-      data_ini = DateTime.new(params[:year].to_i, params[:month].to_i, 01)
+      @data_ini = DateTime.new(params[:year].to_i, params[:month].to_i, 01)
       data_fim = DateTime.new(params[:year].to_i, params[:month].to_i + 1, 01) - 1.minute
-      @posts = Post.where(created_at: data_ini..data_fim)
+      @posts = Post.where(created_at: @data_ini..data_fim)
     end
     
     def publicacoes

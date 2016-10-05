@@ -1,9 +1,0 @@
-/*----------aqui está o css da página de arquivo_view (VER CADA UM) ------------------*/
-.arquivo_v-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 0px;padding-left: 10px;padding-right: 10px;padding-top: 0px;margin-bottom:10px;}
-.arquivo_v-main-container h1 {font-size: 1.6em;padding-bottom: 5px;border-bottom: 0.3px solid black;margin-right: 0px;}
-.r-arq_v{margin-bottom: 10px;padding-top:10px;}
-.r-arq_v h5 {font-weight: bold;padding-bottom: 10px;padding-top: 15px;margin-left: 5px;}
-.descricao p{margin-top: 15px;}
-.descricao h5{padding-left: 15px;}
-.corpo-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;padding-top: 10px;}
-.arq_v-img{min-height:200px;max-width:100%;padding: 5px;-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;}
