@@ -20,6 +20,8 @@ gem 'turbolinks',              '5.0.1'
 gem 'jbuilder',                '2.4.1'
 gem 'jquery-datatables-rails', '~> 3.4.0'
 
+gem "watu_table_builder", :require => "table_builder"
+
 group :development, :test do
   gem 'sqlite3', '1.3.11'
   gem 'byebug',  '9.0.0', platform: :mri

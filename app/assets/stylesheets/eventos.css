@@ -1,0 +1,15 @@
+/*--------------aqui está o css de eventos------------------*/
+
+.eventos-container h1 {font-size: 1.6em;padding-bottom: 5px;border-bottom: 0.3px solid black;margin-right: 0px;}
+.eventos-container{word-wrap: break-word;}
+.ep-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 60px;padding-left: 10px;padding-right: 10px;padding-top: 10px;margin-bottom:20px;}
+.e-container{padding-bottom:30px;padding-top:30px;border-bottom:1px solid gray;}
+.mv-info{padding:5%;}
+.e-info p{text-align:left;text-indent:0px;}
+.e-info a:hover{text-decoration:none;}
+.es-content{padding:5px;}
+.ep-content{padding:20px;}
+.es-main-container a{color: #23527c !important;}
+.es-main-container a:hover{background-color:transparent;color:yellow;}
+.es-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;padding-bottom: 30px;margin-bottom: 20px;border: 1px gray;margin-top:60px;border-radius:2px;}
+.es-main-container h2{background-color:black;border-radius:2px;padding:15px;font-size:15px;color:white;margin-top:0px;}

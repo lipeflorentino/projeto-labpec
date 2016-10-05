@@ -40,6 +40,8 @@ class PasswordResetsController < ApplicationController
   private
     def get_user
       emailFix = params[:email]
+      # Essas linhas de comentário foram uma tentativa de fazer funcionar
+      # em development mode no cloud9
       #emailFix.reverse!
       #emailFix.chop!
       #emailFix.chop!
@@ -50,6 +52,8 @@ class PasswordResetsController < ApplicationController
     # Confirms a valid user.
     def valid_user
       idFix = params[:id]
+      # Essas linhas de comentário foram uma tentativa de fazer funcionar
+      # em development mode no cloud9
       #aux = idFix.reverse.byteslice(0,8)
       #10.times do 
       #  idFix.chop! 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160925215253) do
+ActiveRecord::Schema.define(version: 20161004174218) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -25,6 +25,22 @@ ActiveRecord::Schema.define(version: 20160925215253) do
     t.datetime "updated_at",                   null: false
     t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
     t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+  end
+
+  create_table "compromissos", force: :cascade do |t|
+    t.string   "titulo"
+    t.text     "texto"
+    t.date     "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "eventos", force: :cascade do |t|
+    t.string   "titulo"
+    t.text     "texto"
+    t.date     "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
