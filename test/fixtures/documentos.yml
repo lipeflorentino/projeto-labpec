@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  titulo: MyString
+  descricao: MyText
+  status: false
+  data_defesa: 2016-10-05
+  tese: false
+  mestrado: false
+
+two:
+  user_id: 1
+  titulo: MyString
+  descricao: MyText
+  status: false
+  data_defesa: 2016-10-05
+  tese: false
+  mestrado: false

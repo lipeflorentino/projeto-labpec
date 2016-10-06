@@ -38,7 +38,7 @@ class PagesController < ApplicationController
         ultima_data = Post.last.created_at
         @datas_min << ultima_data
         @data_freq = Array.new
-        @data_freq << 1 if ultima_data != nil
+        @data_freq << 0 if ultima_data != nil
         Post.order('created_at DESC').each do |p|
           if p.created_at.month != ultima_data.month
             @datas_min << p.created_at
