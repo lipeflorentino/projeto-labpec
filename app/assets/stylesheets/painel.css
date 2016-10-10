@@ -1,12 +1,15 @@
 /*-------------aqui está o css do painel admin--------------*/
 
-.lg-painel-container{padding:10px;}
-.lg-painel-container h2{text-align: left;color:#23527c;font-size:2em;margin-bottom:40px;border-bottom: 1px solid gray;}
-.lg-btn{min-width: 100%; margin-bottom:5px;background-color:#23527c !important;color:white;border-color: blue;}
-.lg-btn:hover{color:#f5f5f5 !important;background-color: #3366FF !important;border-color: gray !important;}
-.lg-main-container h1, h4, a{text-align: center;}
-.lg-main-container h1{color:#23527c;}
-.lg-link{text-align: left;}
+.pnl-main-container h1{background-color:black;border-radius:2px;padding:15px;font-size:15px;color:white;margin-top:0px;}
+.pnl-corpo-main-container{background: rgba(256, 256, 256, 0.5);padding:20px;padding-top:0px;}
+.pnl-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-left:60px;padding-right:60px;padding-top:10px;padding-bottom:30px;}
+.pnl-container{}
+.pnl-content{}
+.pnl-button{text-align:left;padding:5px;}
+.pnl-content a:hover{background-color:transparent !important;text-decoration:none;}
+.pnl-main-container h2{text-align: left;color:#23527c;font-size:2em;margin-bottom:40px;border-bottom: 1px solid gray;}
+.p-info-img img{min-width: 100%; max-height: 100%;}
+
 
 /*-------------aqui está o css do login admin--------------*/
 

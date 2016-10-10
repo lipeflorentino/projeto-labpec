@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   validates :descricao, presence: true, length: { minimum: 35, maximum: 150 }
   validates :titulo, presence: true, length: { minimum: 8, maximum: 50 }
   validates :picture, presence: true
-  validates :conteudo, presence: true, length: {minimum: 20, maximum: 200000 }
+  validates :conteudo, presence: true, length: {minimum: 20, maximum: 600000 }
   validate :tamanho_imagem
   
  

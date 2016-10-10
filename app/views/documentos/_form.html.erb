@@ -1,4 +1,5 @@
-<%= form_for(documento) do |f| %>
+<%= form_for(documento, html: { multipart: true})  do |f| %>
+
   <% if documento.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(documento.errors.count, "error") %> prohibited this documento from being saved:</h2>
@@ -44,6 +45,11 @@
   <div class="field">
     <%= f.label :mestrado %>
     <%= f.check_box :mestrado %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :arquivo %>
+    <%= f.file_field :arquivo %>
   </div>
 
   <div class="actions">

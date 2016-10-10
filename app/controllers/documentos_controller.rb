@@ -25,6 +25,8 @@ class DocumentosController < ApplicationController
   # POST /documentos.json
   def create
     @documento = Documento.new(documento_params)
+    # Força o status do documento ser falso por motivos de segurança
+    @documento.status = false
 
     respond_to do |format|
       if @documento.save
@@ -69,6 +71,6 @@ class DocumentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def documento_params
-      params.require(:documento).permit(:user_id, :titulo, :descricao, :status, :data_defesa, :tese, :mestrado)
+      params.require(:documento).permit(:user_id, :titulo, :descricao, :status, :data_defesa, :tese, :mestrado, :arquivo)
     end
 end

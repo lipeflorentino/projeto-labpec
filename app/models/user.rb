@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     has_many :post, dependent: :destroy
+    has_many :documento # dependent :destroy?
     
     attr_accessor :activation_token, :email_confirmation, :actual_password, :reset_token
     

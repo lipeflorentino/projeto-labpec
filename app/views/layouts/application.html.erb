@@ -27,8 +27,20 @@
         <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
         <% end %>
+        <% if !current_page?(login_path) && !current_page?(painel_path) %>
+          <% if !administrador? %>
+            <%= render 'layouts/header' %>
+          <% else %>
+            <%= render 'layouts/header-admin' %>
+          <% end %>
+        <% end %>
         <%= yield %>
+        
     </section>
+    
+    
+     
+    
     
     <!-- Initialize Swiper -->
     <script type="text/javascript">
