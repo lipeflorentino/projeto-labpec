@@ -1,14 +1,14 @@
 /*-------------aqui está o css do painel admin--------------*/
 
 .pnl-main-container h1{background-color:black;border-radius:2px;padding:15px;font-size:15px;color:white;margin-top:0px;}
-.pnl-corpo-main-container{background: rgba(256, 256, 256, 0.5);padding:20px;padding-top:0px;}
-.pnl-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-left:60px;padding-right:60px;padding-top:10px;padding-bottom:30px;}
-.pnl-container{}
-.pnl-content{}
-.pnl-button{text-align:left;padding:5px;}
+.pnl-corpo-main-container{background: rgba(256, 256, 256, 0.5);padding:20px;padding-top:10px;}
+.pnl-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-left:60px;padding-right:60px;padding-top:20px;padding-bottom:30px;margin-top: 20px;}
 .pnl-content a:hover{background-color:transparent !important;text-decoration:none;}
 .pnl-main-container h2{text-align: left;color:#23527c;font-size:2em;margin-bottom:40px;border-bottom: 1px solid gray;}
-.p-info-img img{min-width: 100%; max-height: 100%;}
+.pnl-square{border: solid black;margin-bottom: 20px;margin-top: 10px;}
+.pnl-square h3{font-size: 1.6em;padding-bottom: 5px;text-align: center;}
+.pnl-square p{padding-right: 15px; padding-left: 15px;}
+.pnl-click{margin-bottom: 10px;}
 
 
 /*-------------aqui está o css do login admin--------------*/
