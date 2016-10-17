@@ -48,13 +48,6 @@ ActiveRecord::Schema.define(version: 20161006172954) do
     t.string   "arquivo"
   end
 
-  create_table "eventos", force: :cascade do |t|
-    t.string   "titulo"
-    t.text     "texto"
-    t.date     "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "titulo"

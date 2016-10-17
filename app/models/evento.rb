@@ -1,2 +1,0 @@
-class Evento < ApplicationRecord
-end
