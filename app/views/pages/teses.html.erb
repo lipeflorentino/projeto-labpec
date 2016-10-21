@@ -1,6 +1,128 @@
  
 <% provide(:title, "TDs") %>
 <div class="corpo-main-container">
-  
+    <div class="td-container">
+        <div class="td-main-container">
+        <div class="main wrapper clearfix">
+            <h1>Teses e Dissertações</h1>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div class="main wrapper clearfix">
+                        <div class="row es-content">
+                              <div class="col-md-12">
+                                <div class="input-group" id="adv-search">
+                                    <input type="text" class="form-control" placeholder="busca por tipo..." />
+                                    <div class="input-group-btn">
+                                        <div class="btn-group" role="group">
+                                            <div class="dropdown dropdown-lg">
+                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                                                <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                                    <form class="form-horizontal" role="form">
+                                                      <div class="form-group">
+                                                        <label for="filter">Filtrar por</label>
+                                                        <select class="form-control">
+                                                            <option value="0" selected>Todos</option>
+                                                            <option value="1">Teses</option>
+                                                            <option value="2">Dissertações</option>
+                                                            <option value="3">Mais visualizados</option>
+                                                            <option value="4">Mais recentes</option>
+                                                        </select>
+                                                      </div>
+                                                      <div class="form-group">
+                                                        <label for="contain">Autor</label>
+                                                        <input class="form-control" type="text" />
+                                                      </div>
+                                                      <div class="form-group">
+                                                        <label for="contain">Contém as palavras</label>
+                                                        <input class="form-control" type="text" />
+                                                      </div>
+                                                      <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          
+                      
+                        <div class="row td-e-container">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <p>autor</p>
+                                <div class="td-img">
+                                    <%= image_tag("semfoto.jpg", class: 'img-responsive') %>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="p-info">
+                                  <h5>Titulo</h5>
+                                  <h6>Data</h6>
+                                  <p>descrição...</p>
+                                  <a href="">pdf</a>
+                                </div>
+                            </div>
+                        </div> 
+                        <!--------------------ILUSTRATIVO----------------------->
+                        <div class="row td-e-container">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <p>autor</p>
+                                <div class="td-img">
+                                    <%= image_tag("semfoto.jpg", class: 'img-responsive') %>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="p-info">
+                                  <h5>Titulo</h5>
+                                  <h6>Data</h6>
+                                  <p>descrição...</p>
+                                  <a href="">pdf</a>
+                                </div>
+                            </div>
+                        </div> 
+                        <!--------------------ILUSTRATIVO----------------------->
+                        <div class="row td-e-container">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <p>autor</p>
+                                <div class="td-img">
+                                    <%= image_tag("semfoto.jpg", class: 'img-responsive') %>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="p-info">
+                                  <h5>Titulo</h5>
+                                  <h6>Data</h6>
+                                  <p>descrição...</p>
+                                  <a href="">pdf</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                  <div class="main wrapper clearfix">
+                      <div class="es-main-container">
+                         <h2>Arquivo</h2>
+                         <div class="row">
+                            <div class="col-lg-12">
+                                <div class="r-arquivo">
+                                  <div class="col-lg-12">OUT 2016<span class="badge">5</span></div>
+                                  <div class="col-lg-12">SET 2016<span class="badge">10</span></div>
+                                  <div class="col-lg-12">AGO 2016<span class="badge">12</span></div>
+                                </div>
+                            </div>    
+                            <div class="col-lg-12">
+                                <div class="t-arquivo"><%= link_to 'Ver todos', arquivos_path %></div>
+                            </div>
+                        </div> 
+                      </div>   
+                  </div>
+                </div> 
+                <div></div>
+            </div>
+        </div>
+    </div>
+    </div>
   <%= render 'layouts/footer' %>
 </div>  
