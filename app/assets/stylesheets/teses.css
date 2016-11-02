@@ -6,7 +6,6 @@
 .td-img{height:100px;width:100px;padding: 5px;}
 
 /*---------aqui está o css da busca-----------*/
-body {    padding-top: 50px;}
 .dropdown.dropdown-lg .dropdown-menu {margin-top: -1px;padding: 6px 20px;}
 .input-group-btn .btn-group {display: flex !important;}
 .btn-group .btn {border-radius: 0;margin-left: -1px;}

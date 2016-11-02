@@ -1,0 +1,45 @@
+
+<div class="pst-corpo-main-container">
+  <div class="pst-main-container">
+    <div class="main clearfix">
+      <h2>Gerenciador de Fotos</h2>
+      <div class="pst-container">
+        <div class="pst-content">
+          <div class="table-responsive">
+            <table id="tablesorter" class="display" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                  
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Matricula</th>
+                  <th>Aceitar</th>
+                  <th>Negar</th>
+                  
+                </tr>
+              </thead>
+            
+              <tbody>
+                <% User.where(picture_accepted: false).find_each.each do |user| %>
+                  <tr>
+                    
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.matricula %></td>
+                    <td><%= link_to 'Aceitar', aceitar_foto_path(:aceitar => true, :id => user.id) %></td>
+                    <td><%= link_to 'Negar', aceitar_foto_path(:aceitar => false, :id => user.id) %></td>
+                  
+                  </tr>
+                <% end %>
+              </tbody>  
+            </table>
+          </div>
+        </div>
+        <div class="pst-button">
+          <button><%= link_to 'Novo Usuário', new_user_path %></button>
+        </div>
+      </div>
+    </div>  
+  </div>
+  <%= render 'layouts/footer' %>
+</div>

@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   patch 'editemailupdate' => 'users#editemailupdate'
   patch 'editpasswordupdate' => 'users#editpasswordupdate'
   
+  
+  get 'aceitar_foto' => 'users#aceitar_foto'
+  get 'fotos' => 'users#fotos'
   get 'arquivo_show' => 'pages#arquivo_show'
   get 'editemail' => 'users#editemail'
   get 'editpassword' => 'users#editpassword'
@@ -35,7 +38,7 @@ Rails.application.routes.draw do
   get 'parceiros'    => 'pages#parceiros'
   get 'colaboradores' => 'pages#colaboradores'
   get 'instituicoes'  => 'pages#instituicoes'
-  get 'eventos'    => 'pages#eventos'
+  get 'events'    => 'pages#eventos'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#home'

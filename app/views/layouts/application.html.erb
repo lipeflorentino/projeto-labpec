@@ -29,9 +29,13 @@
         <% end %>
         <% if !current_page?(login_path) && !current_page?(painel_path) %>
           <% if administrador? %>
-             <%= render 'layouts/header-admin' %>
-          <% else %>
+            <% if !current_page?(root_path) && !current_page?(publicacoes_path) && !current_page?(teses_path) && !current_page?(linhasdepesquisa_path) && !current_page?(eventos_path) && !current_page?(colaboradores_path) && !current_page?(instituicoes_path) && !current_page?(arquivos_path) && !current_page?(arquivo_show_path)%>
+              <%= render 'layouts/header-admin' %>
+            <% else %>
               <%= render 'layouts/header' %>
+            <% end %>  
+          <% else %>
+            <%= render 'layouts/header' %>
           <% end %>
         <% end %>
         <%= yield %>

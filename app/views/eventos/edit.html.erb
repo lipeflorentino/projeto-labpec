@@ -1,6 +1,19 @@
-<h1>Editing Evento</h1>
+<div class="pst-corpo-main-container">
+  <div class="pst-main-container">
+    <div class="main clearfix">
+      <h2>Editar Evento</h2>
+      <div class="pst-container">
+        <div class="pst-content">
+          <%= render 'form', evento: @evento %>
+        </div>
+        <div class="pst-button">
+            <%= link_to 'Visualizar', @evento %> |
+            <%= link_to 'Voltar', eventos_path %>
+        </div>
+      </div>
+    </div>  
+  </div>
+  <%= render 'layouts/footer' %>
+</div>
 
-<%= render 'form', evento: @evento %>
 
-<%= link_to 'Show', @evento %> |
-<%= link_to 'Back', eventos_path %>

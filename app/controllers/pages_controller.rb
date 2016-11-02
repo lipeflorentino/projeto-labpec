@@ -69,6 +69,8 @@ class PagesController < ApplicationController
     end 
     
     def eventos
+      @eventos = Evento.reorder("created_at DESC").page(params[:page]).per_page(4)   
+      @proximo_evento = Evento.order(:data).last
     end  
     
     def parceiros

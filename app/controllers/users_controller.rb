@@ -36,6 +36,22 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
   end
+  
+  def fotos
+  end
+  
+  def aceitar_foto
+    aceitar = params[:aceitar]
+    id = params[:id]
+    
+    user = User.find id
+    if (user.picture_accepted != aceitar)
+      user.update(:picture_accepted => aceitar)
+    end
+    
+    redirect_to fotos_url
+    
+  end
 
   # GET /users/new
   def new

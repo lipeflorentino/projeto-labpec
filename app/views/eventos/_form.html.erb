@@ -10,20 +10,22 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+  
+  <div class="form-group">
     <%= f.label :titulo %>
-    <%= f.text_field :titulo %>
+    <%= f.text_field :titulo,  class:'form-control', :placeholder=>"Digite o título"  %>
   </div>
-
-  <div class="field">
+  
+  <span class="counter"></span>
+  
+  <div class="form-group">
     <%= f.label :data %>
-    <%= f.datetime_select :data %>
+    <%= f.datetime_select :data, class:'form-control' %>
   </div>
-
-  <div class="field">
+  
+  <div class="form-group">
     <%= f.label :localizacao %>
-    <%= f.text_area :localizacao %>
+    <%= f.text_area :localizacao, class:'form-control' %>
   </div>
   
   <div class="form-group">
@@ -34,4 +36,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  
 <% end %>
