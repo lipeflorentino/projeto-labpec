@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
     
-    
     def arquivos
       @datas_min = Array.new
       ultima_data = Post.last.created_at
@@ -20,6 +19,7 @@ class PagesController < ApplicationController
     
     def home
       @noticias = Post.last(3)
+      @eventos = Evento.order(:data).last(3)
     end    
     
     def linhasDePesquisa
@@ -81,6 +81,7 @@ class PagesController < ApplicationController
     
     def recuperacao
     end
+    
     
     
 end

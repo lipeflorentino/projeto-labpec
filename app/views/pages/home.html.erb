@@ -117,31 +117,17 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div>    
                     <!-----------IMPLEMENTAR: buscar eventos do BD------------->
-                        <div class="row b-borda-dotted ic-title">
-                            <h1>Eventos</h1>
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                            <h5>20 SET</h5>
+                        <% @eventos.each do |evento| %>
+                            <div class="row b-borda-dotted ic-title">
+                                <h1>Eventos</h1>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <h5><%=imprime_data(evento.data, 2) %></h5>
+                                </div>
+                                <div class="l-borda-dotted col-lg-8 col-md-8 col-sm-12 col-xs-12 d-event">
+                                <p><%= evento.localizacao %></p>
+                                </div>  
                             </div>
-                            <div class="l-borda-dotted col-lg-8 col-md-8 col-sm-12 col-xs-12 d-event">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            </div>  
-                        </div>
-                        <div class="row b-borda-dotted ic-title">
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                            <h5>25 SET</h5>
-                            </div>
-                            <div class="l-borda-dotted col-lg-8 col-md-8 col-sm-12 col-xs-12 d-event">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            </div>  
-                        </div>
-                        <div class="row b-borda-dotted ic-title">
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                            <h5>3 OUT</h5>
-                            </div>
-                            <div class="l-borda-dotted col-lg-8 col-md-8 col-sm-12 col-xs-12 d-event">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            </div>  
-                        </div>
+                        <%end %>
                     </div>    
                     <div class="h-link">
                         <a href=""><p>+ saiba mais</p></a>

@@ -1,39 +1,54 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @documento.user_id %>
-</p>
-
-<p>
-  <strong>Titulo:</strong>
-  <%= @documento.titulo %>
-</p>
-
-<p>
-  <strong>Descricao:</strong>
-  <%= @documento.descricao %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @documento.status %>
-</p>
-
-<p>
-  <strong>Data defesa:</strong>
-  <%= @documento.data_defesa %>
-</p>
-
-<p>
-  <strong>Tese:</strong>
-  <%= @documento.tese %>
-</p>
-
-<p>
-  <strong>Mestrado:</strong>
-  <%= @documento.mestrado %>
-</p>
-
-<%= link_to 'Edit', edit_documento_path(@documento) %> |
-<%= link_to 'Back', documentos_path %>
+<div class="pst-corpo-main-container">
+  <div class="pst-main-container">
+    <div class="main clearfix">
+      <h2>Documento</h2>
+      <div class="pst-container">
+        <div class="pst-content">
+          <div class="pst-info-content">
+            <p>
+              <strong>User:</strong>
+              <%= @documento.user_id %>
+            </p>
+            
+            <p>
+              <strong>Titulo:</strong>
+              <%= @documento.titulo %>
+            </p>
+            
+            <p>
+              <strong>Descricao:</strong>
+              <%= @documento.descricao %>
+            </p>
+            
+            <p>
+              <strong>Status:</strong>
+              <%= @documento.status %>
+            </p>
+            
+            <p>
+              <strong>Data defesa:</strong>
+              <%= @documento.data_defesa %>
+            </p>
+            
+            <p>
+              <strong>Tese:</strong>
+              <%= @documento.tese %>
+            </p>
+            
+            <p>
+              <strong>Mestrado:</strong>
+              <%= @documento.mestrado %>
+            </p>
+            
+            <div class="pst-button">
+              <%= link_to 'Edit', edit_documento_path(@documento) %> |
+              <%= link_to 'Back', documentos_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render 'layouts/footer' %>
+</div>  

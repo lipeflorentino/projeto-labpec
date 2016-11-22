@@ -1,30 +1,45 @@
 <script src="//maps.google.com/maps/api/js?key=[your API key]"></script>
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Titulo:</strong>
-  <%= @evento.titulo %>
-</p>
-
-<p>
-  <strong>Descricao:</strong>
-  <%= simple_format(@evento.descricao) %>
-</p>
-
-<p>
-  <strong>Data:</strong>
-  <%= @evento.data %>
-</p>
-
-<p>
-  <strong>Localizacao:</strong>
-  <%= @evento.localizacao %>
-</p>
-
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
-
-<%= link_to 'Edit', edit_evento_path(@evento) %> |
-<%= link_to 'Back', eventos_path %>
+<div class="pst-corpo-main-container">
+  <div class="pst-main-container">
+    <div class="main clearfix">
+      <h2>Documento</h2>
+      <div class="pst-container">
+        <div class="pst-content">
+          <div class="pst-info-content">
+            <p>
+              <strong>Titulo:</strong>
+              <%= @evento.titulo %>
+            </p>
+            
+            <p>
+              <strong>Descricao:</strong>
+              <%= simple_format(@evento.descricao) %>
+            </p>
+            
+            <p>
+              <strong>Data:</strong>
+              <%= @evento.data %>
+            </p>
+            
+            <p>
+              <strong>Localizacao:</strong>
+              <%= @evento.localizacao %>
+            </p>
+            
+            <div style='width: 800px;'>
+              <div id="map" style='width: 800px; height: 400px;'></div>
+            </div>
+            
+            <div class="pst-button">
+              <%= link_to 'Edit', edit_evento_path(@evento) %> |
+              <%= link_to 'Back', eventos_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render 'layouts/footer' %>
+</div>  

@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Eventos</h1>
+<div id="calendar">
+	<%= calendar_for(@eventos) do |t| %>
+		<%= t.head('DOM','SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB') %>
+		<%= t.day(:day_method => :data) do |day, compromissos| %>
+			<%= day.day %>
+		<% end %>
+	<% end %>
+</div>
+

@@ -12,47 +12,38 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.number_field :user_id %>
-  </div>
-
-  <div class="field">
+  
+  <div class="form-group">
     <%= f.label :titulo %>
-    <%= f.text_field :titulo %>
-  </div>
-
-  <div class="field">
-    <%= f.label :descricao %>
-    <%= f.text_area :descricao %>
-  </div>
-
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.check_box :status %>
-  </div>
-
-  <div class="field">
-    <%= f.label :data_defesa %>
-    <%= f.date_select :data_defesa %>
-  </div>
-
-  <div class="field">
-    <%= f.label :tese %>
-    <%= f.check_box :tese %>
-  </div>
-
-  <div class="field">
-    <%= f.label :mestrado %>
-    <%= f.check_box :mestrado %>
+    <%= f.text_field :titulo,  class:'form-control', :placeholder=>"Digite o título"  %>
   </div>
   
-  <div class="field">
+  <span class="counter"></span>
+  
+  <div class="form-group">
+    <%= f.label :descricao %>
+    <%= f.text_area :descricao,  class:'form-control', :placeholder=>"Digite a descrição" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :data_defesa %>
+    <%= f.date_select :data_defesa, class:'form-control' %>
+  </div>
+  
+  <label>Tipo do documento</label><br>
+  <select class="form-group">
+    <%= f.options %>
+    <option><%= f.label :tese %></option>
+    <option><%= f.label :mestrado %></option>
+  </select>
+  
+  
+  <div class="form-group">
     <%= f.label :arquivo %>
     <%= f.file_field :arquivo %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Enviar', class:'btn btn-default'%>
   </div>
 <% end %>

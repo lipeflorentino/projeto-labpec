@@ -10,21 +10,21 @@ class Documento < ApplicationRecord
   
   private
     def data_nao_esta_no_passado
-      if !dafata_defesa.present?
+      if !data_defesa.present?
         errors.add(:data_defesa, "O documento deve possuir uma data em que foi defendido")
         return
       end
-      if data_defesa >= (Date.now + 1.day)
+      if data_defesa >= (Date.today + 1.day)
           errors.add(:data_defesa, "Experimente checar a data (está no futuro)")
       end
     end
     
-    def tamanho_imagem
+    def tamanho_do_arquivo
       if !arquivo
         errors.add :arquivo, 'O post deve possuir um arquivo anexado.'
         return
       end
-      if arqvuio.size > (4).megabytes
+      if arquivo.size > (4).megabytes
         errors.add :arquivo, 'O arquivo deve conter no máximo 4 megabytes.'
       end
     end

@@ -20,6 +20,7 @@ gem 'jquery-rails',            '4.1.1'
 gem 'turbolinks',              '5.0.1'
 gem 'jbuilder',                '2.4.1'
 gem 'jquery-datatables-rails', '~> 3.4.0'
+gem 'simple_calendar',         '~> 2.0'
 
 gem "watu_table_builder", :require => "table_builder"
 

@@ -24,10 +24,11 @@ class DocumentosController < ApplicationController
   # POST /documentos
   # POST /documentos.json
   def create
+    params[:documento][:user_id] = current_user.id
     @documento = Documento.new(documento_params)
     # Força o status do documento ser falso por motivos de segurança
     @documento.status = false
-
+  
     respond_to do |format|
       if @documento.save
         format.html { redirect_to @documento, notice: 'Documento was successfully created.' }

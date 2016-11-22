@@ -5,6 +5,7 @@ class EventosController < ApplicationController
   # GET /eventos.json
   def index
     @eventos = Evento.all
+    @date = Evento.first.data
   end
   
 

@@ -5,11 +5,12 @@
 .pnl-main-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-left:60px;padding-right:60px;padding-top:20px;padding-bottom:30px;margin-top: 20px;}
 .pnl-content a:hover{background-color:transparent !important;text-decoration:none;}
 .pnl-main-container h2{text-align: left;color:#23527c;font-size:2em;margin-bottom:40px;border-bottom: 1px solid gray;}
-.pnl-square{border: 1px solid black;margin-bottom: 20px;margin-top: 10px;}
-.pnl-square h3{font-size: 1.6em;padding-bottom: 5px;text-align: center;}
+.pnl-square{margin-bottom: 20px;margin-top: 10px;}
+.pnl-square h3{font-size: 2.2em;padding-bottom: 5px;text-align: center;color:black;}
 .pnl-square p{padding-right: 15px; padding-left: 15px;}
 .pnl-click{margin-bottom: 10px;}
 .pnl-button{ min-width: 210px;min-height: 65px;}
+.pnl-square p{text-align: justify;text-indent: 15px;}
 
 /*-------------aqui está o css do login admin--------------*/
 
