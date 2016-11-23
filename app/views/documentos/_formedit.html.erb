@@ -34,10 +34,6 @@
   <label>Tipo do documento</label><br>
     <%= f.select :tese, options_for_select(["Tese", "Dissertação"]) %>
   </div>
-  <div class="form-group">
-    <%= f.label :arquivo %>
-    <%= f.file_field :arquivo %>
-  </div>
 
   <div class="actions">
     <%= f.submit 'Enviar', class:'btn btn-default'%>

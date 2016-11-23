@@ -26,6 +26,11 @@ class DocumentosController < ApplicationController
   def create
     params[:documento][:user_id] = current_user.id
     @documento = Documento.new(documento_params)
+    if (params[:documento][:tese] == "Tese")
+      @documento.tese = true
+    else
+      @documento.tese = false
+    end
     # Força o status do documento ser falso por motivos de segurança
     @documento.status = false
   

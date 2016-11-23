@@ -2,8 +2,8 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <% date_range.slice(0, 7).each do |day| %>
-          <th><%= ["Seg", "Ter", "Quar", "Quin", "Sex", "Sab", "Dom"][day.wday] %></th>
+        <% date_range.slice(0, 4.each do |day| %>
+          <th><%= ["Seg", "Ter", "Qua", "Qui", "Sex", "Sab", "Dom"][day.wday] %></th>
         <% end %>
       </tr>
     </thead>

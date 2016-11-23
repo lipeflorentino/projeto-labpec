@@ -8,7 +8,9 @@
           <div class="pst-info-content">
             <p>
               <strong>User:</strong>
-              <%= @documento.user_id %>
+              <% if @documento.user %>
+                <%= @documento.user.name %>
+              <% end %> 
             </p>
             
             <p>
