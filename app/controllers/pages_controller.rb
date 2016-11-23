@@ -68,9 +68,18 @@ class PagesController < ApplicationController
         end
     end 
     
+    
     def eventos
-      @eventos = Evento.reorder("created_at DESC").page(params[:page]).per_page(4)   
       @proximo_evento = Evento.order(:data).last
+      @eventos_semana = Evento.all
+      if params[:evento]
+          # busca
+            @eventos = Evento.reorder("created_at DESC").where('titulo LIKE ? or descricao LIKE ?', 
+                                    "%#{params[:evento][:search]}%", "%#{params[:evento][:search]}%").page(params[:page]).per_page(4)
+        else
+            # Ordena invertido pra aparecer os mais recentes primeiro, sem parametro de busca
+            @eventos = Evento.reorder("created_at DESC").page(params[:page]).per_page(4)    
+        end
     end  
     
     def parceiros

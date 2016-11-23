@@ -49,10 +49,37 @@
                           </div>
                       </div> 
                   </div>
-                  <div class="es-main-container">
-                     <h2>Calendário</h2>
-                      
-                  </div>   
+                  <div class="main wrapper clearfix">
+                    <div class="es-main-container">
+                        <h2>Essa Semana</h2>
+                        <%= week_calendar events: @eventos_semana do |date, meetings| %>
+                          <%= date.day %>
+                        
+                          <% meetings.each do |meeting| %>
+                            <%= link_to meeting do %>
+                              <div class="circle">
+                              </div>
+                            <% end %>
+                          <% end %>
+                        <% end %>
+                    </div>
+                  </div>
+                  <div class="main wrapper clearfix">
+                        <div class="ps-main-container">
+                            <h2>Busca</h2>
+                            <div class="p-busca">
+                                <div class="input-group">
+                                  <%= form_for(:evento, url: events_path, method: :get) do |f| %>
+                                      <%= f.text_field :search, class: "form-control", :placeholder => 'Buscar por...' %>
+                                      <span class="input-group-btn">
+                                        <%= f.submit 'Buscar', class:'btn btn-default pp-btn'%>
+                                      </span>
+                                  <% end %>
+                                </div>
+                            </div>    
+                        
+                        </div>
+                  </div>
               </div>
             </div>    
           </div>

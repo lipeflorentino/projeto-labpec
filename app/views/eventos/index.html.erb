@@ -11,7 +11,7 @@
           
             <% meetings.each do |meeting| %>
               <div>
-                <%= meeting.titulo %>
+                <%= link_to meeting.titulo, meeting %>
               </div>
             <% end %>
           <% end %>
