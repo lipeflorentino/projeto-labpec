@@ -6,3 +6,4 @@
 .col-cl-img{min-height:100px;max-width:100%;padding: 5px;-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;}
 .photo h3{margin-top: 10px; font-size: 1.3em;color: #23527c}
 .photos{margin-top: 15px;margin-left: 5px;margin-right: 5px;}
+.photo{padding-bottom: 30px;}

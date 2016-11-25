@@ -46,58 +46,24 @@
                                 </div>
                               </div>
                             </div>
-                          
-                      
+                        <% @teses.each do |tese| %>
                         <div class="row td-e-container">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                <p>autor</p>
+                                <p><%= tese.user.name %></p>
                                 <div class="td-img">
                                     <%= image_tag("semfoto.jpg", class: 'img-responsive') %>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="p-info">
-                                  <h5>Titulo</h5>
-                                  <h6>Data</h6>
-                                  <p>descrição...</p>
-                                  <a href="">pdf</a>
+                                  <h5><%= tese.titulo%></h5>
+                                  <h6><%= imprime_data(tese.data_defesa, 0)%></h6>
+                                  <p><%= tese.descricao%></p>
+                                  <%= link_to "Download", tese.arquivo_url %>
                                 </div>
                             </div>
                         </div> 
-                        <!--------------------ILUSTRATIVO----------------------->
-                        <div class="row td-e-container">
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                <p>autor</p>
-                                <div class="td-img">
-                                    <%= image_tag("semfoto.jpg", class: 'img-responsive') %>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="p-info">
-                                  <h5>Titulo</h5>
-                                  <h6>Data</h6>
-                                  <p>descrição...</p>
-                                  <a href="">pdf</a>
-                                </div>
-                            </div>
-                        </div> 
-                        <!--------------------ILUSTRATIVO----------------------->
-                        <div class="row td-e-container">
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                <p>autor</p>
-                                <div class="td-img">
-                                    <%= image_tag("semfoto.jpg", class: 'img-responsive') %>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="p-info">
-                                  <h5>Titulo</h5>
-                                  <h6>Data</h6>
-                                  <p>descrição...</p>
-                                  <a href="">pdf</a>
-                                </div>
-                            </div>
-                        </div>
+                        <% end %>
                         <div class="ts-button">
                             <button class="btn"><%= link_to 'Novo Documento', new_documento_path %></button>
                         </div>
@@ -105,22 +71,24 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                   <div class="main wrapper clearfix">
-                      <div class="es-main-container">
-                         <h2>Arquivo</h2>
-                         <div class="row">
-                            <div class="col-lg-12">
-                                <div class="r-arquivo">
-                                  <div class="col-lg-12">OUT 2016<span class="badge">5</span></div>
-                                  <div class="col-lg-12">SET 2016<span class="badge">10</span></div>
-                                  <div class="col-lg-12">AGO 2016<span class="badge">12</span></div>
+                        <div class="ps-main-container">
+                            <h2>Arquivo</h2>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="r-arquivo">
+                                          <% @datas_min.slice(0,4).each do |d| %>
+                                          <div class="col-lg-12"><%= link_to imprime_data_arquivo(d), arquivo_show_path(:month => d.month, :year => d.year) %>
+                                          <span class="badge"><%= @data_freq.shift%></span></div>
+                                        <% end %>
+                                    </div>
+                                </div>    
+                                <div class="col-lg-12">
+                                    
+                                    <div class="t-arquivo"><%= link_to 'Ver todos', arquivos_path %></div>
                                 </div>
-                            </div>    
-                            <div class="col-lg-12">
-                                <div class="t-arquivo"><%= link_to 'Ver todos', arquivos_path %></div>
                             </div>
-                        </div> 
-                      </div>   
-                  </div>
+                        </div>
+                    </div>    
                 </div> 
                 <div></div>
             </div>

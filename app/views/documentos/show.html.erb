@@ -25,22 +25,33 @@
             
             <p>
               <strong>Status:</strong>
-              <%= @documento.status %>
+              <% if @documento.status %>
+                <%= "Aprovado" %>
+              <% else %>
+                <%= "Pendente/Reprovado" %>
+              <% end %>
             </p>
             
             <p>
               <strong>Data defesa:</strong>
-              <%= @documento.data_defesa %>
+              <%= imprime_data(@documento.data_defesa) %>
             </p>
             
             <p>
               <strong>Tese:</strong>
-              <%= @documento.tese %>
+              <% if @documento.tese %>
+                <%= "Tese" %>
+              <% else %>
+                <%= "Dissertação" %>
             </p>
             
             <p>
               <strong>Mestrado:</strong>
-              <%= @documento.mestrado %>
+              <%if @documento.mestrado %>
+                <%= "Mestrado" %>
+              <% else %>
+                <%= "Doutorado" %>
+              <% end %>
             </p>
             
             <div class="pst-button">

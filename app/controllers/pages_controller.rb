@@ -60,8 +60,6 @@ class PagesController < ApplicationController
             # o operador " | " aqui junta as duas buscas em uma só removendo duplicatas
             @posts = Post.reorder("vezes_visitado DESC").where('titulo LIKE ? or descricao LIKE ?', 
                                     "%#{params[:post][:search]}%", "%#{params[:post][:search]}%").page(params[:page]).per_page(4)
-            
-            
         else
             # Ordena invertido pra aparecer os mais recentes primeiro, sem parametro de busca
             @posts = Post.reorder("created_at DESC").page(params[:page]).per_page(4)    
@@ -86,6 +84,29 @@ class PagesController < ApplicationController
     end  
     
     def teses
+        @datas_min = Array.new
+        ultima_data = Documento.last.created_at
+        @datas_min << ultima_data
+        @data_freq = Array.new
+        @data_freq << 0 if ultima_data != nil
+        Documento.order('created_at DESC').each do |p|
+          if p.created_at.month != ultima_data.month
+            @datas_min << p.created_at
+            @data_freq << 1
+            ultima_data = p.created_at
+          else 
+            @data_freq[(@datas_min.length) -1] += 1
+          end
+        end
+        # entra no if se tiver parametro de busca, ordenando pelo mais visitado
+        if params[:tese]
+            # o operador " | " aqui junta as duas buscas em uma só removendo duplicatas
+            @teses = Documento.reorder("vezes_visitado DESC").where('titulo LIKE ? or descricao LIKE ?', 
+                                    "%#{params[:tese][:search]}%", "%#{params[:tese][:search]}%").page(params[:page]).per_page(4)
+        else
+            # Ordena invertido pra aparecer os mais recentes primeiro, sem parametro de busca
+            @teses = Documento.reorder("created_at DESC").page(params[:page]).per_page(4)    
+        end
     end
     
     def recuperacao

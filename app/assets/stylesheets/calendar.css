@@ -1,6 +1,20 @@
+.pst-main-calendar-container h1{background-color:black;border-radius:2px;padding:15px;font-size:15px;color:white;margin-top:0px;}
+.pst-main-calendar-container{-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:30px;}
+.pst-calendar-container{}
+.pst-calendar-content{}
+.pst-button{text-align:left;padding:5px;}
+.pst-content a:hover{background-color:transparent !important;text-decoration:none;}
+.pst-main-calendar-container h2{text-align: left;color:#23527c;font-size:2em;margin-bottom:40px;border-bottom: 1px solid gray;}
+.cld-nav{margin-left:5px;margin-right:5px;}
+.cld-nav a{color:yellow;}
+.cld-btn{min-width: 80px;}
+.calendar-heading{padding-bottom: 20px;}
+.calendar-title{color:#23527c;font-size: 22px;font-weight: bold;}
+.calendar-title h3{max-width: 200px;}
+
 #calendar table {
 border-collapse: collapse;
-width: 100%;
+max-width: 100% !important;
 }
 
 #calendar td,
@@ -23,7 +37,7 @@ background: #FFF;
 color: #777;
 height: 80px;
 vertical-align: top;
-font-size: 16px;
+font-size: 1em;
 }
 
 #calendar .notmonth {
@@ -65,4 +79,30 @@ text-align: center;
   
   background-color: #8c8c8c;
   
+}
+
+
+@media only screen and (max-width: 768px) {
+#calendar td {
+height: 70px;
+font-size: 14px;
+}
+#calendar td,
+#calendar th {
+font-family: "Lucida Grande",arial,helvetica,sans-serif;
+font-size: 8px;
+padding: 5px;
+}
+}
+
+@media only screen and (max-width: 480px) {
+#calendar td {
+height: 50px;
+font-size: 12px;
+}
+#calendar td,
+#calendar th {
+font-size: 8px;
+padding: 4px;
+}
 }
