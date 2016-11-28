@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="main wrapper clearfix">
-                        <div class="row es-content">
+                        <!--<div class="row es-content">
                               <div class="col-md-12">
                                 <div class="input-group" id="adv-search">
                                     <input type="text" class="form-control" placeholder="busca por tipo..." />
@@ -45,11 +45,13 @@
                                     </div>
                                 </div>
                               </div>
-                            </div>
+                            </div> -->
                         <% @teses.each do |tese| %>
                         <div class="row td-e-container">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                <p><%= tese.user.name %></p>
+                                <p><% if tese.user %>
+                                    <%= tese.user.name %>
+                                    <% end %></p>
                                 <div class="td-img">
                                     <%= image_tag("semfoto.jpg", class: 'img-responsive') %>
                                 </div>
@@ -64,8 +66,9 @@
                             </div>
                         </div> 
                         <% end %>
+                        <%= will_paginate @teses %>
                         <div class="ts-button">
-                            <button class="btn"><%= link_to 'Novo Documento', new_documento_path %></button>
+                            <button class="btn"><%= link_to 'Enviar Documento', new_documento_path %></button>
                         </div>
                     </div>
                 </div>
@@ -88,7 +91,23 @@
                                 </div>
                             </div>
                         </div>
-                    </div>    
+                    </div>
+                    <div class="main wrapper clearfix">
+                        <div class="ps-main-container">
+                            <h2>Busca</h2>
+                            <div class="p-busca">
+                                <div class="input-group">
+                                  <%= form_for(:tese, url: teses_path, method: :get) do |f| %>
+                                      <%= f.text_field :search, class: "form-control", :placeholder => 'Buscar por...' %>
+                                      <span class="input-group-btn">
+                                        <%= f.submit 'Buscar', class:'btn btn-default pp-btn'%>
+                                      </span>
+                                  <% end %>
+                                </div>
+                            </div>    
+                        
+                        </div>
+                  </div>
                 </div> 
                 <div></div>
             </div>

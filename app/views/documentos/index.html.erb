@@ -24,7 +24,11 @@
               <tbody>
                 <% @documentos.each do |documento| %>
                   <tr>
-                    <td><%= documento.user.name %></td>
+                    <td>
+                      <% if documento.user %>
+                        <%= documento.user.name %>
+                      <% end %>
+                    </td>
                     <td><%= documento.titulo %></td>
                     <td><%= documento.descricao %></td>
                     <td>

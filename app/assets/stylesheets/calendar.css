@@ -11,6 +11,7 @@
 .calendar-heading{padding-bottom: 20px;}
 .calendar-title{color:#23527c;font-size: 22px;font-weight: bold;}
 .calendar-title h3{max-width: 200px;}
+.table td{max-width: 35px !important;}
 
 #calendar table {
 border-collapse: collapse;

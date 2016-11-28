@@ -62,7 +62,7 @@ class PagesController < ApplicationController
                                     "%#{params[:post][:search]}%", "%#{params[:post][:search]}%").page(params[:page]).per_page(4)
         else
             # Ordena invertido pra aparecer os mais recentes primeiro, sem parametro de busca
-            @posts = Post.reorder("created_at DESC").page(params[:page]).per_page(4)    
+            @posts = Post.reorder("created_at DESC").page(params[:page]).per_page(5)    
         end
     end 
     
@@ -76,7 +76,7 @@ class PagesController < ApplicationController
                                     "%#{params[:evento][:search]}%", "%#{params[:evento][:search]}%").page(params[:page]).per_page(4)
         else
             # Ordena invertido pra aparecer os mais recentes primeiro, sem parametro de busca
-            @eventos = Evento.reorder("created_at DESC").page(params[:page]).per_page(4)    
+            @eventos = Evento.reorder("created_at DESC").page(params[:page]).per_page(5)    
         end
     end  
     
@@ -101,11 +101,11 @@ class PagesController < ApplicationController
         # entra no if se tiver parametro de busca, ordenando pelo mais visitado
         if params[:tese]
             # o operador " | " aqui junta as duas buscas em uma só removendo duplicatas
-            @teses = Documento.reorder("vezes_visitado DESC").where('titulo LIKE ? or descricao LIKE ?', 
+            @teses = Documento.reorder("created_at DESC").where('titulo LIKE ? or descricao LIKE ?', 
                                     "%#{params[:tese][:search]}%", "%#{params[:tese][:search]}%").page(params[:page]).per_page(4)
         else
             # Ordena invertido pra aparecer os mais recentes primeiro, sem parametro de busca
-            @teses = Documento.reorder("created_at DESC").page(params[:page]).per_page(4)    
+            @teses = Documento.reorder("created_at DESC").page(params[:page]).per_page(6)    
         end
     end
     

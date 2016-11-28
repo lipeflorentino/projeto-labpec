@@ -12,11 +12,11 @@
               <div class="actions">  
                 <%= f.submit "Trocar minha senha", class: "btn" %>
               </div>
-            <% end %>
+           <% end %>
           
-            <p> Não recebi meu e-mail de confirmação </p>
-           <%= form_for @contact, html:{class:"form-contato"} do |f| %>
-            <%= form_for(:user, url: lostemail_path, html:{class:"form-contato"} ) do |f| %>
+           <p> Não recebi meu e-mail de confirmação </p>
+           
+           <%= form_for(:user, url: lostemail_path, html:{class:"form-contato"} ) do |f| %>
             
             <div class="form-group"
               <%= f.label :email %><br>
