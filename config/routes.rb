@@ -22,8 +22,8 @@ Rails.application.routes.draw do
   patch 'editemailupdate' => 'users#editemailupdate'
   patch 'editpasswordupdate' => 'users#editpasswordupdate'
   
-  
-  get 'aceitar_foto' => 'users#aceitar_foto'
+  get 'user_aprove_image' => 'users#aprove_image'
+  get 'aceitar_foto' => 'pages#aprovacao_imagens'
   get 'fotos' => 'users#fotos'
   get 'arquivo_show' => 'pages#arquivo_show'
   get 'editemail' => 'users#editemail'

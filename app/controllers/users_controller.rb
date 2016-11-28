@@ -40,18 +40,6 @@ class UsersController < ApplicationController
   def fotos
   end
   
-  def aceitar_foto
-    aceitar = params[:aceitar]
-    id = params[:id]
-    
-    user = User.find id
-    if (user.picture_accepted != aceitar)
-      user.update(:picture_accepted => aceitar)
-    end
-    
-    redirect_to fotos_url
-    
-  end
 
   # GET /users/new
   def new
@@ -170,7 +158,25 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  def aprove_image
+    choice = params[:choice]
+    user = User.find(params[:user_id])
+    
+    if (choice)
+      user.update(picture_accepted: true)
+    else
+      user.update(picture_accepted: true)
+      if default_picture
+        redirect_to root_url
+      else 
+        redirect_to aceitar_foto_url
+      end
+    end
+    
+    
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -181,4 +187,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :adm, :matricula, :password, :password_confirmation, :email_confirmation, :picture, :actual_password, :new_email)
     end
+    
+    
 end

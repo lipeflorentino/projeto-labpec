@@ -112,6 +112,12 @@ class PagesController < ApplicationController
     def recuperacao
     end
     
+    def aprovacao_imagens
+      # Pega só os usuários que precisam de aprovação na imagem
+      @users = User.where(:picture_accepted => false)
+    end
+    
+    
     
     
 end

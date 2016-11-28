@@ -25,9 +25,9 @@
     
     <section class="pag-container" id="topo">
         <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
         <% end %>
-        <% if !current_page?(login_path) && !current_page?(painel_path) %>
+        <% if request.path != "/login" && !current_page?(painel_path) %>
           <% if administrador? %>
             <% if !current_page?(root_path) && !current_page?(publicacoes_path) && !current_page?(teses_path) && !current_page?(linhasdepesquisa_path) && !current_page?(eventos_path) && !current_page?(colaboradores_path) && !current_page?(instituicoes_path) && !current_page?(arquivos_path) && !current_page?(arquivo_show_path)%>
               <%= render 'layouts/header-admin' %>

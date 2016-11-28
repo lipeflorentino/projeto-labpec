@@ -9,9 +9,11 @@
 .cld-nav a{color:yellow;}
 .cld-btn{min-width: 80px;}
 .calendar-heading{padding-bottom: 20px;}
-.calendar-title{color:#23527c;font-size: 22px;font-weight: bold;}
+.calendar-title{color:#1c6ba0;font-size: 22px;font-weight: bold;}
 .calendar-title h3{max-width: 200px;}
 .table td{max-width: 35px !important;}
+.td a, a:visited{color: rgba(255, 255, 255, 0.9) !important;}
+.cld-btn{background-color: #aaa;}
 
 #calendar table {
 border-collapse: collapse;
@@ -78,7 +80,8 @@ text-align: center;
 
 #calendar .has-events {
   
-  background-color: #8c8c8c;
+  color: #aaa;
+  background-color: #1c6ba0;
   
 }
 

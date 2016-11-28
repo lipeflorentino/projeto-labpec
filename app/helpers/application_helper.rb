@@ -33,4 +33,5 @@ module ApplicationHelper
       data.strftime("%d " + aux + " %y")
     end
   end
+  
 end

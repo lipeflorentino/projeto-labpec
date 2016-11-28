@@ -1,0 +1,42 @@
+
+<div class="pst-corpo-main-container">
+  <div class="pst-main-container">
+    <div class="main clearfix">
+      <h2>Gerenciador de Fotos</h2>
+      <div class="pst-container">
+        <div class="pst-content">
+          <div class="table-responsive">
+            <table id="tablesorter" class="display" cellspacing="0" width="100%">
+              <thead>
+                  <tr>
+                    <th>Usuário</th>
+                    <th>Imagem</th>
+                    <th>Aceitar</th>
+                    <th>Negar</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <% if @users %>
+                  <% @users.each do |user| %>
+                    <tr>
+                      <td><%= user.name %></td>
+                      <td><%= user.id %></td>
+                      <td><%= link_to "Aceitar", user_aprove_image_path(:choice => true, :user_id => user.id)%></td>
+                      <td><%= link_to "Negar", user_aprove_image_path(:choice => false, :user_id => user.id) %></td>
+                    </tr>
+                  <% end %>
+                <% else %>
+                  <h4> Nenhuma foto para aprovar por hoje! </h4>
+                <% end %>
+              </tbody>
+          </table>
+          </div>
+        </div>
+        <div class="pst-button">
+          <button><%= link_to 'Nova Publicação', new_post_path %></button>
+        </div>
+      </div>
+    </div>  
+  </div>
+  <%= render 'layouts/footer' %>
+</div>

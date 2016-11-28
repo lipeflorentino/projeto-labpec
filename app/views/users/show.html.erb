@@ -9,7 +9,11 @@
             <div class="col-lg-6">
               <div class="p-img">
                 <%= image_tag(@user.picture.url, class: 'img-responsive')if @user.picture? %>
-                <%= image_tag("semfoto.jpg", class: 'img-responsive')if !@user.picture? %>
+                <%= image_tag(default_image, class: 'img-responsive')if !@user.picture? %>
+                <% if @user.picture && @user.picture_accepted %>
+                  <h4> Sua nova foto de perfil não foi aprovada. <br>
+                      Tente novamente com uma foto diferente ou entre em contato conosco. </h4>
+                <% end %>
               </div>
             </div>
             <div class="col-lg-6">
