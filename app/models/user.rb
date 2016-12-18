@@ -89,6 +89,12 @@ class User < ApplicationRecord
       reset_sent_at < 2.hours.ago
     end
   
+    def foto_para_aprovar?
+      if picture? and picture_accepted == false
+        return true
+      end
+    end
+  
   private 
   
     def tamanho_imagem
@@ -121,5 +127,12 @@ class User < ApplicationRecord
       self.activation_token  = User.new_token
       self.activation_digest = User.digest(activation_token)
     end
-      
+    
+    def aprova_foto
+      if picture_accepted === false and picture != null
+        picture_accepted = true
+      end
+    end
+    
+    
 end

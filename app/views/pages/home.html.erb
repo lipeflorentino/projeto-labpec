@@ -5,11 +5,15 @@
         <div class="carrousel-container">
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <div class="row">
+                    <div class="">
                         <!-----------IMPLEMENTAR: carrousel *talvez------------->
-                        <div class="lp-img img-container-home">
-                			<%= image_tag("alunos.jpg", class: 'img-responsive') %>
-                		</div>
+                        <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><div class="lp-img img-container-home"><%= image_tag("alunos.jpg", class: 'img-responsive') %></div></div>
+                            <div class="swiper-slide"><div class="lp-img img-container-home"><%= image_tag("grupo.jpg", class: 'img-responsive') %></div></div>
+                        </div>
+                        <!-- Add Pagination -->
+                    </div>
                 	</div>	
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -21,10 +25,8 @@
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p>
                                     <button type="button" class="btn btn-danger btn-lg btn-cadastro ">
                                         <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="margin-right:10px;"></span><%= link_to 'Cadastro', new_user_path %></button>
-                                        <button type="button" class="btn btn-success btn-lg btn-cadastro">
+                                        <button type="button" class="btn btn-success btn-lg btn-cadastro" data-toggle="modal" data-target="#myModal">
                                         <span class="glyphicon glyphicon-envelope" aria-hidden="true" style="margin-right:10px;"></span>Contato</button>
-                                        <button type="button" class="btn btn-info btn-lg btn-cadastro">
-                                        <span class="glyphicon glyphicon-search" aria-hidden="true" style="margin-right:10px;"></span>Buscar</button>
                                 </div>
                             </div>
                         </div>  
@@ -33,101 +35,53 @@
                 </div>    
             </div>
         </div>    
-        <div class="main wrapper clearfix">
-            <h1>LABPEC</h1>
-            <p> O Laboratório de Pesquisa em contato Linguístico - LABPEC da UFF - foi criado para desenvolver estudos e pesquisas na temática de Línguas em/de contato em diferentes situações etnolinguísticas e culturais. As pesquisas desenvolvidas têm por objetivo central identificar, descrever e analisar situações de manutenção, perda e revitalização de línguas e culturas autóctones e alóctones; de contexto de imigração; de contexto de escravidão; de fronteiras linguísticas, incluindo aquelas que se estabelecem nos limites geográficos e ainda situações de ensino e aprendizagem de línguas. Como resultado das investigações, o grupo tem por meta avaliar e propor ações de política e planejamento linguístico para diferentes situações de/em contato estudadas. As pesquisas desenvolvidas no LABPEC estão inseridas na Linha História, Política e Contato Linguístico do Programa de Pós-graduação em Estudos de Linguagem da Universidade Federal Fluminense.  Os produtos das investigações desenvolvidas no grupo apresentados em teses de doutorado, dissertações de mestrado e demais publicações em periódicos e livros da área. Desde 2015 desenvolvemos um projeto de cooperação internacional bilateral entre a CAPES e o DAAD em parceria com a Europa-Universität Viadrina, de cotutela doutoral no âmbito de um PROBRAL II (Projeto Brasil Alemanha) na área de estudos culturais, através do qual abordamos temas sobre processos de transculturalidade e etnicidade em movimento (B/orders in motion).</p>
-        </div>
+        
     </div> 
-    <div class="coordenadores-container">
+    <div class="destaques-container">
         <div class="main wrapper clearfix">
-            <h1>O Grupo</h1>
-            <div class="row r-coordenadores"> 
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..</p>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="lp-img">
-                        <%= image_tag("grupo.jpg", class: 'img-responsive') %>
+            <h1>Destaques</h1>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div class="c-simp">
+                        <h2>XV Simpósio do lorem ipsum</h2>
+                        <h4>Este é o simposio do lorem ipsum, feito anualmente pela sociedade lorem ipsum</h4>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/ug5y2Uo1mPE" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>    
-    <div class="coordenadores-container">
-        <div class="main wrapper clearfix">
-            <h1>Coordenadores</h1>
-            <div class="row r-coordenadores">
-                <div class="main wrapper clearfix">
-                    <div class="cd-img col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <h5>Mônica Maria Guimarães Savedra</h5>
-                        <div class="cl-img">
-                            <%= image_tag("monica.gif", class: 'img-responsive') %>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="">
-                            <h3>Biografia:</h3>
-                            <p>Possui Bacharelado e Licenciatura em Português e Alemão pela Universidade do Estado do Rio de Janeiro (1977), Mestrado em Educação pela Pontifícia Universidade Católica do Rio de Janeiro (1988) e Doutorado em Linguística pela Universidade Federal do Rio de Janeiro (1994). Realizou pesquisa de pós-doutorado na Universität Duisburg-Essen (2004). Atualmente é professora da Universidade Federal Fluminense - UFF, onde desenvolve pesquisas e orienta na área de sociolinguística, com ênfase na área de contato linguístico...</p>
-                            <button type="button" class="btn btn-primary" onclick="window.open('http://lattes.cnpq.br/4459785358922944', '_blank');">Saiba Mais</button>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-        </div>
-    </div>
-    <div class="coordenadores-container">
-        <div class="row r-coordenadores">
-            <div class="main wrapper clearfix">
-                <div class="cd-img col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <h5>Telma Cristina de Almeida Silva Pereira</h5>
-                    <div class="cl-img">
-                        <%= image_tag("telma.gif", class: 'img-responsive') %>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="">
-                        <h3>Biografia:</h3>
-                        <p>Docente de Graduação (Departamento GLE) e de Pós- Graduação (Estudos de Linguagem) do Instituto de Letras da Universidade Federal Fluminense-UFF desde 2010. Possui graduação em Letras pela Universidade Federal do Rio de Janeiro (UFRJ- 1987), Especialização em língua e literatura francesa pela UFRJ (1989), Mestrado em Letras pela Universidade do Estado do Rio de Janeiro (UERJ), com pesquisa na área de Política Linguística e ensino de LE, orientada pela Profa. Mônica Savedra (2002)...</p>
-                        <button type="button" class="btn btn-primary" onclick="window.open('http://lattes.cnpq.br/5612983419355234', '_blank');">Saiba Mais</button>
-                    </div>
-                </div>    
-            </div>
-        </div>
-    </div>
-    <div class="coordenadores-container">
-        <div class="row r-coordenadores">
-            <div class="main wrapper clearfix">
-                <div class="cd-img col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <h5>Xoán Carlos Lagares Diez</h5>
-                    <div class="cl-img">
-                        <%= image_tag("xoan.gif", class: 'img-responsive') %>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="">
-                        <h3>Biografia:</h3>
-                        <p>Possui graduação em Filologia Hispânica Galego Português pela Universidade da Coruña (1994), mestrado em Filologia Hispânica Galego Português pela Universidade da Coruña (1996) e doutorado em Lingüística, Literatura no Âmbito Galego Português pela Universidade da Coruña (2000). Atualmente é professor adjunto da Universidade Federal Fluminense Tem experiência na área de Lingüística, com ênfase em Linguística Histórica e Linguística Aplicada atuando principalmente...</p>
-                        <button type="button" class="btn btn-primary" onclick="window.open('http://lattes.cnpq.br/2004481969817661', '_blank');">Saiba Mais</button>
-                    </div>
-                </div>    
-            </div>
-        </div>
-    </div>
-    <div class="info-container">
-        <div class="row">
-            <div class="wrapper clearfix">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="main wrapper clearfix">
+                        <!---VERIFICAR: uso do botão--->
+                        <!---<button type="button" class="p-buttom">Enviar Publicação</button>-->
+                        <div class="ps-main-container">
+                           <h2>Mais Visto</h2>
+                           <div class="row ps-content">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <h4>XV simpósio do lorem ipsum</h4>
+                                    <iframe width="100%" height="115" src="https://www.youtube.com/embed/ug5y2Uo1mPE" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                           </div>
+                        </div>   
+                    </div>    
+                </div>
+            </div>    
+        </div>    
+    </div>    
+    <div class="main info-container">
+        <div class="row">
+            <div class="main wrapper clearfix">
+                <div class="event col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div>    
                     <h1>Eventos</h1>
                     <!-----------IMPLEMENTAR: buscar eventos do BD------------->
                         <% @eventos.each do |evento| %>
-                            <div class="row b-borda-dotted ic-title">
+                            <div class="row h-cald">
                                 
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                <h5><%=imprime_data(evento.data, 2) %></h5>
+                                <div class="r-borda-dotted rb-cal col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <h5><%=imprime_data(evento.data, 2) %></h5>
                                 </div>
-                                <div class="l-borda-dotted col-lg-8 col-md-8 col-sm-12 col-xs-12 d-event">
-                                <p><%= evento.localizacao %></p>
+                                <div class="col-lg-8 col-md-8 col-sm-4 col-xs-12 d-event">
+                                    <h4>Título</h4>
+                                    <p><%= evento.localizacao %></p>
                                 </div>  
                             </div>
                         <%end %>
@@ -168,4 +122,36 @@
         </div>
     </div>
     <%= render 'layouts/footer' %>
+</div>
+
+<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>-->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Contato LABPEC</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email:</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputMensagem">Mensagem:</label>
+                <textarea class="form-control" rows="3" placeholder="Mensagem..."></textarea>
+            </div>  
+            <button type="submit" class="btn btn-default">Enviar</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>

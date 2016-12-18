@@ -1,4 +1,4 @@
-﻿$('#tabela').dataTable({
+$('#tabela').dataTable({
 	language:{
 		info: "Mostrando de _START_ até _END_ de _TOTAL_ registros.",
 		search: "Pesquisar ",

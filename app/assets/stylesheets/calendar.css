@@ -12,7 +12,8 @@
 .calendar-title{color:#1c6ba0;font-size: 22px;font-weight: bold;}
 .calendar-title h3{max-width: 200px;}
 .table td{max-width: 35px !important;}
-.td a, a:visited{color: rgba(255, 255, 255, 0.9) !important;}
+.td a {color: rgba(255, 255, 255, 0.9) !important;} 
+.td a:visited{color: rgba(255, 255, 255, 0.9) !important;}
 .cld-btn{background-color: #aaa;}
 
 #calendar table {

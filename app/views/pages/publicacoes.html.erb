@@ -77,8 +77,8 @@
                                 <div class="col-lg-12">
                                     <div class="r-arquivo">
                                         <% @datas_min.slice(0,4).each do |d| %>
-                                          <div class="col-lg-12"><%= link_to imprime_data_arquivo(d), arquivo_show_path(:month => d.month, :year => d.year) %>
-                                          <span class="badge"><%= @data_freq.shift%></span></div>
+                                          <div class="col-lg-12", style="padding-bottom: 14px"><%= link_to imprime_data_arquivo(d), arquivo_show_path(:month => d.month, :year => d.year) %>
+                                          <span class="badge", style="margin-left: 5px"><%= @data_freq.shift%></span></div>
                                         <% end %>
                                     </div>
                                 </div>    

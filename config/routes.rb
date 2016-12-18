@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   get 'colaboradores' => 'pages#colaboradores'
   get 'instituicoes'  => 'pages#instituicoes'
   get 'events'    => 'pages#eventos'
+  get 'coordenadores'    => 'pages#coordenadores'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#home'
