@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20161128180433) do
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
     t.boolean  "picture_accepted",  default: false
-    t.boolean  "picture_declined"
+    t.boolean  "picture_declined", default: false
   end
 
 end

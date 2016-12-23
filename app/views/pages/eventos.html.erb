@@ -17,7 +17,7 @@
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                           <div class="p-info">
-                            <h3><%= evento.titulo %></h3>
+                            <h3><%= link_to evento.titulo, evento %></h3>
                             <h6><%= imprime_data(evento.data) %></h6>
                             <p><%= evento.localizacao %></p>
                           </div>
@@ -41,8 +41,8 @@
                               </div>
                           </div>
                           <div class="e-info col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <div class="mv-info">
-                                  <h3><%= @proximo_evento.titulo %></h3>
+                              <div class="p-info">
+                                  <h3><%= link_to @proximo_evento.titulo, @proximo_evento %></h3>
                                   <h6><%= imprime_data(@proximo_evento.data) %></h6>
                                   <p><%= @proximo_evento.localizacao %></p>
                               </div>

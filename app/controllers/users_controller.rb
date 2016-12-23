@@ -159,7 +159,7 @@ class UsersController < ApplicationController
     end
   end
   
-  def aprove_image
+  def aprove_user_image
     choice = params[:choice]
     user = User.find(params[:user_id])
     if (choice)
@@ -173,8 +173,6 @@ class UsersController < ApplicationController
         redirect_to aceitar_foto_url
       end
     end
-    
-    
   end
   
   private

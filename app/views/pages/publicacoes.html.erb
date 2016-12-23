@@ -59,9 +59,9 @@
                                     </div>
                                 </div>
                                 <div class="p-info col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="mv-info">
+                                    <div class="p-info">
                                         
-                                        <h3><%= @mais_visitado.titulo  %></h3>
+                                        <h3><%= link_to @mais_visitado.titulo, @mais_visitado %></h3>
                                         <h6><%= imprime_data(@mais_visitado.created_at) %> </h6>
                                         <p><%=@mais_visitado.descricao %></p>
                                     </div>

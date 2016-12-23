@@ -21,9 +21,9 @@
 .lg-container{}
 .lg-content{}
 .lg-button{text-align:left;padding:5px;}
-.lg-link a:hover{background-color:transparent !important;text-decoration:none;color:#ffff33 !important;}
-.lg-link a:focus{color:yellow;}
-.lg-link a:visited{color:blue;text-decoration:none;}
+.lg-link a:hover{background-color:transparent !important;text-decoration:underline !important;}
+.lg-link a:focus{color:#337ab7;}
+.lg-link a:visited{color:#337ab7;text-decoration:none;}
 .lg-main-container h2{text-align: left;color:#23527c;font-size:2em;margin-bottom:40px;border-bottom: 1px solid gray;}
 
 
