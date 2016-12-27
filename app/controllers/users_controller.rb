@@ -166,7 +166,7 @@ class UsersController < ApplicationController
       user.update(picture_accepted: true)
       redirect_to aceitar_foto_url
     else
-      user.update(picture_accepted: true)
+      user.update(picture_declined: true)
       if default_picture
         redirect_to root_url
       else 

@@ -77,10 +77,10 @@
                             <div class="row h-cald">
                                 
                                 <div class="r-borda-dotted rb-cal col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                    <h5><%=imprime_data(evento.data, 2) %></h5>
+                                    <h5><%= imprime_data(evento.data, 2) %></h5>
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-4 col-xs-12 d-event">
-                                    <h4>Título</h4>
+                                    <h4><%= link_to evento.titulo, evento %></h4>
                                     <p><%= evento.localizacao %></p>
                                 </div>  
                             </div>
@@ -109,7 +109,7 @@
                         <h1>Noticias</h1>
                         <% @noticias.each do |n| %>
                         <div class="h-noticia b-borda-dotted ic-title">
-                            <h5><%= n.titulo %> </h5>
+                            <h5><%= link_to n.titulo, n %> </h5>
                             <p><%= n.descricao %></p>
                         </div>
                         <% end %>

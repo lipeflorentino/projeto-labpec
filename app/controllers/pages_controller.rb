@@ -101,11 +101,11 @@ class PagesController < ApplicationController
         # entra no if se tiver parametro de busca, ordenando pelo mais visitado
         if params[:tese]
             # o operador " | " aqui junta as duas buscas em uma só removendo duplicatas
-            @teses = Documento.reorder("created_at DESC").where('titulo LIKE ? or descricao LIKE ?', 
+            @teses = Documento.reorder("created_at DESC").where('titulo LIKE ? or descricao LIKE ? and accepted=true', 
                                     "%#{params[:tese][:search]}%", "%#{params[:tese][:search]}%").page(params[:page]).per_page(4)
         else
             # Ordena invertido pra aparecer os mais recentes primeiro, sem parametro de busca
-            @teses = Documento.reorder("created_at DESC").page(params[:page]).per_page(6)    
+            @teses = Documento.reorder("created_at DESC").where("accepted = ?", true).page(params[:page]).per_page(6)    
         end
     end
     

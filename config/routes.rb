@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   
   get 'user_aprove_image' => 'users#aprove_image'
   get 'aceitar_foto' => 'pages#aprovacao_imagens'
+  get 'aceitar_doc' => 'documentos#aceitar_doc'
+  get 'aprove_doc' => 'documentos#aprove_doc'
   get 'fotos' => 'users#fotos'
   get 'arquivo_show' => 'pages#arquivo_show'
   get 'editemail' => 'users#editemail'

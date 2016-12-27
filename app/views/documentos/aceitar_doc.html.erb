@@ -2,7 +2,7 @@
 <div class="pst-corpo-main-container">
   <div class="pst-main-container">
     <div class="main clearfix">
-      <h2>Gerenciador de Documentos</h2>
+      <h2>Respostas de Documentos</h2>
       <div class="pst-container">
         <div class="pst-content">
           <div class="table-responsive">
@@ -12,14 +12,11 @@
                   <th>Nome do Usuário</th>
                   <th>Título</th>
                   <th>Descrição</th>
-                  <th>Aprovado?</th>
-                  <th>Data defesa</th>
                   <th>Tese/Dissertação</th>
                   <th>Mestrado/Doutorado</th>
                   <th>Download</th>
-                  <th>Ver</th>
-                  <th>Editar</th>
-                  <th>Deletar</th>
+                  <th>Aceitar</th>
+                  <th>Negar</th>
                 </tr>
               </thead>
             
@@ -33,18 +30,6 @@
                     </td>
                     <td><%= documento.titulo %></td>
                     <td><%= documento.descricao %></td>
-                    <td>
-                      <% if documento.accepted %>
-                        <%= "Aprovado" %>
-                      <% else %>
-                        <% if documento.respondido %>
-                          <%= "Reprovado" %>
-                        <% else %>
-                          <%= "Ainda não respondido" %>
-                        <% end %>
-                      <% end %>
-                    </td>
-                    <td><%= imprime_data(documento.data_defesa, 0) %></td>
                     <td>
                       <% if documento.tese %>
                         <%= "Tese" %>
@@ -60,10 +45,33 @@
                       <% end %>
                     </td>
                     <td><%= link_to "Download", documento.arquivo_url %></td>
-                    <td><%= link_to 'Ver', documento %></td>
-                    <td><%= link_to 'Editar', edit_documento_path(documento) %></td>
-                    <td><%= link_to 'Deletar', documento, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+                    <td id="aceitar_doc_<%= documento.id %>"><%= link_to 'Aceitar', aprove_doc_path(:choice => 1, :doc_id => documento.id), remote: true,
+                    id: "link_aceita_doc_#{documento.id}"%></td>
+                    <td id="negar_doc_<%= documento.id %>"><%= link_to 'Negar', aprove_doc_path(:choice => 2, :doc_id => documento.id), remote: true, 
+                    id: "link_nega_doc_#{documento.id}" %></td>
                   </tr>
+                  
+                  <% content_for :js do %>
+                    $('#link_aceita_doc_<%= documento.id %>').bind('ajax:success', function(){
+                      $('#aceitar_doc_<%= documento.id %>').text('Aceito');
+                      $('#negar_doc_<%= documento.id %>').text('Aceito');
+                      
+                      $('#aceitar_doc_<%= documento.id %>').addClass('aceito');
+                      $('#negar_doc_<%= documento.id %>').addClass('aceito');
+                      
+                    });
+                    
+                    $('#link_nega_doc_<%= documento.id %>').bind('ajax:success', function(){
+                      $('#aceitar_doc_<%= documento.id %>').text('Negado');
+                      $('#negar_doc_<%= documento.id %>').text('Negado');
+                      
+                      $('#aceitar_doc_<%= documento.id %>').addClass('negado');
+                      $('#negar_doc_<%= documento.id %>').addClass('negado');
+                      
+                    });
+                    
+                  <%end%>
+                  
                 <% end %>
               </tbody>
             </table>

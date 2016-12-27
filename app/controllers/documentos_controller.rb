@@ -20,6 +20,10 @@ class DocumentosController < ApplicationController
   # GET /documentos/1/edit
   def edit
   end
+  
+  def aceitar_doc
+    @documentos = Documento.where(:respondido => false)
+  end
 
   # POST /documentos
   # POST /documentos.json
@@ -66,6 +70,16 @@ class DocumentosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to documentos_url, notice: 'Documento was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+  
+  def aprove_doc
+    choice = params[:choice]
+    doc = Documento.find(params[:doc_id])
+    if (choice == "1")
+      doc.update(accepted: true, respondido: true)
+    else
+      doc.update(accepted: false, respondido: true)
     end
   end
 
