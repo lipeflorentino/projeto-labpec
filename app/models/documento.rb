@@ -8,6 +8,11 @@ class Documento < ApplicationRecord
   validates :titulo, presence: true, length: { minimum: 10, maximum: 120 }
   validate :tamanho_do_arquivo
   
+  def self.docs_antigos_reprovados
+   #return  Documento.where('updated_at < ? and respondido = ? and accepted = ?', Time.now - 1.hour , true, true)
+   return Documento.where('id = 16')
+  end
+  
   private
     def data_nao_esta_no_passado
       if !data_defesa.present?

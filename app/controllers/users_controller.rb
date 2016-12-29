@@ -163,15 +163,9 @@ class UsersController < ApplicationController
     choice = params[:choice]
     user = User.find(params[:user_id])
     if (choice)
-      user.update(picture_accepted: true)
-      redirect_to aceitar_foto_url
+      user.update(picture_accepted: true, picture_declined: false)
     else
-      user.update(picture_declined: true)
-      if default_picture
-        redirect_to root_url
-      else 
-        redirect_to aceitar_foto_url
-      end
+      user.update(picture_accepted: false, picture_declined: true)
     end
   end
   

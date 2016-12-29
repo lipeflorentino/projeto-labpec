@@ -20,10 +20,31 @@
                     <tr>
                       <td><%= user.name %></td>
                       <td><button type="button" data-toggle="modal" data-target="#myModal" data-url="<%= user.picture.url %>" data-title="<%= user.name %>" >visualizar foto</button></td>
-                      <td><%= link_to "Aceitar", user_aprove_image_path(:choice => true, :user_id => user.id)%></td>
-                      <td><%= link_to "Negar", user_aprove_image_path(:choice => false, :user_id => user.id) %></td>
+                      <td id="aceitar_img_<%= user.id %>"><%= link_to "Aceitar", user_aprove_image_path(:choice => true, :user_id => user.id), remote: true,
+                      id:"link_aceita_img_#{user.id}" %></td>
+                      <td id="negar_img_<%= user.id %>"><%= link_to "Negar", user_aprove_image_path(:choice => false, :user_id => user.id), remote: true,
+                      id:"link_nega_img_#{user.id}" %></td>
                     </tr>
                     
+                    <% content_for :js do %>
+                    $('#link_aceita_img_<%= user.id %>').bind('ajax:success', function(){
+                      $('#aceitar_img_<%= user.id %>').text('Aceito');
+                      $('#negar_img_<%= user.id %>').text('Aceito');
+                      
+                      $('#aceitar_img_<%= user.id %>').addClass('aceito');
+                      $('#negar_img_<%= user.id %>').addClass('aceito');
+                      
+                    });
+                    
+                    $('#link_nega_img_<%= user.id %>').bind('ajax:success', function(){
+                      $('#aceitar_img_<%= user.id %>').text('Negado');
+                      $('#negar_img_<%= user.id %>').text('Negado');
+                      
+                      $('#aceitar_img_<%= user.id %>').addClass('negado');
+                      $('#negar_img_<%= user.id %>').addClass('negado');
+                      
+                    });
+                    <% end %>
                   <% end %>
                 <% else %>
                   <h4> Nenhuma foto para aprovar por hoje! </h4>

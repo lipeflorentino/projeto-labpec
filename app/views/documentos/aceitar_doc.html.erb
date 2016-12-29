@@ -51,24 +51,24 @@
                     id: "link_nega_doc_#{documento.id}" %></td>
                   </tr>
                   
-                  <% content_for :js do %>
-                    $('#link_aceita_doc_<%= documento.id %>').bind('ajax:success', function(){
-                      $('#aceitar_doc_<%= documento.id %>').text('Aceito');
-                      $('#negar_doc_<%= documento.id %>').text('Aceito');
+                    <% content_for :js do %>
+                      $('#link_aceita_doc_<%= documento.id %>').bind('ajax:success', function(){
+                        $('#aceitar_doc_<%= documento.id %>').text('Aceito');
+                        $('#negar_doc_<%= documento.id %>').text('Aceito');
+                        
+                        $('#aceitar_doc_<%= documento.id %>').addClass('aceito');
+                        $('#negar_doc_<%= documento.id %>').addClass('aceito');
+                        
+                      });
                       
-                      $('#aceitar_doc_<%= documento.id %>').addClass('aceito');
-                      $('#negar_doc_<%= documento.id %>').addClass('aceito');
-                      
-                    });
-                    
-                    $('#link_nega_doc_<%= documento.id %>').bind('ajax:success', function(){
-                      $('#aceitar_doc_<%= documento.id %>').text('Negado');
-                      $('#negar_doc_<%= documento.id %>').text('Negado');
-                      
-                      $('#aceitar_doc_<%= documento.id %>').addClass('negado');
-                      $('#negar_doc_<%= documento.id %>').addClass('negado');
-                      
-                    });
+                      $('#link_nega_doc_<%= documento.id %>').bind('ajax:success', function(){
+                        $('#aceitar_doc_<%= documento.id %>').text('Negado');
+                        $('#negar_doc_<%= documento.id %>').text('Negado');
+                        
+                        $('#aceitar_doc_<%= documento.id %>').addClass('negado');
+                        $('#negar_doc_<%= documento.id %>').addClass('negado');
+                        
+                      });
                     
                   <%end%>
                   

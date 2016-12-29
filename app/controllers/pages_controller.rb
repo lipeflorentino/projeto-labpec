@@ -114,7 +114,7 @@ class PagesController < ApplicationController
     
     def aprovacao_imagens
       # Pega só os usuários que precisam de aprovação na imagem
-      @users = User.where(:picture_accepted => false)
+      @users = User.where("picture_accepted = ? and picture_declined = ?", false, false)
     end
     
     
