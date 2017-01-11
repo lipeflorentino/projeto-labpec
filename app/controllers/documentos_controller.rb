@@ -35,8 +35,16 @@ class DocumentosController < ApplicationController
     else
       @documento.tese = false
     end
-    # Força o status do documento ser falso por motivos de segurança
-    @documento.status = false
+    
+    if (params[:documento][:mestrado] == "Mestrado")
+      @documento.mestrado = true
+    else
+      @documento.mestrado = false
+    end
+    
+    # Força o status do documento ser pendente por motivos de segurança
+    @documento.accepted = false
+    @documento.respondido = false
   
     respond_to do |format|
       if @documento.save

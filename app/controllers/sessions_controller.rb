@@ -8,6 +8,9 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       if user.activated?
         log_in user
+        if user.adm == true
+          Documento.destroy_docs_antigos_reprovados
+        end
         redirect_to user
       else
         flash.now[:notice] = 'Favor confirmar seu e-mail'

@@ -25,10 +25,14 @@
             
             <p>
               <strong>Status:</strong>
-              <% if @documento.status %>
+              <% if @documento.accepted %>
                 <%= "Aprovado" %>
               <% else %>
-                <%= "Pendente/Reprovado" %>
+                <% if @documento.respondido %>
+                  <%= "Reprovado" %>
+                <% else %>
+                  <%= "Pendente" %>
+                <% end %>
               <% end %>
             </p>
             

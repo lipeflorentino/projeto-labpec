@@ -5,6 +5,7 @@
 .mv-info{padding:5%;}
 .td-img{height:100px;width:100px;padding: 5px;}
 .arq-peq {padding-top: 15px;}
+.imgs {min-height: 130px;max-height:130px; min-width: 130px; padding-bottom: 20px;}
 
 /*---------aqui está o css da busca-----------*/
 .dropdown.dropdown-lg .dropdown-menu {margin-top: -1px;padding: 6px 20px;}

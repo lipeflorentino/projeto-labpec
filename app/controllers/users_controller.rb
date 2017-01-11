@@ -138,8 +138,13 @@ class UsersController < ApplicationController
       params[:user].delete(:password_confirmation)
     end
     
+    
+    
     respond_to do |format|
       if @user.update(user_params)
+        if params[:user][:picture]
+          @user.update(picture_accepted: false, picture_declined: false)
+        end
         format.html { redirect_to @user, notice: 'Alterações efetuadas com sucesso.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -162,7 +167,7 @@ class UsersController < ApplicationController
   def aprove_user_image
     choice = params[:choice]
     user = User.find(params[:user_id])
-    if (choice)
+    if (choice == 1)
       user.update(picture_accepted: true, picture_declined: false)
     else
       user.update(picture_accepted: false, picture_declined: true)

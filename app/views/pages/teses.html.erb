@@ -58,7 +58,7 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="p-info">
-                                  <h3><%= tese.titulo%></h3>
+                                  <h3><%= link_to tese.titulo, tese %></h3>
                                   <h6><%= imprime_data(tese.data_defesa, 0)%></h6>
                                   <p><%= tese.descricao%></p>
                                   <%= link_to "Download", tese.arquivo_url %>
@@ -108,7 +108,11 @@
                         
                         </div>
                         <div class="pco main wrapper clearfix">
-                              <h3>Instituições Parceiras</h3>
+                                <h3>Instituições Parceiras</h3>
+                                  <%= image_tag("logo-capes.png", class: 'imgs img-responsive') %>
+                                  <%= image_tag("viadrina_logo2.png", class: 'imgs img-responsive') %>
+                                  <%= image_tag("logo uff.jpg", class: 'imgs img-responsive') %>
+                                  <%= image_tag("daad pt al.png", class: 'imgs img-responsive') %>
                         </div>    
                         
                         </div>

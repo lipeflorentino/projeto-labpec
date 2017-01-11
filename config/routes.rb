@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   patch 'editemailupdate' => 'users#editemailupdate'
   patch 'editpasswordupdate' => 'users#editpasswordupdate'
   
-  get 'user_aprove_image' => 'users#aprove_image'
+  get 'user_aprove_image' => 'users#aprove_user_image'
   get 'aceitar_foto' => 'pages#aprovacao_imagens'
   get 'aceitar_doc' => 'documentos#aceitar_doc'
   get 'aprove_doc' => 'documentos#aprove_doc'

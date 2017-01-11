@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161223171458) do
+ActiveRecord::Schema.define(version: 20161229030215) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20161223171458) do
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
     t.boolean  "picture_accepted",  default: false
-    t.boolean  "picture_declined"
+    t.boolean  "picture_declined",  default: false
   end
 
 end

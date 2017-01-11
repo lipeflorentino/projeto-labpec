@@ -34,6 +34,12 @@
   <label>Tipo do documento</label><br>
     <%= f.select :tese, options_for_select(["Tese", "Dissertação"]) %>
   </div>
+  
+  <div class="form-group">
+  <label>Categoria do documento</label><br>
+    <%= f.select :mestrado, options_for_select(["Mestrado", "Doutorado"]) %>
+  </div>
+  
   <div class="form-group">
     <%= f.label :arquivo %>
     <%= f.file_field :arquivo %>
