@@ -1,0 +1,2 @@
+class Simposio < ApplicationRecord
+end

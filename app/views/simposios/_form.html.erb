@@ -1,0 +1,37 @@
+<%= form_for(simposio) do |f| %>
+  <% if simposio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(simposio.errors.count, "error") %> prohibited this simposio from being saved:</h2>
+
+      <ul>
+      <% simposio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :conteudo %>
+    <%= f.text_area :conteudo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :picture %>
+    <%= f.text_field :picture %>
+  </div>
+
+  <div class="field">
+    <%= f.label :titulo %>
+    <%= f.text_field :titulo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :video %>
+    <%= f.text_area :video %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

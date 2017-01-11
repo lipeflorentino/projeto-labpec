@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :simposios
   resources :eventos
   resources :documentos
   get 'password_resets/new'

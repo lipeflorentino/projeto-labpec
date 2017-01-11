@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Conteudo:</strong>
+  <%= @simposio.conteudo %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @simposio.picture %>
+</p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @simposio.titulo %>
+</p>
+
+<p>
+  <strong>Video:</strong>
+  <iframe width="560" height="315" src="<%= @simposio.video %>" frameborder="0" allowfullscreen></iframe>
+</p>
+
+<%= link_to 'Edit', edit_simposio_path(@simposio) %> |
+<%= link_to 'Back', simposios_path %>

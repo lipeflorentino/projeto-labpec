@@ -1,0 +1,2 @@
+module SimposiosHelper
+end
