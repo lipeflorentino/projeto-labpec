@@ -24,17 +24,30 @@ class SimposiosController < ApplicationController
   # POST /simposios
   # POST /simposios.json
   def create
-    @simposio = Simposio.new(simposio_params)
+   params[:simposio][:user_id] = current_user.id
+   
+   @simposio = Simposio.new(simposio_params)
 
     respond_to do |format|
       if @simposio.save
-        format.html { redirect_to @simposio, notice: 'Simposio was successfully created.' }
-        format.json { render :show, status: :created, location: @simposio }
+        
+        @videosimposios = VideosSimposio.new(:simposio_id => @simposio.id)
+        
+        if @videosimposios.save
+          format.html { redirect_to edit_videos_simposio_path(@videosimposios), notice: 'Simposio was successfully created.' }
+          format.json { render :show, status: :created, location: @simposio }
+        else
+          format.html { render :new }
+          format.json { render json: @videosimposios.errors, status: :unprocessable_entity }
+        end
+        
       else
         format.html { render :new }
         format.json { render json: @simposio.errors, status: :unprocessable_entity }
       end
+      
     end
+    
   end
 
   # PATCH/PUT /simposios/1
@@ -69,6 +82,6 @@ class SimposiosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def simposio_params
-      params.require(:simposio).permit(:conteudo, :picture, :titulo, :video)
+      params.require(:simposio).permit(:conteudo, :picture, :titulo, :video, :user_id)
     end
 end

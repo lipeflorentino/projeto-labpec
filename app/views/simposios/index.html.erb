@@ -1,33 +1,41 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Simposios</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Conteudo</th>
-      <th>Picture</th>
-      <th>Titulo</th>
-      <th>Video</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @simposios.each do |simposio| %>
-      <tr>
-        <td><%= simposio.conteudo %></td>
-        <td><%= simposio.picture %></td>
-        <td><%= simposio.titulo %></td>
-        <td><%= simposio.video %></td>
-        <td><%= link_to 'Show', simposio %></td>
-        <td><%= link_to 'Edit', edit_simposio_path(simposio) %></td>
-        <td><%= link_to 'Destroy', simposio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Simposio', new_simposio_path %>
+<!--<p id="notice"><= notice %></p>-->
+<% provide(:title, "Simpósios") %>
+<div class="corpo-main-container">
+       <div class="pp-main-container">
+            <div class="main wrapper clearfix">
+              <h1>Simpósios</h1>
+                <div class="pst-container">
+                  <div class="pst-content">
+                    <div class="table-responsive">
+                      <table id="tablesorter" class="display" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                              <th>Título</th>
+                              <th>Visualizar</th>
+                              <th>Editar</th>
+                              <th>Deletar</th>
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                          <% @simposios.each do |simposio| %>
+                            <tr>
+                              <td><%= simposio.titulo %></td>
+                              <td><%= link_to 'Ver', simposio %></td>
+                              <td><%= link_to 'Editar', edit_simposio_path(simposio) %></td>
+                              <td><%= link_to 'Apagar', simposio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                      </table>
+                      <div class="pst-button">
+                        <button><%= link_to 'Novo Simpósio', new_simposio_path %></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+         </div>
+          <%= render 'layouts/footer' %>
+      </div>
+</div> 

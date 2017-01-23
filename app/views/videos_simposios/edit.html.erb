@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="pst-corpo-main-container">
+  <div class="pst-main-container">
+    <div class="main clearfix">
+      <h2>Adicionar vídeos/documentos ao simposio</h2>
+      <div class="pst-container">
+        <div class="pst-content">
+          <div class="pst-info-content">
+            <div id="videos">
+              <h4>Vídeos de <%= @videos_simposio.simposio.titulo %></h4>
+              <h5> Apenas links do youtube serão aceitos </h5>
+              <ul class="lista">
+
+                <% @simposio_videos.each do |video_simposio| %>
+                
+                <% if video_simposio.video %>
+                
+                  <li id="video-li-<%= video_simposio.id %>" class='video-li'> 
+                  
+                    <%= render 'formedit', videos_simposio: video_simposio, simposio: @simposio %>    
+                    
+                    <%= link_to 'Deletar', video_simposio, method: :delete, 
+                    data: { confirm: 'Você tem certeza disso?' }, remote: true, id: "botao-deletar-#{video_simposio.id}", class: 'linha' %>
+                    
+                  </li>
+                
+                <% end %>
+                
+                <% content_for :js do %>
+                  $('#botao-deletar-<%= video_simposio.id %>').on('click', function(){
+                    $('#video-li-<%= video_simposio.id%>').remove();
+                  });
+                <% end %>
+              <% end %>  
+              </ul>
+              
+              
+              <%= render 'form', videos_simposio: @videos_simposio, simposio: @simposio %>
+              
+            </div> <!-- Vídeos -->
+            
+            <% content_for :js do %>
+             
+                $('#submit-video').on('click', function(){
+                  var input = $('#input-video').val();
+                  var conteudo = "<li>" + input + "</li>" 
+                  $('#videos ul').append(conteudo);
+                });
+                
+                
+              
+            <% end %>
+            
+            <div>
+              
+            </div> <!-- Documentos -->
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

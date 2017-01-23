@@ -1,5 +1,16 @@
-<h1>New Simposio</h1>
-
-<%= render 'form', simposio: @simposio %>
-
-<%= link_to 'Back', simposios_path %>
+<div class="pst-corpo-main-container">
+  <div class="pst-main-container">
+    <div class="main clearfix">
+      <h2>Novo Simpósio</h2>
+      <div class="pst-container">
+        <div class="pst-content">
+          <%= render 'form', simposio: @simposio %>
+        </div>
+        <div class="pst-button">
+          <%= link_to 'Voltar', simposios_path %>
+        </div>
+      </div>
+    </div>  
+  </div>
+  <%= render 'layouts/footer' %>
+</div>

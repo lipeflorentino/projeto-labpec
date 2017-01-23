@@ -1,24 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Conteudo:</strong>
-  <%= @simposio.conteudo %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= @simposio.picture %>
-</p>
-
-<p>
-  <strong>Titulo:</strong>
-  <%= @simposio.titulo %>
-</p>
-
-<p>
-  <strong>Video:</strong>
-  <iframe width="560" height="315" src="<%= @simposio.video %>" frameborder="0" allowfullscreen></iframe>
-</p>
-
-<%= link_to 'Edit', edit_simposio_path(@simposio) %> |
-<%= link_to 'Back', simposios_path %>
+<div class="pst-corpo-main-container">
+  <div class="pst-main-container">
+    <div class="main clearfix">
+      <h2>Publicação</h2>
+      <div class="pst-container">
+        <div class="pst-content">
+          <div class="pst-info-content">
+            <p>
+              <strong>Conteudo:</strong>
+              <%= @simposio.conteudo %>
+            </p>
+            
+            <p>
+              <strong>Picture:</strong>
+              <%= @simposio.picture %>
+            </p>
+            
+            <p>
+              <strong>Titulo:</strong>
+              <%= @simposio.titulo %>
+            </p>
+            
+            <!--<p>
+              <strong>Video:</strong>
+              <iframe width="560" height="315" src="< @simposio.video %>" frameborder="0" allowfullscreen></iframe>
+            </p> -->
+            
+            <p> 
+              <strong> User:</strong>
+              <%= @simposio.user.name %>
+            </p>
+            <%= link_to 'Edit', edit_simposio_path(@simposio) %> |
+            <%= link_to 'Back', simposios_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

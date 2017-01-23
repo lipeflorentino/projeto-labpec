@@ -108,7 +108,7 @@
                         <!-----------IMPLEMENTAR: buscar noticias do BD------------->
                         <h1>Publicações</h1>
                         <% @noticias.each do |n| %>
-                        <div class="h-noticia b-borda-dotted ic-title">
+                        <div class="h-noticia b-borda-dotted ic-title p-info">
                             <h5><%= link_to n.titulo, n %> </h5>
                             <p><%= n.descricao %></p>
                         </div>

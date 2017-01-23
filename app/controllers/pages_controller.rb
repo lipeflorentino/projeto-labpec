@@ -66,6 +66,39 @@ class PagesController < ApplicationController
         end
     end 
     
+    def simposios
+      
+        @datas_min = Array.new
+        ultima_data = Post.last.created_at
+        @datas_min << ultima_data
+        @data_freq = Array.new
+        @data_freq << 0 if ultima_data != nil
+        Post.order('created_at DESC').each do |p|
+          if p.created_at.month != ultima_data.month
+            @datas_min << p.created_at
+            @data_freq << 1
+            ultima_data = p.created_at
+          else 
+            @data_freq[(@datas_min.length) -1] += 1
+          end
+          
+          # Aqui limita a quantidade da array pra só mostrar as 4 primeiras
+          # opções de arquivo na pagina de publicacoes
+          if @datas_min.length == 4
+            break
+          end
+        end
+        @mais_visitado = Post.order("vezes_visitado DESC").first
+        # entra no if se tiver parametro de busca, ordenando pelo mais visitado
+        if params[:post]
+            # o operador " | " aqui junta as duas buscas em uma só removendo duplicatas
+            @posts = Post.reorder("vezes_visitado DESC").where('titulo LIKE ? or descricao LIKE ?', 
+                                    "%#{params[:post][:search]}%", "%#{params[:post][:search]}%").page(params[:page]).per_page(4)
+        else
+            # Ordena invertido pra aparecer os mais recentes primeiro, sem parametro de busca
+            @posts = Post.reorder("created_at DESC").page(params[:page]).per_page(5)    
+        end
+    end
     
     def eventos
       @proximo_evento = Evento.order(:data).last

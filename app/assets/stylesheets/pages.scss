@@ -52,7 +52,13 @@ body {font: 16px/22px calibri, sans-serif, roboto, Helvetica, Helvetica Neue, Ar
 .h-cadastro .btn{width:50%;margin-left:25%;margin-right:25%;margin-top:15px;padding:5px !important;}
 .h-cadastro p{border-bottom:1px gray dotted;}
 .h-link a:visited{color:#23527c;}
-.h-link a:hover{text-decoration: none;color: yellow;padding-top:10px;}
+.h-link a:hover{text-decoration: underline; padding-top:10px;}
+.h-noticia a:hover{text-decoration:none;}
+.h-noticia h5{color: #337ab7;}
+.h-noticia a:visited {color: #337ab7;}
+.d-event a:hover{text-decoration:none;}
+.d-event h3{color: #337ab7;}
+.d-event a:visited {color: #337ab7;}
 .ic-title h5{color: #23527c;}
 .b-borda-dotted{border-bottom: dotted 1px gray; }
 .coordenadores-container{margin-top:10px;margin-bottom: 10px;-webkit-box-shadow: 0 5px 10px #aaa;-moz-box-shadow: 0 5px 10px #aaa;box-shadow: 0 5px 10px #aaa;background-color: white;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;padding-top: 10px;}
@@ -90,6 +96,8 @@ body {font: 16px/22px calibri, sans-serif, roboto, Helvetica, Helvetica Neue, Ar
 
 /*----------aqui está o css do simposio--------------*/
 
+.simposios-container h1 {font-size: 1.6em;padding-bottom: 5px;border-bottom: 0.3px solid black;margin-right: 0px;}
+.simposios-container{word-wrap: break-word;}
 .c-simp{width:80%;}
 
 /*----------aqui está o css do swipper slider--------------*/

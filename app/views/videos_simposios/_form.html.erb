@@ -1,0 +1,22 @@
+<%= form_for videos_simposio, :url => {:action => "add", params: {id: videos_simposio.id}}, remote: true do |f| %>
+  <% if videos_simposio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(videos_simposio.errors.count, "error") %> prohibited this videos_simposio from being saved:</h2>
+
+      <ul>
+      <% videos_simposio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :video %>
+    <%= f.text_field :video, id: 'input-video' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Adicionar Video', class:'btn btn-default', id: 'submit-video', method: :post%>
+  </div>
+<% end %>

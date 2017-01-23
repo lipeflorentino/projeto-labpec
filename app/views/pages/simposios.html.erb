@@ -1,0 +1,96 @@
+ 
+<% provide(:title, "Simpósios") %>
+<div class="corpo-main-container">
+    <div class="simposios-container">
+        <div class="pp-main-container">
+            <div class="main wrapper clearfix">
+                <h1>Simpósios</h1>
+            
+              <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                   <div class="main wrapper clearfix">
+                        <% @posts.each do |simposio| %>
+                            <div class="row p-container">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="p-img">
+                                        <%= image_tag(simposio.picture.url, class: 'img-responsive') if simposio.picture? %>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="p-info">
+                                      <h3><%= link_to  simposio.titulo, simposio %></h3>
+                                      <h6><%= imprime_data(simposio.created_at) %> </h6>
+                                      <p><%= simposio.descricao %></p>
+                                    </div>
+                                </div>
+                            </div>    
+                        <% end %>
+                        <%= will_paginate @posts %>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="main wrapper clearfix">
+                        <!---VERIFICAR: uso do botão--->
+                        <!---<button type="button" class="p-buttom">Enviar Publicação</button>-->
+                        <div class="ps-main-container">
+                           <h2>Mais Visto</h2>
+                           <div class="row ps-content">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="p-img">
+                                        <%= image_tag(@mais_visitado.picture.url, class: 'img-responsive') if @mais_visitado.picture? %>
+                                    </div>
+                                </div>
+                                <div class="p-info col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="p-info">
+                                        
+                                        <h3><%= link_to @mais_visitado.titulo, @mais_visitado %></h3>
+                                        <h6><%= imprime_data(@mais_visitado.created_at) %> </h6>
+                                        <p><%=@mais_visitado.descricao %></p>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>  
+                    <!------IMPLEMENTAR: badge dinamicamente como atributo derivado--------->
+                    <div class="main wrapper clearfix">
+                        <div class="ps-main-container">
+                            <h2>Arquivo</h2>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="r-arquivo">
+                                        <% @datas_min.slice(0,4).each do |d| %>
+                                          <div class="col-lg-12", style="padding-bottom: 14px"><%= link_to imprime_data_arquivo(d), arquivo_show_path(:month => d.month, :year => d.year) %>
+                                          <span class="badge", style="margin-left: 5px"><%= @data_freq.shift%></span></div>
+                                        <% end %>
+                                    </div>
+                                </div>    
+                                <div class="col-lg-12">
+                                    
+                                    <div class="t-arquivo"><%= link_to 'Ver todos', simposios_path %></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="main wrapper clearfix">
+                        <div class="ps-main-container">
+                            <h2>Busca</h2>
+                            <div class="p-busca">
+                                <div class="input-group">
+                                  <%= form_for(:post, url: publicacoes_path, method: :get) do |f| %>
+                                      <%= f.text_field :search, class: "form-control", :placeholder => 'Buscar por...' %>
+                                      <span class="input-group-btn">
+                                        <%= f.submit 'Buscar', class:'btn btn-default pp-btn'%>
+                                      </span>
+                                  <% end %>
+                                </div>
+                            </div>    
+                        
+                        </div>
+                    </div>    
+                </div>    
+            </div> 
+            </div>
+        </div>    
+    </div>
+    <%= render 'layouts/footer' %>
+</div> 

@@ -1,0 +1,11 @@
+<%= form_for videos_simposio, remote: true do |f| %>
+
+
+  
+    <%= f.text_field :video, class: 'linha' %>
+  
+
+  
+    <%= f.submit 'Atualizar', class:'btn btn-default linha', method: :post%>
+  
+<% end %>
