@@ -3,12 +3,32 @@ class Post < ApplicationRecord
   belongs_to :user
   
   mount_uploader :picture, PictureUploader
-  validates :descricao, presence: true, length: { minimum: 35, maximum: 150 }
-  validates :titulo, presence: true, length: { minimum: 8, maximum: 50 }
-  validates :picture, presence: true
-  validates :conteudo, presence: true, length: {minimum: 20, maximum: 600000 }
+  
+  # Validação 'titulo'
+  
+  validates_presence_of :titulo
+  validates :titulo, length: { minimum: 10, maximum: 90 }, 
+                     allow_blank: true
+  
+  # Validação 'descricao'
+  
+  validates_presence_of :descricao
+  validates :descricao, length: {minimum: 20, maximum: 250 }, 
+                        allow_blank: true
+  
+  # Validação 'picture'
+  
   validate :tamanho_imagem
   
+  # Validação 'conteudo'
+  
+  validates_presence_of :conteudo
+  validates :conteudo, length: {minimum: 50, maximum: 50000 }, 
+                       allow_blank: true
+  
+  # Validação 'vezes_visitado'
+  
+  # Validação 'user_id'
  
   
   private 

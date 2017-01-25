@@ -1,13 +1,63 @@
 class Documento < ApplicationRecord
   belongs_to :user
   
-  mount_uploader :arquivo, FileUploader
+#  validates_presence_of :cpf
+#  validates_length_of :cpf, :is => 11, :allow_blank => true
+#  validates_numericality_of :cpf, :allow_blank => true
+#  validates_uniqueness_of :cpf, :allow_blank => true
+#  validates_as_cpf :cpf, :allow_blank => true
+  
+  # Validação user_id
+  
+  validates_presence_of :user_id
+  
+  # Validação 'titulo'
+  
+  validates_presence_of :titulo
+  validates :titulo, length: { minimum: 10, maximum: 90 }, 
+                     allow_blank: true
+  
+  # Validação 'descricao'
+  
+  validates_presence_of :descricao
+  validates :descricao, length: { minimum: 30, maximum: 250 }, 
+                        allow_blank: true
+
+  # Validação 'data_defesa'
+  
+   validates_presence_of :data_defesa
+   validate :data_nao_esta_no_passado
+  
+  # Validação 'status' (checar defaults)
+  
+  validates_presence_of :status
+  
+  # Validação 'tese' (checar defaults)
+  
+  validates_presence_of :tese
+  
+  # Validação 'mestrado' (checar defaults)
+  
+  validates_presence_of :mestrado
+  
+  # Validação 'arquivo'
+  
   validates_presence_of :arquivo
-  validate :data_nao_esta_no_passado
-  validates :user_id, presence: true
-  validates :descricao, presence: true, length: { minimum: 30, maximum: 180 }
-  validates :titulo, presence: true, length: { minimum: 10, maximum: 120 }
   validate :tamanho_do_arquivo
+  
+  # Validação 'accepted'
+  
+  validates_presence_of :accepted
+  
+  # Validação 'respondido'
+  
+  validates_presence_of :respondido
+  
+  ##
+  
+  mount_uploader :arquivo, FileUploader
+  
+  # Exclui documentos antigos que foram reprovados
   
   def self.destroy_docs_antigos_reprovados
     Documento.where('updated_at < ? and respondido = ? and accepted = ?', Time.now - 4.weeks , true, false).destroy_all
