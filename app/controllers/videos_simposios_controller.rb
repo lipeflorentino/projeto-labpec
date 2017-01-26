@@ -1,5 +1,9 @@
 class VideosSimposiosController < ApplicationController
   before_action :set_videos_simposio, only:  [:edit, :update, :destroy]
+    # Verifica se o usuario está logado
+  before_action :authenticated_as_user, :except => [:show, :index]
+  # Verifica se é adm
+  before_action :authenticated_as_admin, :except => [:show, :index]
 
   # GET /videos_simposios
   # GET /videos_simposios.json

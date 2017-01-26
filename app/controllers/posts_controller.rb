@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :logged_as_admin, only: [:edit, :update, :destroy, :create, :index, :new]
+  # Verifica se o usuario está logado
+  before_action :authenticated_as_user, :except => [:show, :index]
+  # Verifica se é adm
+  before_action :authenticated_as_admin, :except => [:show, :index]
 
   # GET /posts
   # GET /posts.json

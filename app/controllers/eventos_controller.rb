@@ -1,5 +1,9 @@
 class EventosController < ApplicationController
   before_action :set_evento, only: [:show, :edit, :update, :destroy]
+  # Verifica se o usuario está logado
+  before_action :authenticated_as_user, :except => [:show, :index]
+  # Verifica se é adm
+  before_action :authenticated_as_admin, :except => [:show, :index]
 
   # GET /eventos
   # GET /eventos.json
