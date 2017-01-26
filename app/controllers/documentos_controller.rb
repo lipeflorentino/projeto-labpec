@@ -1,5 +1,9 @@
 class DocumentosController < ApplicationController
   before_action :set_documento, only: [:show, :edit, :update, :destroy]
+  # Verifica se o usuario está logado
+  before_action :authenticated_as_user, only: [:create, :edit, :update, :destroy, :new]
+  # Verifica se é adm
+  before_action :authenticated_as_admin, only: [:create, :edit, :update, :destroy, :new]
 
   # GET /documentos
   # GET /documentos.json
@@ -101,4 +105,7 @@ class DocumentosController < ApplicationController
     def documento_params
       params.require(:documento).permit(:user_id, :titulo, :descricao, :status, :data_defesa, :tese, :mestrado, :arquivo)
     end
+    
+  
+  
 end

@@ -22,8 +22,10 @@
                       <td><%= post.titulo %></td>
                       <td><%= post.user_id %></td>
                       <td><%= link_to 'Ver', post %></td>
+                      <% if logged_in? %>
                       <td><%= link_to 'Editar', edit_post_path(post) %></td>
                       <td><%= link_to 'Apagar', post, method: :delete, data: { confirm: 'Está certo disso?' } %></td>
+                      <% end %>
                     </tr>
                   <% end %>
               </tbody>

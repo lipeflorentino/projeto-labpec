@@ -22,8 +22,10 @@
                             <tr>
                               <td><%= simposio.titulo %></td>
                               <td><%= link_to 'Ver', simposio %></td>
+                              <% if logged_in? %>
                               <td><%= link_to 'Editar', edit_simposio_path(simposio) %></td>
                               <td><%= link_to 'Apagar', simposio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                              <% end %>
                             </tr>
                           <% end %>
                         </tbody>

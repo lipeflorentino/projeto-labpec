@@ -25,6 +25,15 @@
                 <li><%= link_to "Publicações",    publicacoes_path %></li>
                 <li><%= link_to "Eventos",    events_path %></li>
                 <li><%= link_to "Parceiros",    colaboradores_path %></li>
+                <li>
+                   <% if logged_in? %>
+                    Olá, <strong><%= current_user.name %></strong>.
+                    <%= link_to 'Editar Perfil', edit_user_path(current_user) %> |
+                    <%= link_to 'Sair', logout_url %>
+                    <% else %>
+                    <%= link_to 'Entrar', login_url %>
+                   <% end %>
+                </li>
               </ul>
               
             </div><!--/.nav-collapse -->

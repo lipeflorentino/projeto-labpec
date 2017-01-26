@@ -3,7 +3,7 @@ class User < ApplicationRecord
     has_many :documento # dependent :destroy?
     
     attr_accessor :activation_token, :email_confirmation, :actual_password, :reset_token
-    
+            
     validate :email_match_email_confirmation, on: :create
     validate :new_email_match_email_confirmation, on: :update
     

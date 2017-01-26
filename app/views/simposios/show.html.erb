@@ -31,7 +31,9 @@
               <strong> User:</strong>
               <%= @simposio.user.name %>
             </p>
+            <% if logged_in? %>
             <%= link_to 'Edit', edit_simposio_path(@simposio) %> |
+            <% end %>
             <%= link_to 'Back', simposios_path %>
           </div>
         </div>

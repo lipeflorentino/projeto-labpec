@@ -17,8 +17,10 @@
         <td><%= videos_simposio.simposio_id %></td>
         <td><%= videos_simposio.video %></td>
         <td><%= link_to 'Show', videos_simposio %></td>
+        <% if logged_in? %>
         <td><%= link_to 'Edit', edit_videos_simposio_path(videos_simposio) %></td>
         <td><%= link_to 'Destroy', videos_simposio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

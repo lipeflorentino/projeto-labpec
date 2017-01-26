@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <h1> LABPEC </h1>
 
 <p> Olá <%= @user.name %>, <p>
@@ -10,3 +11,4 @@
                                                     email: @user.email) %>
 
 <p> Se você não tentou se cadastrar em nosso site, desconsidere esta mensagem. </p>
+<% end %>
