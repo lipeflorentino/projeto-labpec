@@ -1,9 +1,9 @@
-<% if logged_in? %>
 <div class="pst-corpo-main-container">
   <div class="pst-main-container">
     <div class="main clearfix">
       <h2>Editar Publicação</h2>
       <div class="pst-container">
+        <h3> Autor : <%= @post.user.name %></h3>
         <div class="pst-content">
           <%= render 'formedit', post: @post %>
         </div>
@@ -16,4 +16,4 @@
   </div>
   <%= render 'layouts/footer' %>
 </div>
-<% end %>
+

@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :editemail, :editpassword]
   # Verifica se o usuario está logado
-  before_action :authenticated_as_user
+  before_action :authenticated_as_user, :except => [:new]
   # Verifica se é adm
-  before_action :authenticated_as_admin, :except => [:show, :edit]
+  before_action :authenticated_as_admin, :except => [:edit, :new]
 
   # GET /users
   # GET /users.json
