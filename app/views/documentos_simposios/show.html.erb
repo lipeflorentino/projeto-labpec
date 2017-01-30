@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @documentos_simposio.arquivo %>
+</p>
+
+<p>
+  <strong>Simposio:</strong>
+  <%= @documentos_simposio.simposio_id %>
+</p>
+
+<%= link_to 'Edit', edit_documentos_simposio_path(@documentos_simposio) %> |
+<%= link_to 'Back', documentos_simposios_path %>

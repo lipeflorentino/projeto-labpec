@@ -1,0 +1,27 @@
+<%= form_for(documentos_simposio) do |f| %>
+  <% if documentos_simposio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(documentos_simposio.errors.count, "error") %> prohibited this documentos_simposio from being saved:</h2>
+
+      <ul>
+      <% documentos_simposio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :arquivo %>
+    <%= f.text_field :arquivo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :simposio_id %>
+    <%= f.number_field :simposio_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

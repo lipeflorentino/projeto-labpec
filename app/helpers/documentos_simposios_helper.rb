@@ -1,0 +1,2 @@
+module DocumentosSimposiosHelper
+end

@@ -19,6 +19,7 @@ class VideosSimposiosController < ApplicationController
   # GET /videos_simposios/1/edit
   def edit
     @simposio_videos = VideosSimposio.where("simposio_id = ?", @videos_simposio.simposio_id)
+    @simposio_docs = DocumentosSimposio.where("simposio_id = ?", @videos_simposio.simposio_id)
   end
 
   # POST /videos_simposios

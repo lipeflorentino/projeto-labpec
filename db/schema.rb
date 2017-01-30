@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170124160018) do
+ActiveRecord::Schema.define(version: 20170129012520) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(version: 20170124160018) do
     t.string   "arquivo"
     t.boolean  "accepted",    default: false
     t.boolean  "respondido",  default: false
+  end
+
+  create_table "documentos_simposios", force: :cascade do |t|
+    t.string   "arquivo"
+    t.integer  "simposio_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "eventos", force: :cascade do |t|

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :documentos_simposios
   resources :videos_simposios
   resources :simposios
   resources :eventos
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
   
   patch 'add' => 'videos_simposios#add'
   
+  get 'dashboard' => 'pages#dashboard'
   get 'users_simposios' => 'pages#simposios'
   get 'user_aprove_image' => 'users#aprove_user_image'
   get 'aceitar_foto' => 'pages#aprovacao_imagens'

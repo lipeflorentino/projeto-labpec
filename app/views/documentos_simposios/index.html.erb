@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Documentos Simposios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Arquivo</th>
+      <th>Simposio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @documentos_simposios.each do |documentos_simposio| %>
+      <tr>
+        <td><%= documentos_simposio.arquivo %></td>
+        <td><%= documentos_simposio.simposio_id %></td>
+        <td><%= link_to 'Show', documentos_simposio %></td>
+        <td><%= link_to 'Edit', edit_documentos_simposio_path(documentos_simposio) %></td>
+        <td><%= link_to 'Destroy', documentos_simposio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Documentos Simposio', new_documentos_simposio_path %>

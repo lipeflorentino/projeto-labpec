@@ -36,8 +36,9 @@ class SimposiosController < ApplicationController
       if @simposio.save
         
         @videosimposios = VideosSimposio.new(:simposio_id => @simposio.id)
+        @docsimposios = DocumentosSimposio.new(:simposio_id => @simposio.id)
         
-        if @videosimposios.save
+        if @videosimposios.save && @docsimposios.save
           format.html { redirect_to edit_videos_simposio_path(@videosimposios), notice: 'Simposio was successfully created.' }
           format.json { render :show, status: :created, location: @simposio }
         else

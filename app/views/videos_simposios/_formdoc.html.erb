@@ -1,0 +1,11 @@
+<%= form_for documentos_simposio, :url => {:action => 'add'} do |f| %> 
+
+<div class="field">
+    <%= f.label :arquivo %>
+    <%= f.text_field :arquivo, id: 'input-arquivo' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Adicionar Arquivo', class:'btn btn-default', id: 'submit-arquivo', method: :post%>
+  </div>
+<% end %>
