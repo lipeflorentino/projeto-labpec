@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170129012520) do
+ActiveRecord::Schema.define(version: 20170130182554) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20170129012520) do
     t.string   "arquivo"
     t.boolean  "accepted",    default: false
     t.boolean  "respondido",  default: false
+    t.index ["user_id"], name: "index_documentos_on_user_id"
   end
 
   create_table "documentos_simposios", force: :cascade do |t|
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20170129012520) do
     t.integer  "simposio_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["simposio_id"], name: "index_documentos_simposios_on_simposio_id"
   end
 
   create_table "eventos", force: :cascade do |t|
@@ -56,6 +58,8 @@ ActiveRecord::Schema.define(version: 20170129012520) do
     t.text     "localizacao"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_eventos_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -67,6 +71,7 @@ ActiveRecord::Schema.define(version: 20170129012520) do
     t.string   "picture"
     t.text     "conteudo"
     t.integer  "vezes_visitado", default: 0
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "simposios", force: :cascade do |t|
@@ -76,6 +81,7 @@ ActiveRecord::Schema.define(version: 20170129012520) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.index ["user_id"], name: "index_simposios_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -94,6 +100,7 @@ ActiveRecord::Schema.define(version: 20170129012520) do
     t.datetime "reset_sent_at"
     t.boolean  "picture_accepted",  default: false
     t.boolean  "picture_declined",  default: false
+    t.index ["email"], name: "index_users_on_email"
   end
 
   create_table "videos_simposios", force: :cascade do |t|
@@ -101,6 +108,7 @@ ActiveRecord::Schema.define(version: 20170129012520) do
     t.string   "video"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["simposio_id"], name: "index_videos_simposios_on_simposio_id"
   end
 
 end

@@ -1,5 +1,6 @@
 class Evento < ApplicationRecord
-
+  belongs_to :user
+  
   # Validação 'titulo'
   
   validates_presence_of :titulo

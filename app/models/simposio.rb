@@ -1,5 +1,6 @@
 class Simposio < ApplicationRecord
-  has_many :video_simposios
+  has_many :video_simposio, dependent: :destroy
+  has_many :documentos_simposio, dependent: :destroy 
   belongs_to :user
   
   # Validação 'conteudo'
