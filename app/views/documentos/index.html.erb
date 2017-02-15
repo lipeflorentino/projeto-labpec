@@ -9,9 +9,10 @@
             <table id="tablesorter" class="display" cellspacing="0" width="100%">
               <thead>
                 <tr>
-                  <th>Nome do Usuário</th>
+                  <th>Enviado por</th>
                   <th>Título</th>
                   <th>Descrição</th>
+                  <th>Autor</th>
                   <th>Aprovado?</th>
                   <th>Data defesa</th>
                   <th>Tese/Dissertação</th>
@@ -33,6 +34,7 @@
                     </td>
                     <td><%= documento.titulo %></td>
                     <td><%= documento.descricao %></td>
+                    <td><%= documento.author %></td>
                     <td>
                       <% if documento.accepted %>
                         <%= "Aprovado" %>

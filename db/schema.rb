@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130182554) do
+ActiveRecord::Schema.define(version: 20170215125639) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20170130182554) do
     t.string   "arquivo"
     t.boolean  "accepted",    default: false
     t.boolean  "respondido",  default: false
+    t.string   "author"
     t.index ["user_id"], name: "index_documentos_on_user_id"
   end
 

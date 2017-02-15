@@ -49,8 +49,8 @@
                         <% @teses.each do |tese| %>
                         <div class="row td-e-container">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                <p><% if tese.user %>
-                                    <%= tese.user.name %>
+                                <p><% if tese.author %>
+                                    <%= tese.author %>
                                     <% end %></p>
                                 <div class="td-img">
                                     <%= image_tag("semfoto.jpg", class: 'img-responsive') %>
