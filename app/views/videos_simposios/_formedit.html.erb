@@ -1,11 +1,10 @@
 <%= form_for videos_simposio, remote: true do |f| %>
-
-
   
     <%= f.text_field :video, class: 'linha' %>
   
-
-  
     <%= f.submit 'Atualizar', class:'btn btn-default linha', method: :post%>
+    
+    <%= link_to 'Deletar', videos_simposio, method: :delete,
+            data: { confirm: 'Você tem certeza disso?' }, remote: true, id: "botao-deletar-#{videos_simposio.id}", class: 'linha' %>
   
 <% end %>

@@ -78,3 +78,4 @@ class EventosController < ApplicationController
       params.require(:evento).permit(:titulo, :descricao, :data, :localizacao)
     end
 end
+

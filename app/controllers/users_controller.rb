@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :editemail, :editpassword]
   # Verifica se o usuario está logado
-  before_action :authenticated_as_user, :except => [:new]
+  before_action :authenticated_as_user, :only => [:index, :edit, :editemail, :editemailupdate, :editpassword, :editpasswordupdate, :update]
   # Verifica se é adm
-  before_action :authenticated_as_admin, :except => [:edit, :new]
+  before_action :authenticated_as_admin, :only => [:destroy, :aprove_user_image]
+  # Verifica se é adm ou current_user
+  before_action :authenticated_as_admin_or_current_user, :only => [:index, :edit, :editemail, :editemailupdate, :editpassword, :editpasswordupdate]
 
   # GET /users
   # GET /users.json
@@ -193,5 +195,11 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :adm, :matricula, :password, :password_confirmation, :email_confirmation, :picture, :actual_password, :new_email)
     end
     
+    def authenticated_as_admin_or_current_user
+    if !current_user.adm || @user != current_user
+      flash.now[:error] = "Você não possui permissão para acessar essa pagina. Entre em contato com o administrador do dominio."
+      redirect_to root_url
+    end
+  end
     
 end

@@ -1,0 +1,15 @@
+.links{padding-right: 20px; padding-left: 20px;}
+.block{display: inline-block !important; width: 100%; height: 100%;}
+.painel{width: 30%;}
+.bemVindo{width: 67%;float:right; min-height: 350px;}
+.painel{float: left; height: 100%; text-align: center;}
+.painel h2{margin-bottom: 20px; margin-left: 17px; margin-right:17px;}
+.painel ul{list-style: none; padding:0px;text-align: center;}
+.painel li{padding-bottom: 10px; padding-top: 10px; border-bottom: .2px solid;}
+.esquerda {float: left;}
+.direita {float: right;}
+.buttons {padding-bottom: 20px;}
+.bemVindo h3{font-size:1.6em; border-bottom: 0.3px solid gray; margin-top: 30px; margin-bottom: 30px;}
+.block a:hover{background-color:transparent !important;text-decoration:underline !important;}
+.block a:focus{color:#337ab7;}
+.block a:visited{color:#337ab7;text-decoration:none;}

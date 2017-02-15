@@ -1,4 +1,9 @@
 class PagesController < ApplicationController
+  
+   # Verifica se o usuario está logado
+  before_action :authenticated_as_user, :only => [:aprovacao_imagens]
+  # Verifica se é adm
+  before_action :authenticated_as_admin, :only => [:aprovacao_imagens]
     
     def arquivos
       @datas_min = Array.new
@@ -34,11 +39,17 @@ class PagesController < ApplicationController
     
     def publicacoes
       
+        # Cria array de meses
         @datas_min = Array.new
+        # pega o ultimo post
         ultima_data = Post.last.created_at
+        # Bota o ultimo post na array
         @datas_min << ultima_data
+        # Cria array com o número de posts referentes a cada mes
         @data_freq = Array.new
+        # Bota 0 caso tenha ultimo post (gambiarra)
         @data_freq << 0 if ultima_data != nil
+        # itera array de posts com criação decrescente
         Post.order('created_at DESC').each do |p|
           if p.created_at.month != ultima_data.month
             @datas_min << p.created_at

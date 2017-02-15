@@ -1,11 +1,11 @@
-<%= form_for documentos_simposio, :url => {:action => 'add'} do |f| %> 
+<%= form_for documentos_simposio, :url => {:action => 'adddoc', :controller => 'documentos_simposios', params: {id: @videos_simposio.id}} do |f| %> 
 
-<div class="field">
-    <%= f.label :arquivo %>
-    <%= f.text_field :arquivo, id: 'input-arquivo' %>
+  <div class="form-group">
+    <%= f.file_field :arquivo, id: 'input-doc' %>
   </div>
 
   <div class="actions">
-    <%= f.submit 'Adicionar Arquivo', class:'btn btn-default', id: 'submit-arquivo', method: :post%>
+    <%= f.submit 'Adicionar Arquivo', class:'btn btn-default', id: 'submit-doc', method: :post%>
   </div>
+  
 <% end %>

@@ -1,9 +1,9 @@
 class VideosSimposiosController < ApplicationController
   before_action :set_videos_simposio, only:  [:edit, :update, :destroy]
     # Verifica se o usuario está logado
-  before_action :authenticated_as_user, :except => [:show, :index]
+  before_action :authenticated_as_user
   # Verifica se é adm
-  before_action :authenticated_as_admin, :except => [:show, :index]
+  before_action :authenticated_as_admin
 
   # GET /videos_simposios
   # GET /videos_simposios.json
@@ -55,14 +55,18 @@ class VideosSimposiosController < ApplicationController
   # DELETE /videos_simposios/1
   # DELETE /videos_simposios/1.json
   def destroy
-    @videos_simposio.destroy
-    respond_to do |format|
-      #format.html { redirect_to videos_simposios_url, notice: 'Videos simposio was successfully destroyed.' }
-      #format.json { head :no_content }
+    if params[:id].to_i != @videos_simposio.id
+      @videos_simposio.destroy
+    else 
+      @videos_simposio.update(:video => nil)
     end
+    #respond_to do |format|
+    #  format.html { redirect_to videos_simposios_url, notice: 'Videos simposio was successfully destroyed.' }
+    #  format.json { head :no_content }
+    #end
   end
   
-  def add
+  def addvideo
     
     @videos_simposio = VideosSimposio.find(params[:id])  
     

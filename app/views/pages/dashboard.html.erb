@@ -1,24 +1,29 @@
 <% provide(:title, "Dashboard") %>
 <div class="corpo-main-container">
     <div class="dashboard-container">
-        <div class="pp-main-container">
-            <div class="main wrapper clearfix">
-                <h1>Dashboard</h1>
-              <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                  <div class="main wrapper clearfix">
-                      <p>Menus</p> 
-                  </div>
-                </div>
-                <div class="col-lg-8 col-md-4 col-sm-12 col-xs-12">
+        <div class="block">
+            <div class="painel pp-main-container">
+                <div class="main wrapper clearfix">
+                    <h2>Painel de Controle</h2>
                     <div class="main wrapper clearfix">
-                        <p>Mensagem de Bem-vindo</p>
-                    </div>  
+                        <ul>
+                           <li><%= link_to 'Eventos', events_path %></li>
+                           <li><%= link_to 'Publicações', posts_path %></li>
+                           <li><%= link_to 'Teses e Dissertações', teses_path %></li>
+                           <li><%= link_to 'Simpósios', simposios_path %></li>
+                           <li><%= link_to 'Usuários', users_path %></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bemVindo pp-main-container">
+                <div class="main wrapper clearfix">
+                    <h3>Mensagem de Bem-vindo</h3>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut quam odio. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum consectetur, odio ultricies bibendum suscipit, lectus elit dignissim purus, eget mattis odio mi in mi. Nulla interdum libero mi, eget sodales urna rutrum eget. Nullam non neque nulla. Sed et lectus consequat, auctor purus at, laoreet risus. Aliquam commodo euismod tincidunt. Quisque ac lacus in justo luctus cursus non vel nulla. Sed ultricies vel risus.</p>
                 </div>    
-              </div>    
-            </div> 
+            </div>  
         </div>
-      </div>
+     </div>
     <%= render 'layouts/footer' %>
     </div>
 </div> 

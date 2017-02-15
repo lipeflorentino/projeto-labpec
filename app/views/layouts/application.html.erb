@@ -30,7 +30,11 @@
         <% if request.path != "/login" && !current_page?(painel_path) %>
           <% if administrador? %>
             <% if !current_page?(root_path) && !current_page?(publicacoes_path) && !current_page?(teses_path) && !current_page?(linhasdepesquisa_path) && !current_page?(eventos_path) && !current_page?(colaboradores_path) && !current_page?(instituicoes_path) && !current_page?(arquivos_path) && !current_page?(arquivo_show_path)%>
-              <%= render 'layouts/header-admin' %>
+              <% if current_page?(dashboard_path) %>
+                <%= render 'layouts/header-no-menu' %>
+              <% else %>
+                <%= render 'layouts/header-admin' %>
+              <% end %>
             <% else %>
               <%= render 'layouts/header' %>
             <% end %>  
@@ -39,6 +43,7 @@
           <% end %>
         <% end %>
         <%= yield %>
+        <%# debug(params) if Rails.env.development? %>
         
     </section>
     

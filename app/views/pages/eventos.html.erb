@@ -18,7 +18,13 @@
                       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                           <div class="p-info">
                             <h3><%= link_to evento.titulo, evento %></h3>
+                            
+                            <!-- Como você fez -->
+                            <h6> <%= evento.data %> </h6> 
+                            <!-- Como você deve usar o método -->
                             <h6><%= imprime_data(evento.data) %></h6>
+                            
+                            
                             <p><%= evento.localizacao %></p>
                           </div>
                       </div>

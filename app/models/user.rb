@@ -18,13 +18,11 @@ class User < ApplicationRecord
     # Validação 'nome'
     
     validates_presence_of :name
-    validates :name, length: { minimum: 5, maximum: 40 }, 
+    validates :name, length: { minimum: 4, maximum: 40 }, 
                      allow_blank: true
     
     # Validação 'email' (retirei on update)
-    
-    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-    
+     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates_presence_of :email
     validates :email, length: { maximum: 255 },
                       format: { with: VALID_EMAIL_REGEX },

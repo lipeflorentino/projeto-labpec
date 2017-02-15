@@ -1,0 +1,32 @@
+<div class="header-main-container">
+    <header class="header-container">
+        <div class="row">
+            <div class="logo-container">
+                <a href="/"><%= image_tag("logo.png", class: 'logo1 img-responsive') %></a>  
+            </div>
+        </div> 
+    </header>
+    <nav class="navbar navbar-default navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav nav-a navbar-left">
+                <li><%= link_to "Página Inicial", root_path %></li>
+              </ul>
+              <ul class="nav navbar-nav nav-a navbar-right">
+                <li><%= link_to "Manual",    linhasdepesquisa_path %></li>
+                <li><%= link_to "Sair",    logout_url %></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+    </nav>
+</div>
+
+

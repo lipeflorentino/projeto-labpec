@@ -8,64 +8,84 @@
       <div class="pst-container">
         <div class="pst-content">
           <div class="pst-info-content row">
-            <div id="videos col-md-6">
-              <h4>Vídeos de <%= @videos_simposio.simposio.titulo %></h4>
-              <h5> Apenas links do youtube serão aceitos </h5>
-              <ul class="lista">
-
-                <% @simposio_videos.each do |video_simposio| %>
-                
-                <% if video_simposio.video %>
-                
-                  <li id="video-li-<%= video_simposio.id %>" class='video-li'> 
-                  
-                    <%= render 'formedit', videos_simposio: video_simposio, simposio: @simposio %>    
+            <div class="row">
+              <div class="videos col-md-6">
+                <h4>Vídeos de <%= @videos_simposio.simposio.titulo %></h4>
+                <h5> Apenas links do youtube serão aceitos </h5>
+                <ul>
+                  <% @simposio_videos.each do |video_simposio| %>
+                    <% if video_simposio.video %>
+                      <li id="video-li-<%= video_simposio.id %>" > 
+                        <%= render 'formedit', videos_simposio: video_simposio, simposio: @simposio %>    
+                      </li>
+                    <% end %>
                     
-                    <%= link_to 'Deletar', video_simposio, method: :delete, 
-                    data: { confirm: 'Você tem certeza disso?' }, remote: true, id: "botao-deletar-#{video_simposio.id}", class: 'linha' %>
-                    
-                  </li>
+                    <% content_for :js do %>
+                      $('#botao-deletar-<%= video_simposio.id %>').on('click', function(){
+                        $('#video-li-<%= video_simposio.id%>').remove();
+                      });
+                    <% end %>
+                  <% end %>  
+                </ul>
                 
-                <% end %>
                 
-                <% content_for :js do %>
-                  $('#botao-deletar-<%= video_simposio.id %>').on('click', function(){
-                    $('#video-li-<%= video_simposio.id%>').remove();
+                <%= render 'form', videos_simposio: @videos_simposio, simposio: @simposio %>
+                
+              </div> <!-- Vídeos -->
+              
+              <% content_for :js do %>
+               
+                  $('#submit-video').on('click', function(){
+                    var input = $('#input-video').val();
+                    var conteudo = "<li>" + input + "</li>" 
+                    $('.videos ul').append(conteudo);
                   });
-                <% end %>
-              <% end %>  
-              </ul>
+                
+              <% end %>
               
+              <div class="documentos col-md-6">
+                
+                <h4> Documentos de <%= @videos_simposio.simposio.titulo %> </h4>
+                <h5> Apenas arquivos pdf serão aceitos </h5>
+                <ul>
+                  <% @simposio_docs.each do |doc_simposio| %>
+                    <% if doc_simposio.arquivo.url %>
+                      <li class='doc-li'> 
+                        <%= link_to doc_simposio.arquivo.file.filename, doc_simposio.arquivo_url %>
+                        <%= link_to 'Deletar',doc_simposio, method: :delete,
+            data: { confirm: 'Você tem certeza disso?' }, remote: true, id: "botao-deletar-doc-#{doc_simposio.id}", class: 'linha' %>
+                      </li>
+                    <% end %>
+                    
+                    <% content_for :js do %>
+                      
+                      
+                    
+                    <% end %>
+                    
+                  <% end %>
+                </ul>
+                <%= render 'formdoc', documentos_simposio: @simposio_docs.first, simposio: @simposio %> 
+                
+              </div> <!-- Documentos -->
               
-              <%= render 'form', videos_simposio: @videos_simposio, simposio: @simposio %>
+              <% content_for :js do %>
+               
+                  $('#submit-doc').on('click', function(){
+                    var input = $('#input-doc').val().split("\\");
+                    var conteudo = "<li>" + input[input.length -1] + "</li>" 
+                    $('.documentos ul').append(conteudo);
+                  });
+                  
+                  
+                  $('#input-doc').on('click', function(){
+                    $('#submit-doc').prop('disabled', false);
+                  });
+                  
+              <% end %>
               
-            </div> <!-- Vídeos -->
-            
-            <% content_for :js do %>
-             
-                $('#submit-video').on('click', function(){
-                  var input = $('#input-video').val();
-                  var conteudo = "<li>" + input + "</li>" 
-                  $('#videos ul').append(conteudo);
-                });
-              
-            <% end %>
-            
-            <div class="documentos col-md-6">
-              
-              <h4> Documentos de <%= @videos_simposio.simposio.titulo %> </h4>
-              <h5> Apenas arquivos pdf serão aceitos </h5>
-              <ul>
-                <% @simposio_docs.each do |doc_simposio| %>
-                    <li class='doc-li'> 
-                      Documento
-                    </li>
-                <% end %>
-              </ul>
-              <%= render 'formdoc', documentos_simposio: @simposio_docs.first, simposio: @simposio %> 
-              
-            </div> <!-- Documentos -->
-            
+            </div>
+            <div class="clearfix"></div>
           </div>
         </div>
       </div>

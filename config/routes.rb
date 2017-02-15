@@ -27,7 +27,8 @@ Rails.application.routes.draw do
   patch 'editemailupdate' => 'users#editemailupdate'
   patch 'editpasswordupdate' => 'users#editpasswordupdate'
   
-  patch 'add' => 'videos_simposios#add'
+  patch 'addvideo' => 'videos_simposios#addvideo'
+  patch 'adddoc' => 'documentos_simposios#adddoc'
   
   get 'dashboard' => 'pages#dashboard'
   get 'users_simposios' => 'pages#simposios'
